@@ -1,0 +1,18 @@
+{
+  "status": "candidate_not_applied",
+  "actual_jig_range_mm": [
+    80,
+    300
+  ],
+  "samples": 227,
+  "gain": 0.8978048056331662,
+  "offset_mm": 65.22306168323131,
+  "formula": "corrected_mm = gain * raw_tof_mm + offset_mm",
+  "rmse_mm": 7.963419806485649,
+  "uncorrected_rmse_mm": 51.96450965902575,
+  "raw_zero_excluded": true,
+  "actual_observed_range_mm": [
+    81.28625316455697,
+    299.9898412698413
+  ]
+}

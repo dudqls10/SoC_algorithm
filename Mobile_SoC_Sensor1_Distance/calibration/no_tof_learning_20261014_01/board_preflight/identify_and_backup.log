@@ -1,0 +1,15 @@
+SEGGER J-Link Commander V8.10d (Compiled Oct 24 2024 10:01:14)
+DLL version V8.10d, compiled Oct 24 2024 09:58:28
+
+J-Link Commander will now exit on Error
+
+J-Link Command File read successfully.
+Processing script file...
+J-Link>exec DisableAutoUpdateFW
+J-Link>exec ForceAttachTarget=1
+J-Link connection not established yet but required for command.
+Connecting to J-Link via USB...FAILED
+
+Script processing completed.
+
+

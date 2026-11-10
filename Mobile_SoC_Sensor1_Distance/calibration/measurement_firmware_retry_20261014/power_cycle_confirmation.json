@@ -1,0 +1,9 @@
+{
+  "project": "Mobile_SoC_Sensor1_Distance",
+  "image_sha256": "8cdef58fe86c587d46e9d981133e9c44d8b806660f29345503fafec765430192",
+  "user_confirmed_full_power_cycle": true,
+  "confirmed_epoch_s": 1791954574.719,
+  "user_statement": "jlink는 뺏고 재인가완료했어",
+  "jlink_disconnected_user_confirmed": true,
+  "jig_reference": "User confirmed actual 30cm at command/actual pulse zero before this sensor power cycle; motor power retained."
+}

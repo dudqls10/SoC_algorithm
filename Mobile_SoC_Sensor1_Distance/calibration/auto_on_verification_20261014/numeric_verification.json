@@ -1,0 +1,20 @@
+{
+  "executed_production_C_functions_in_ARM_emulator": true,
+  "hardware_used": false,
+  "completed": true,
+  "failure_bitmask": 0,
+  "checks": [
+    "Invalid/zero/out-of-range ToF stays invalid",
+    "8..30cm linear correction",
+    "CAP formula and affine correction vs independent fit-file calculation",
+    "CAP bounds and extreme uint32 inputs",
+    "All25 recorded deltas map to existing27..3cm slots",
+    "Baseline and seeded raw buffers agree",
+    "Curve arrays remain30elements",
+    "Original25point logarithmic regression matches independent calculation",
+    "Both active CAP paths use calibrated model",
+    "Automatic curve collection enabled at startup"
+  ],
+  "production_header_sha256": "c8b7bc468694add60fbd2db68e7fc14b3d0f096d31821dd97c3e69ae23f22172",
+  "test_build_note": "Soft-float ARM exercises the same C; firmware is separately built for Cortex-M7 hard-float."
+}

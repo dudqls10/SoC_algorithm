@@ -1,0 +1,8 @@
+{
+  "read_started_epoch_s": 1791983243.4977567,
+  "confirmation_observed_by_utc": "2026-10-14 13:03:43 UTC",
+  "note": "No requested SWD accesses during the preceding CAN-only180s; this subprocess reads one batch after that interval.",
+  "read_ended_epoch_s": 1791983245.3993492,
+  "read_exit_code": 0,
+  "post_observed_epoch_s": 1791983260.401606
+}

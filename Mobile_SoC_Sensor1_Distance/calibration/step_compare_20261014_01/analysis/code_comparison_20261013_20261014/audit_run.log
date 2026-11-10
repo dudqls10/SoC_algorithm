@@ -1,0 +1,89 @@
+{
+  "binaries": {
+    "C:\\Users\\SongYoungBin\\.codex\\visualizations\\2026\\10\\02\\01a0fcdc-55de-7463-a319-ade97ad00ae3\\step_sigma_once_20261013\\firmware_reference\\Mobile_SoC.bin": {
+      "bytes": 74040,
+      "sha256": "8cdef58fe86c587d46e9d981133e9c44d8b806660f29345503fafec765430192"
+    },
+    "C:\\Users\\SongYoungBin\\Desktop\\Soc\\Mobile_SoC\\Debug\\Mobile_SoC.bin": {
+      "bytes": 74040,
+      "sha256": "8cdef58fe86c587d46e9d981133e9c44d8b806660f29345503fafec765430192"
+    },
+    "C:\\Users\\SongYoungBin\\Desktop\\Soc\\Mobile_SoC_Experiments\\Mobile_SoC_Sensor1_Distance\\Debug\\Mobile_SoC_Sensor1_Distance.bin": {
+      "bytes": 72408,
+      "sha256": "4cb14fda2071894cde9c6bbb4538551da6e506538449d2be7297c42664fbef15"
+    }
+  },
+  "same_source_functions": {
+    "InitializeCompensation": true,
+    "LinearRegression": true,
+    "TrainDelayedQ1Pair": true,
+    "DriftCompensation": true,
+    "ApplyEMA2Filter": true,
+    "InitializeKalmanFilters": true,
+    "KalmanFilter": true
+  },
+  "metrics": {
+    "oct13": {
+      "ema_sigma": 77.39234761099333,
+      "ema_threshold_3sigma": 232.17704283297996,
+      "raw0_sigma": 256.660974626495,
+      "raw1_sigma": 89.96934399559451,
+      "raw0_return_shift": -37.248375022783875,
+      "ema_return_shift": -61.12215165793896,
+      "EMA_contiguous_cm": 26
+    },
+    "oct14": {
+      "ema_sigma": 65.53029813224683,
+      "ema_threshold_3sigma": 196.59089439674048,
+      "raw0_sigma": 249.6996344049171,
+      "raw1_sigma": 278.5706347822285,
+      "raw0_return_shift": 208.9390629408881,
+      "ema_return_shift": 210.1904776468873,
+      "EMA_contiguous_cm": 22
+    }
+  },
+  "CAN_settled_model_fits": {
+    "oct13": {
+      "n_stationary_windows": 60,
+      "CH0_slope": 1.0000999306153138,
+      "CH1_slope": -0.7244585222448887,
+      "effective_reference_gain": 0.7244585222448887,
+      "intercept": 39553989.180004634,
+      "rmse_count": 5.1604208710627315,
+      "interpretation": "Descriptive fit of settled raw/EMA window means; not direct RAM coefficient readback."
+    },
+    "oct14": {
+      "n_stationary_windows": 60,
+      "CH0_slope": 1.0000268521206535,
+      "CH1_slope": -7.241998927075972e-05,
+      "effective_reference_gain": 7.241998927075972e-05,
+      "intercept": 31733182.371957265,
+      "rmse_count": 4.669725961274486,
+      "interpretation": "Descriptive fit of settled raw/EMA window means; not direct RAM coefficient readback."
+    }
+  },
+  "custom_soc_revision": {
+    "old_measurement_start_kst": "2026-10-13T17:15:55+09:00",
+    "old_measurement_end_kst": "2026-10-13T17:22:33+09:00",
+    "safe_ram_flash_kst": "2026-10-13T19:50:11+09:00",
+    "flash_after_26cm_measurement": true,
+    "source_diffs": {
+      "main.c": {
+        "old_sha256": "8a2fe441b6bebee58240d6b921ad4a8daa3ac21ecfa4ef7773aa050eb723b092",
+        "new_sha256": "43cc9a0d611504eb0bf0b0e754ecc97c38124e4703b023bf7e263b17400d01ed",
+        "diff_lines": 21
+      },
+      "i2c_apb.c": {
+        "old_sha256": "bc77dc0d9bca24f41b7f1b1e086a09c245db83ca25aea601da2c007873803acf",
+        "new_sha256": "48fd507e59ed21313463126c0daf419e826b5eb43c7124be6c2b83fd64d6b9c2",
+        "diff_lines": 16
+      },
+      "Makefile": {
+        "old_sha256": "88fd7f466898838d925bafafee7d5a13e1e99558a5fa03036d6496c611ccf91a",
+        "new_sha256": "d205631ead48936e05b690ddafe37e09ecbab8646aedd35fe3a68e8d7741a337",
+        "diff_lines": 14
+      }
+    },
+    "limit": "Historical SoC flash was verified; SoC image at Oct14 22cm run was not read back."
+  }
+}

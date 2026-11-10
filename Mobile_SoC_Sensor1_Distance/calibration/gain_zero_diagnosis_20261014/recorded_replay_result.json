@@ -1,0 +1,54 @@
+{
+  "exit_code": 0,
+  "records": [
+    {
+      "case": "recorded_inputs",
+      "records": 15726,
+      "noise_ready": 0,
+      "first_noise_ready_tick": 0,
+      "peak_noise_samples": 0,
+      "near_cycles": 3827,
+      "residual_cycles": 2744,
+      "object_cycles": 2642,
+      "allowed_cycles": 40
+    },
+    {
+      "case": "fixed_ToF_only_counterfactual",
+      "records": 15726,
+      "noise_ready": 1,
+      "first_noise_ready_tick": 30881,
+      "peak_noise_samples": 501,
+      "near_cycles": 0,
+      "residual_cycles": 2744,
+      "object_cycles": 2642,
+      "allowed_cycles": 10310
+    },
+    {
+      "case": "object_zero_only_counterfactual",
+      "records": 15726,
+      "noise_ready": 0,
+      "first_noise_ready_tick": 0,
+      "peak_noise_samples": 0,
+      "near_cycles": 3827,
+      "residual_cycles": 2744,
+      "object_cycles": 0,
+      "allowed_cycles": 40
+    },
+    {
+      "case": "fixed_ToF_and_object_zero_counterfactual",
+      "records": 15726,
+      "noise_ready": 1,
+      "first_noise_ready_tick": 30881,
+      "peak_noise_samples": 501,
+      "near_cycles": 0,
+      "residual_cycles": 2744,
+      "object_cycles": 0,
+      "allowed_cycles": 10351
+    }
+  ],
+  "hardware_commands": 0,
+  "firmware_changes": 0,
+  "scope": "First completed reboot, recorded filtered pairs/ToF/object flags, fixed original first model. Production guard/noise headers. Approximate cycle timing from evaluation tick, valid ToF quality assumed; not a bit-exact full firmware replay. Fixed ToF/object cases are offline counterfactuals and are not proposed firmware changes.",
+  "input_sha256": "1907b1da02ef50eddf4f2e8d1b5e81a7e8373c6e2f981687f36259abad333418",
+  "input_records": 15726
+}

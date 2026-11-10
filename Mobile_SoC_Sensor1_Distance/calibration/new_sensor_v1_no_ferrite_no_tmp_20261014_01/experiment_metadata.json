@@ -1,0 +1,22 @@
+{
+  "experiment_date": "2026-10-14",
+  "timezone": "Asia/Seoul",
+  "label": "New sensor: v1 firmware, ferrite bead and TMP omitted",
+  "hardware_description_source": "User report",
+  "ferrite_bead": "omitted, user-reported",
+  "tmp": "omitted, user-reported",
+  "firmware": "v1 unchanged, user-reported; running image not independently read back",
+  "firmware_changes_requested": false,
+  "firmware_programming_requested": false,
+  "user_confirmed_physical_start_gap_cm": 30,
+  "user_confirmed_motor_usb_reconnected": true,
+  "motor_probe_after_reconnection": "preflight_motor_reconnected.json",
+  "coordinate_reset_authorized": false,
+  "procedure": "30->1->30cm, one roundtrip, 10mm steps, 5s confirmed stationary holds, 20mm/s",
+  "baseline_seconds": 30,
+  "final_baseline_seconds": 30,
+  "signal_plot_policy": "Every original received raw and EMA sample; no averaging, resampling, or baseline subtraction in time plots",
+  "today_reference": "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/step_compare_20261014_01",
+  "october_7_reference_candidate": "C:/Users/SongYoungBin/Desktop/Codex_작업자료/03_실험_분석/raw_plateau_flags_20261007/completed_five_cycles",
+  "comparison_policy": "Compare overlapping distances and directions; explicitly retain differing firmware, hardware, and measurement conditions"
+}

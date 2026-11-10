@@ -1,0 +1,208 @@
+{
+  "failure": null,
+  "ids": {
+    "0x41": 617,
+    "0x42": 616,
+    "0x43": 616,
+    "0x44": 616
+  },
+  "complete_snapshots": 616,
+  "partial_discarded": 0,
+  "errors": [],
+  "controller_states": [
+    {
+      "host_monotonic_ns": 23180156000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 23180796000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 23181296000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 23181796000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 23182296000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 23182796000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 23183296000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 23183796000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 23184296000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 23184796000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 23185296000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 23185796000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 23186296000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 23186796000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 23187296000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 23187796000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 23188296000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 23188796000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 23189296000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 23189796000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    }
+  ],
+  "sensor_commands_sent": 0,
+  "controller_started_from_ininit": true,
+  "controller_reset_before_capture": false,
+  "controller_reset_denied": false,
+  "error_frame_monitoring_enabled": true,
+  "initial_controller_overrun_latched": false,
+  "initial_controller": {
+    "status": 16,
+    "opmode": 0,
+    "btr0": 0,
+    "btr1": 0
+  },
+  "recording_initial_controller": {
+    "status": 0,
+    "opmode": 5,
+    "btr0": 0,
+    "btr1": 20
+  },
+  "latest_snapshot": {
+    "host_monotonic_ns": 23190156000000,
+    "end_monotonic_ns": 23190171000000,
+    "span_ms": 15.0,
+    "raw0": 8918591,
+    "raw1": 10984335,
+    "compensated": 40235788,
+    "cap_mm": 500,
+    "fusion_mm": 375,
+    "tof_mm": 318,
+    "status_hex": "FFCF80000000CDFB",
+    "status_bits": 255,
+    "line_bits": 207,
+    "hal_byte": 128,
+    "raw_flags": 0,
+    "tof_api": 0,
+    "can_queue_count": 0,
+    "read_count": 205,
+    "tof_count": 251,
+    "init_hal": 0,
+    "ch0_hal": 0,
+    "ch1_hal": 0,
+    "chip_type": 2,
+    "diagnostic_transport_valid": 1,
+    "chip_ready": 1,
+    "ch0_valid": 1,
+    "ch1_valid": 1,
+    "tof_ready": 1,
+    "tof_fresh": 1,
+    "fusion_valid": 1,
+    "ema_ready": 1,
+    "sensing_on": 1,
+    "phase": "connecting"
+  },
+  "mobile_four_frame_protocol_observed": true,
+  "motor_commands_sent": 0
+}

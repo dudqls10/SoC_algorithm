@@ -1,0 +1,16 @@
+--- C:\Users\SongYoungBin\.codex\visualizations\2026\10\02\01a0fcdc-55de-7463-a319-ade97ad00ae3\step_sigma_once_20261013\raw_freeze_diagnosis\swd_pinmux_fix_1791882849205759100\before_project\example\nxp3110\i2c_apb.c
++++ C:\Users\SongYoungBin\.codex\visualizations\2026\10\02\01a0fcdc-55de-7463-a319-ade97ad00ae3\step_sigma_once_20261013\raw_freeze_diagnosis\safe_ram_build_1791886086708768300\after_firmware\i2c_apb.c
+@@ -353,11 +353,12 @@
+     /* 패드 input enable(GPIE) 디폴트가 NXP3100 과 달리 NXP3110 은 off 일 수
+      * 있다. GPIE 가 꺼져 있으면 입력버퍼가 죽어 TWI 엔진이 START/주소를 아예
+      * 못 보는데, 이건 "레지스터 readback 은 정상인데 ACK 만 없는" 증상과
+      * 정확히 일치한다. PB4-7(I2C0/I2C1 4핀) input enable + 내부풀업을 명시적
+      * 으로 켠다(GPILEV 모니터 신뢰성 확보 목적도 겸함). */
+-    *R_GPIE(1)   = 0xF0;    /* PB4-7 input enable (PB0-3 은 미사용) */
++    /* Preserve PB3/SWCLK enabled by main(); ensure the I2C input pads stay on. */
++    *R_GPIE(1)  |= 0xF0;    /* PB4..7 input enable; keep other enabled pads. */
+     *R_GPPUEN(1) = 0xF0;    /* PB4-7 내부 풀업 (외부 풀업 유무와 무관, 보험) */
+ 
+     debugprintf("[INIT] CH=%d  PINMUX(1)=0x%04X  TWIADR=0x%02X  TWICTRL=0x%02X  IRQn=%d\r\n",
+                 CH, *R_PINMUX(1), *R_TWIADR(CH), *R_TWICTRL(CH), (int)IRQn_i2c_1);
+     debugprintf("[INIT] ST0=0x%03X ST1=0x%03X  GPILEV_B(PB4-7)=0x%02X\r\n",

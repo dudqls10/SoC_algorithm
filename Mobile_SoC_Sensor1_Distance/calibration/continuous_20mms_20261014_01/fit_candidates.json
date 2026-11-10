@@ -1,0 +1,262 @@
+{
+  "status": "offline_candidates_not_applied_to_firmware",
+  "project": "Mobile_SoC_Sensor1_Distance",
+  "experiment_speed_mm_s": 20,
+  "baseline_count": 40000240.36548223,
+  "formula_cap": "u=(baseline_count-compensated)/delta_scale_count; cap_mm=a_mm*exp(-b*u)+c_mm*exp(-d*u)",
+  "cap_exp2_approach_fit": {
+    "a_mm": 119.04750937643614,
+    "b": 8.8777187566756,
+    "c_mm": 161.28565358363457,
+    "d": 243.0964649674322,
+    "delta_scale_count": 265070.74048223346,
+    "training_rmse_mm": 7.310982447524951
+  },
+  "cap_exp2_retreat_validation_rmse_mm": 9.324849481673844,
+  "cap_affine_after_new_exp2": {
+    "samples": 30,
+    "gain": 0.980981295523833,
+    "offset_mm": 3.880087619661225,
+    "rmse_mm": 7.054503235262202,
+    "uncorrected_rmse_mm": 7.310982447524951
+  },
+  "cap_affine_retreat_validation_rmse_mm": 8.442874260977193,
+  "tof_affine_combined": {
+    "samples": 229,
+    "gain": 0.8947609104431198,
+    "offset_mm": 65.76107415667592,
+    "rmse_mm": 8.01728763030825,
+    "uncorrected_rmse_mm": 52.24865038073001
+  },
+  "tof_actual_fit_distance_range_mm": [
+    79.13999999999999,
+    299.9898412698413
+  ],
+  "tof_candidate_excludes_invalid_zero_readings": true,
+  "curve_log_fit": {
+    "formula": "ln(delta)=gain*distance_mm+offset",
+    "gain": -0.025017214906034615,
+    "offset": 11.433679708368782,
+    "fit_points": 26,
+    "signal_threshold_count": 140.60491444849816
+  },
+  "curve_seed_points": [
+    {
+      "nominal_cm": 30,
+      "actual_mean_mm": 298.0293302590957,
+      "measured_delta_count": -46.07201776653528,
+      "initial_delta_integer": -46,
+      "use_for_log_curve": false
+    },
+    {
+      "nominal_cm": 29,
+      "actual_mean_mm": 290.0046880664016,
+      "measured_delta_count": -32.39451776653528,
+      "initial_delta_integer": -32,
+      "use_for_log_curve": false
+    },
+    {
+      "nominal_cm": 28,
+      "actual_mean_mm": 279.8501257799032,
+      "measured_delta_count": -22.865286997304512,
+      "initial_delta_integer": -23,
+      "use_for_log_curve": false
+    },
+    {
+      "nominal_cm": 27,
+      "actual_mean_mm": 270.0370554116411,
+      "measured_delta_count": 180.41953628751878,
+      "initial_delta_integer": 180,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 26,
+      "actual_mean_mm": 260.045989725303,
+      "measured_delta_count": 85.70758749662261,
+      "initial_delta_integer": 86,
+      "use_for_log_curve": false
+    },
+    {
+      "nominal_cm": 25,
+      "actual_mean_mm": 250.0597545469849,
+      "measured_delta_count": 229.7543711223536,
+      "initial_delta_integer": 230,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 24,
+      "actual_mean_mm": 240.3809267357714,
+      "measured_delta_count": 246.66548223346473,
+      "initial_delta_integer": 247,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 23,
+      "actual_mean_mm": 229.9473309874523,
+      "measured_delta_count": 351.4454822334647,
+      "initial_delta_integer": 351,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 22,
+      "actual_mean_mm": 219.95882634736034,
+      "measured_delta_count": 414.08548223346475,
+      "initial_delta_integer": 414,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 21,
+      "actual_mean_mm": 209.49204070628483,
+      "measured_delta_count": 553.5321489001313,
+      "initial_delta_integer": 554,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 20,
+      "actual_mean_mm": 200.08497488978347,
+      "measured_delta_count": 604.9060227740052,
+      "initial_delta_integer": 605,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 19,
+      "actual_mean_mm": 190.1914449344448,
+      "measured_delta_count": 817.0411579091403,
+      "initial_delta_integer": 817,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 18,
+      "actual_mean_mm": 180.19479827420673,
+      "measured_delta_count": 941.9765933445758,
+      "initial_delta_integer": 942,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 17,
+      "actual_mean_mm": 170.17243422789022,
+      "measured_delta_count": 1273.3254822334648,
+      "initial_delta_integer": 1273,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 16,
+      "actual_mean_mm": 160.1842187235519,
+      "measured_delta_count": 1429.6854822334647,
+      "initial_delta_integer": 1430,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 15,
+      "actual_mean_mm": 150.18803601745768,
+      "measured_delta_count": 1725.2054822334646,
+      "initial_delta_integer": 1725,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 14,
+      "actual_mean_mm": 139.7379287674236,
+      "measured_delta_count": 2119.1369108048934,
+      "initial_delta_integer": 2119,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 13,
+      "actual_mean_mm": 130.05804905485354,
+      "measured_delta_count": 2645.0411579091406,
+      "initial_delta_integer": 2645,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 12,
+      "actual_mean_mm": 120.0080453383869,
+      "measured_delta_count": 3431.7865348650434,
+      "initial_delta_integer": 3432,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 11,
+      "actual_mean_mm": 110.38262567750799,
+      "measured_delta_count": 4307.498815566798,
+      "initial_delta_integer": 4307,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 10,
+      "actual_mean_mm": 100.12485428210631,
+      "measured_delta_count": 5458.673174541157,
+      "initial_delta_integer": 5459,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 9,
+      "actual_mean_mm": 89.92713844026878,
+      "measured_delta_count": 7038.085482233465,
+      "initial_delta_integer": 7038,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 8,
+      "actual_mean_mm": 79.77097179106399,
+      "measured_delta_count": 9078.48086684885,
+      "initial_delta_integer": 9078,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 7,
+      "actual_mean_mm": 69.96661613180157,
+      "measured_delta_count": 12241.918113812411,
+      "initial_delta_integer": 12242,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 6,
+      "actual_mean_mm": 59.9674488798875,
+      "measured_delta_count": 17028.230347098328,
+      "initial_delta_integer": 17028,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 5,
+      "actual_mean_mm": 50.08186480875312,
+      "measured_delta_count": 24066.143260011242,
+      "initial_delta_integer": 24066,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 4,
+      "actual_mean_mm": 40.461272390166464,
+      "measured_delta_count": 34688.15858568174,
+      "initial_delta_integer": 34688,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 3,
+      "actual_mean_mm": 30.050159476063936,
+      "measured_delta_count": 53938.96548223346,
+      "initial_delta_integer": 53939,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 2,
+      "actual_mean_mm": 20.061430925939124,
+      "measured_delta_count": 95488.68548223347,
+      "initial_delta_integer": 95489,
+      "use_for_log_curve": true
+    },
+    {
+      "nominal_cm": 1,
+      "actual_mean_mm": 11.635698765943628,
+      "measured_delta_count": 215227.56548223348,
+      "initial_delta_integer": 215228,
+      "use_for_log_curve": true
+    }
+  ],
+  "model_solver_synthetic_recovery_rmse_mm": 0.000007701008757541216,
+  "notes": [
+    "Approach used to fit CAP, retreat used as same-cycle directional validation.",
+    "Continuous response includes filter and sensor latency; this is not independently validated static calibration.",
+    "Do not substitute zero or invented positive deltas for low-signal far-distance points.",
+    "Current firmware curve table supports25points; full30point application requires extending arrays and fitting loops."
+  ]
+}

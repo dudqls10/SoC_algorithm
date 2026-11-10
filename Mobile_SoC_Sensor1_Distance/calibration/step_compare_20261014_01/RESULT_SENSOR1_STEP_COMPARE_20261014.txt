@@ -1,0 +1,68 @@
+Sensor 1 / 2026-10-13 Mobile_SoC 거리 스캔 비교
+2026-10-14 (Asia/Seoul)
+
+측정 완료
+- 사용자 확인: 현재 실제 간격30cm.
+- 30→1→30cm 왕복1회, 1cm 간격, 이동20mm/s.
+- 실제 정지 확인 후5초 측정58구간. 실제 정지시간5.031~5.047초.
+- 시작/최종30cm는 각각30초 기록, 첫5초 제외한25초 사용.
+- 각5초 정지는 첫1초 제외한4초 사용.
+- 모터 최종 command=0, actual=0pulse, 속도0. 정지구간 최대 위치편차0pulse.
+- 임시 속도/감속 RAM 설정은 측정 전 값으로 복원.
+- 펌웨어 기록, 리셋, 원점 변경, 드라이브ROM 저장 없음.
+
+품질 확인
+- 완성되고 동일 구간에 속한 CAN 묶음24,291개.
+- CAN 오류0, 수신 큐 overrun0, raw/EMA 무효 표본0.
+- 관측한 보상 학습 갱신 토글 변화0회.
+- J-Link 읽기 접속 실패로 현재 실행 펌웨어의 동일성은 미확인.
+
+동일 계산법의 3sigma 결과
+각 신호의 시작30cm 표본 표준편차(ddof=1)를 고정 기준으로 사용.
+타깃 음수방향 변화가3sigma를 넘고, 1cm부터 빈틈없이 접근/복귀 모두 통과하는 최대거리.
+1cm 방향전환점은 한 번 측정하여 공유하며 독립된 복귀 표본으로 간주하지 않음.
+
+                      이전10/13          이번Sensor1
+Raw CH0 기준sigma      256.661count       249.700count
+Raw CH0 기준3sigma     769.983count       749.099count
+Raw 접근/복귀 최대     23 /20cm           18 /18cm
+Raw 양방향 연속        20cm               18cm
+보상+EMA 기준sigma     77.392count        65.530count
+보상+EMA 기준3sigma    232.177count       196.591count
+EMA 접근/복귀 최대     29 /26cm           23 /22cm
+EMA 양방향 연속        26cm               22cm
+
+이전 평탄 구간의 접근 raw 변화량(가까운 거리 평균-먼 거리 평균)
+17→16cm: 이전-84.820 /이번-304.066count
+16→15cm: 이전-75.725 /이번-351.323count
+15→14cm: 이전-24.665 /이번-553.016count
+14→13cm: 이전-7.109  /이번-575.233count
+13→12cm: 이전-1059.316 /이번-803.584count
+이전17~13cm의 평탄 현상은 이번에는 재현되지 않음.
+
+해석상 주의
+- 복귀 후 raw 기준 이동+208.939count(시작3sigma의0.279배).
+- 복귀 후 EMA 기준 이동+210.190count(시작3sigma의1.069배).
+- EMA 기준 이동이3sigma를 넘어 먼 거리 판정에 기준 이동 영향이 있음.
+- 시작/끝 기준을 선형 보간한 보조분석에서는 이번EMA 양방향 연속23cm.
+  이는 선형drift 가정의 민감도 분석이며 주결과22cm를 대체하지 않음.
+- 30cm에도 실험판이 있는 상대 기준. 무물체 기준이나 절대 검출거리 보증이 아님.
+- 단1회 왕복이며 상관된 CAN 표본을 독립 반복실험 횟수로 해석하지 않음.
+- 현재 펌웨어 동일성, 칩/센서 차이, 환경 차이를 분리하지 않았으므로
+  거리 차이를 코드 변경의 효과로 단정할 수 없음.
+
+자료
+measurement/can_events.csv: 원본 CAN 프레임과 오류 기록.
+measurement/motor.csv: 모터 위치/속도/상태와 시각.
+measurement/summary.json: 실제 이동/정지 시각과 종료 상태.
+analysis/result.json: 기준 통계와3sigma 판정.
+analysis/distance_by_cm_comparison.csv: cm별 이전/이번 평균 변화량, 접근/복귀.
+analysis/distance_comparison.csv: 원시 평균, 변화량, 정지sigma, 3sigma 비율 상세 비교.
+analysis/adjacent_1cm_comparison.csv: 1cm당 평균 변화량 비교.
+analysis/distance_comparison_zoom.png: 12~30cm 비교.
+analysis/distance_comparison_full.png: 전체 거리 비교.
+analysis/current_timeseries.png: 이번 전체 시간 기록.
+analysis/reference_hashes.json: 입력 데이터SHA256.
+
+원본 비교 대상
+C:/Users/SongYoungBin/.codex/visualizations/2026/10/02/01a0fcdc-55de-7463-a319-ade97ad00ae3/step_sigma_once_20261013

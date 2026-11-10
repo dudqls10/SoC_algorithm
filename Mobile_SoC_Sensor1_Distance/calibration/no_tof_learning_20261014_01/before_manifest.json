@@ -1,0 +1,12 @@
+{
+  "Core/Src/main.c": "96b46e8f7309f9153fbc6f18b9d881729869ac73ce07a6de4716386c9af2410c",
+  "Core/Inc/drift_learning_guard.h": "ee6213eda51f93ab68ab4d2606525b65ac85511c237c4d7b54abe1ef20c5fd6e",
+  "Core/Inc/drift_noise_reference.h": "a49072d85edfc1d855276694948bc2841ae5b707f0a64cab5f7d8c0c167a27fb",
+  "Core/Inc/sensor1_distance_calibration.h": "c8b7bc468694add60fbd2db68e7fc14b3d0f096d31821dd97c3e69ae23f22172",
+  "Debug/Mobile_SoC_Sensor1_Distance.elf": "4ec2d08914b313e4735c68d23808e82a5215cbb8a7f3b9418b444ef769e515f6",
+  "Debug/Mobile_SoC_Sensor1_Distance.bin": "4cb14fda2071894cde9c6bbb4538551da6e506538449d2be7297c42664fbef15",
+  "Debug/Mobile_SoC_Sensor1_Distance.hex": "abea7edbb7db817bbbfdeb04e33ab1484180e4b5daf7f37cf8f56412fcdf9597",
+  "Debug/Mobile_SoC_Sensor1_Distance.map": "7e6118bfe6e8c7d1964d7ca8e10f0a4f861261a88333c544d0d50baf2f0726df",
+  "Debug/makefile": "22fcc2de09d0ee9ae134434e2cc011f9d97105f0a0a3e67a7e918366f3d34bfa",
+  ".cproject": "e9281c2ff109c5b3848725e8ce2c9f480c71d045e372b577334be8322bf3b54a"
+}

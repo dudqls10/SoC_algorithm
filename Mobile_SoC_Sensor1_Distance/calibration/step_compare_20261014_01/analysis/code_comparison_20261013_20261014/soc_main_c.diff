@@ -1,0 +1,21 @@
+--- C:\Users\SongYoungBin\.codex\visualizations\2026\10\02\01a0fcdc-55de-7463-a319-ade97ad00ae3\step_sigma_once_20261013\raw_freeze_diagnosis\swd_pinmux_fix_1791882849205759100\before_project\example\nxp3110\main.c
++++ C:\Users\SongYoungBin\.codex\visualizations\2026\10\02\01a0fcdc-55de-7463-a319-ade97ad00ae3\step_sigma_once_20261013\raw_freeze_diagnosis\safe_ram_build_1791886086708768300\after_firmware\main.c
+@@ -51,11 +51,17 @@
+ 	//*(volatile unsigned int *) (0x40003000 + 0x00)	= 0x40A2; // M:100→64 → Fsys 62.5→40MHz (PCLK:20MHz)
+ 
+ 	// PAF0(A) 0x4000_1800: function 00 = SPI0/UART0. (구버전 0x00FF는 PA0-3을 11=GPIO로 만들어 SPI 죽음 → 버그)
+ 	// PA0=SPI_SCK0, PA1=SPI_MOSI0, PA2=SPI_MISO0, PA3=SPI_SSX0(nSS), PA4=UART_RX0, PA5=UART_TX0(디버그콘솔)
+ 	*R_PINMUX(0) = 0x0000;	// PA0-3 = SPI0 (배선과 일치), PA4/5 = UART0
+-	*R_PINMUX(1) = 0x00FF;	// PB4=SCL0,PB5=SDA0,PB6=SCL1,PB7=SDA1 (I2C CH1 = PB6/PB7), PB0-3 GPIO
++	/* Enable both SWD input pads before selecting their alternate function. */
++	*R_GPIE(1) |= (1U << 3) | (1U << 4);
++	/* Preserve SWD: PB3=SWCLK and PB4=SWDIO use PAF1 function 01.
++	 * PB0..2 remain GPIO (11); PB5..7 retain their existing function 00.
++	 * I2C1 on PB6/PB7 stays available while J-Link is attached.
++	 * NXP3110 datasheet Table 8-1: PB3[7:6], PB4[9:8]. */
++	*R_PINMUX(1) = 0x017F;
+ 
+ 	debugstring("$#==============================================\r\n");
+ 	debugprintf("last Compile time: %s %s\r\n", __DATE__, __TIME__);
+ 	debugprintf("Hello World System Clock( %dMhz )\r\n", SystemCoreClock / 1000000);
+ 	debugprintf("AHB Freq: %dMhz\r\n", get_ahb_freq()/1000000);

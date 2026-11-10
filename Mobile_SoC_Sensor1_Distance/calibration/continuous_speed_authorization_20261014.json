@@ -1,0 +1,9 @@
+{
+  "user_statement": "이 속도로 인제 실험해줘",
+  "speed_mm_s": 20,
+  "pulse_per_second": 20000,
+  "profile": "continuous 30->1->30cm, no intermediate dwells",
+  "baseline_mean_target": 40000000,
+  "baseline_mean_tolerance": 500,
+  "confirmed_epoch_s": 1791955360.287
+}

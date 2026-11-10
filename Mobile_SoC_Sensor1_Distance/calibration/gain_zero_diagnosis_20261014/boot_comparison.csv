@@ -1,0 +1,4 @@
+﻿trial,first_ready_tick_ms,gain,numerator,denominator,sensor_variance,correlation,integer_moments_match,first_fit_collection_span_ms,additional_model_updates_after_first_fit,noise_ready_at_read,tof_reference_mm,tof_sigma_mm,tof_near_enter_mm,first_fit_to180s_allowed_ms,first_invalid_audit_tick_ms,last_read_tick_ms
+1,22782,0.0112,25852,2304743,1099074,0.016243119067685004,True,17191,0,0,296.3125,1.2103072956898178,291.3125,400,,213542
+2,30382,0.1134,402990,3552216,1107193,0.2032043125978322,True,24791,0,0,295.8125,1.8445443204217133,288.4343227183131,0,82780,227457
+3,35782,0.0994,255475,2569127,994895,0.15979640221369124,True,30191,0,0,294.875,1.0532687216470449,289.875,0,,237311

@@ -1,0 +1,8 @@
+exec DisableAutoUpdateFW
+exec ForceAttachTarget=1
+exec SetAllowStopMode=0
+exec InhibitConnectRetries=1
+connect
+savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/no_tof_learning_20261014_01/board_preflight/cpuid.bin", 0xE000ED00, 4
+savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/no_tof_learning_20261014_01/board_preflight/board_flash_before.bin", 0x08000000, 0x80000
+exit

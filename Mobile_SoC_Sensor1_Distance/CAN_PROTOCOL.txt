@@ -1,0 +1,111 @@
+모바일 ASIC / SoC 공통 CAN 출력 (2026-10-01)
+
+표준 CAN, 1 Mbps, DLC=8. 현재 센서 버전의 송신 ID는 0x41~0x44 네 종류뿐입니다.
+각 데이터 프레임은 32비트 값 두 개이며 바이트 순서는 Big Endian입니다.
+
+ID     Byte 0~3                              Byte 4~7
+0x41   원시 CH0 count (uint32, 최초 수신)    원시 CH1 count (uint32, 최초 수신)
+0x42   dComps.fdc_Q1 (drift 보상 + EMA 후)    cvf.FilteredDistance_Q1 (int32, mm)
+0x43   fusion.FusedDistance_Q1 (int32, mm)    tof.distance[0] (uint32, mm)
+0x44   아래 상태 바이트 8개
+
+0x44:
+B0 상태 비트: bit0 칩 초기화 OK, bit1 CH0 알고리즘 샘플 유효, bit2 CH1 알고리즘 샘플 유효,
+              bit3 ToF 초기화 OK, bit4 최근 정상 ToF 거리 읽기,
+              bit5 fusion 유효, bit6 EMA 초기화 완료, bit7 센싱 ON.
+B1 라인/SoC 진단 비트: bit0 I2C1 SCL, bit1 I2C1 SDA, bit2 I2C3 SCL, bit3 I2C3 SDA,
+              bit4 I2C1 BUSY, bit5 I2C3 BUSY. 하위 6비트가 0x0F이면 모두 HIGH, BUSY=0.
+              SoC 평가 펌웨어(2026-10-06): bit6 장애물 판정(1=학습 정지),
+              bit7 실제 보상 학습 갱신 횟수의 홀짝 비트(갱신마다 토글).
+              bit6/7은 이동 중 SWD 없이 판정과 학습 진행을 관찰하기 위한 진단이며,
+              0x41~0x43의 값과 필터/보상/학습 파라미터는 변경하지 않습니다.
+B2 bit1:0 칩 초기화 HAL 상태, bit3:2 CH0 읽기 HAL 상태,
+   bit5:4 CH1 읽기 HAL 상태, bit7:6 칩 종류 (1=ASIC, 2=SoC).
+   HAL: 0=OK, 1=ERROR, 2=BUSY, 3=TIMEOUT. 정상 ASIC=0x40, 정상 SoC=0x80.
+B3 0x41 원시 count 수신 시점의 CH0/CH1 overflow/error 비트.
+   bit0 CH0 overflow, bit1 CH1 overflow, bit4 CH0 error, bit5 CH1 error.
+   ASIC STATUS 또는 SoC 데이터 레지스터 상위 플래그를 이 비트로 매핑합니다.
+B4 마지막 ToF API 상태 (int8, 0=OK, 음수=실패; 기동 미완료=-7).
+B5 CAN 송신 큐 등록 실패/대기 횟수의 하위 8비트.
+B6 양 채널 I2C 읽기 성공 횟수의 하위 8비트.
+B7 정상 ToF 거리 업데이트 횟수의 하위 8비트.
+
+카운터는 256마다 순환합니다. B5는 CAN 배선 오류의 확정 판정값이 아닙니다.
+0x41은 칩 데이터 레지스터에서 처음 읽은 하위 24비트 count를 32비트로 전송합니다.
+Kalman, drift, EMA, slew limiter 및 ASIC 포화 복구 재읽기 결과로 대체하지 않습니다.
+칩 overflow/error나 알고리즘 샘플 거부가 있어도 수신한 원시 count를 표시합니다.
+I2C 읽기 실패 시 해당 채널의 마지막 수신 count와 B3 플래그를 유지합니다.
+전원 기동 후 한 번도 읽지 못한 채널은 0입니다. 읽기 실패는 B2, 칩 오류는 B3로 확인하세요.
+B0의 CH0/CH1 유효 비트는 알고리즘에 채택된 샘플을 뜻하며 원시 데이터와 다를 수 있습니다.
+0x42/0x43은 마지막 계산 값을 전송하며, 알고리즘 유효성은 B0로 판단합니다.
+내부 fdc.ch300/ch302와 거리 계산은 기존 Kalman 및 보상 경로를 유지합니다.
+네 프레임은 첫 프레임 때 같은 시점으로 저장한 값으로 구성합니다.
+한 CAN 타이머 주기마다 한 프레임씩 전송합니다. 센서 읽기 주기는 변경하지 않았습니다.
+라인 상태는 저장 시점의 GPIO 값이며 통신 파형 전체를 판정하지 않습니다.
+ASIC의 ToF 최신성 기준은 120 ms 및 기존 range-status 검증입니다.
+SoC의 ToF 최신성 기준은 정상 거리 읽기 후 200 ms입니다.
+학습 보호는 추가로 광학 range-status=0인 새 측정값만 사용합니다.
+이 품질 조건은 기존 거리 출력과 B0 ToF 비트의 의미를 바꾸지 않습니다.
+학습은 장애물 판정 외에도 정상 모델 잔차·ToF 접근·최신성을 확인합니다.
+새 학습 표본은 최소 2.4초 대기하고, 학습 보류 시 대기 표본을 폐기합니다.
+B1 bit7은 대기 표본 수가 아니라 실제 학습 모델 반영 횟수의 홀짝입니다.
+학습 보류 사유와 실제 학습에 반영한 CH0/CH1은 내부 진단 기록에 저장합니다.
+
+기존 0x45~0x4D의 raw/추가 채널/레지스터 페이지/기동/통계/이벤트 진단 송신은 제거했습니다.
+ToF I2C1(PB6/PB7), 칩 I2C3(PA8/PC9), 두 버스 400 kHz 설정을 유지합니다.
+
+
+2026-10-15 drift comp policy update (payload unchanged):
+RAW CH0 median3 -> 0.5s/0.1s means, guarded rolling120s sigma without physical count floor.
+Object entry 3sigma; release 2sigma/500ms; clear learning hold1s; pair quarantine2.4s.
+ToF is excluded from object/learning/sigma gating; distance/fusion outputs remain unchanged.
+No CAN IDs/fields/rates added or changed. Sensor4 acquisition/CAN stays500Hz, RAW detector nominal100Hz.
+SWD audit schema6: object_mean/reference now RAW mean/baseline; sigma fields RAW sigma/candidate/3sigma/sample count.
+SWD audit depth960; overwrite counter retained. Candidate model checks retain finite-value, gain bounds and zero-variance protections.
+
+2026-10-18 Sensor1 fusion update (payload unchanged):
+ToF initialization state0 or distance0 does not by itself reject a Fusion update.
+The original CAP/ToF inverse-variance weights remain unchanged, including at ToF0.
+ToF sigma remains5.0mm without calibration gain. No CAP-only substitution is applied.
+B0 bit5 reports the Fusion calculation validity; ToF bits remain separate status indicators.
+CAP/model/startup validity checks and the4000mm upper-range guard remain active.
+
+
+2026-10-20 Sensor1 active drift variant V1A3 / SWD audit schema8
+This supersedes the older RAW gate/schema6 notes for the active compensation path.
+V1 compensated/normalized DO uses guarded recent quiet sigma: 500ms observations,
+60s history, at least20 committed points, pending2.4s validation, no count floor.
+Until ready the original1.55*(initial80sigma+recent10sigma) threshold applies;
+after ready the entry/release decision uses3*quiet sigma. Initial idle guard=0.
+ToF remains excluded from idle, noise admission and learning permission.
+CAN0x41..0x44 IDs/payload layout and fusion/distance algorithms are unchanged.
+SWD schema8: detection_baseline_sigma and detection_entry_threshold uint32
+words contain IEEE754 float32 bits; detection_recent_sigma is integer recent10SD.
+noise_reference_samples is committed quiet-point count; flags16=ready,17=safe.
+
+2026-10-20 Sensor1 V1E3 (0x56314533): final Adaptive EMA restored.
+Input Kalman -> drift compensation -> ApplyEMA2Filter -> final output feedback.
+EMA alpha0.01..0.30 and delta5000..42000 counts retained; no final ADKF.
+Auto quiet sigma+3sigma policy and SWD schema8 meanings are retained.
+CAN0x41..0x44 payload layout and current fusion remain unchanged.
+
+
+## 2026-10-20 최신 ToF/CAP/퓨전 무효0치환 제거
+- 사용자 요청으로 센서1~8에 적용: ToF/CAP/퓨전은 품질무효/범위밖/갱신지연만으로0을 보내지 않고 마지막 정상값을 유지한다. 기동 및 명시적 보상초기화 후 첫 정상값 전은0이다.
+- 실제 읽기/계산의 유효성 검사와 상태 표시는 유지하며 정상 계산 때 저장값을 갱신한다. 보정식/계수/거리표/EMA/drift/ASIC/I2C/XSHUT/ToF모드/CAN배치는 변경하지 않는다. 센서6의 양쪽Long은 유지하며 다른 센서의 모드는 이번 범위가 아니다.
+- 소스/빌드 작업이며 플래시/프로브/로봇이동/실측은 수행하지 않는다.
+- 기록: C:/Users/SongYoungBin/Desktop/Soc/작업_기록/20261020_센서1_8_ToF_CAP퓨전_무효0치환제거_01
+
+
+## 2026-10-20 최신: 센서1~8 현재 수치 계산 정책
+- 사용자 요청은 센서6에 적용한 '현재 읽힌 수치로 계산; 품질/표범위/최신성으로0출력이나이전값유지하지 않음'을 센서1~8에 적용하는 것이다. 과거 마지막정상값유지 항목보다 이 항목이 우선한다.
+- 성공한 칩 읽기는 품질/overflow/full-scale 표시와 별개로 기존 보상/필터/EMA 입력에 전달한다. ASIC5/6/7은 첫burst를 사용하며 포화복구 재읽기로 치환하지 않는다. 물리 수신실패는 새표본으로 취급하지 않는다. 품질 진단 flags/reject는 유지한다. 이 정책으로 불량수치가 기존 학습/추정에도 영향을 줄 수 있다.
+- CAP: 센서1/2/3/8은 각자의 기존 연속CAP+로그커브 식으로 계산한다. 센서4는 기존 연속모델/Jacobian 경로를 유지한다. 센서5/7은 기존 보정표 범위 안에서 보간을 유지하고 밖에서는 같은표에서 구한 기존Coeff/Offset의로그식으로 외삽한다. 센서6의 기존98%연속CAP+2%로그식은 유지한다. 거리계수/테이블 자체는 복사하거나 재보정하지 않았다.
+- ToF: 수신에 성공한 거리 숫자는 Range Status/품질과 무관하게 기존 센서별 보정을 적용한다. 실제raw0은0이다. ClearInterrupt 실패만으로 이미 수신한 숫자를 버리지 않는다. DataReady 대기 동안 최근 수신한숫자를 사용하며 오래됐다는 이유로 계산을막지 않는다. 수신실패는0xFFFFFFFF로 구분한다.
+- Fusion: 품질/표범위/최신성/초기학습ready만으로 갱신을막지 않는다. 현재CAP/ToF와각센서의기존역분산식/거리sigma식을사용한다. 센서4의기존출력sigma참조/초기sigma와프로파일경로는유지한다. 그외센서의기존분리된초기countsigma/ToFsigma5mm/최소거리sigma0.001mm를유지한다. sigma0은기존수치하한으로계산하므로 초기 가중치가 충분히 학습된 불확실성을 뜻하지 않는다.
+- 계산불능(0분모/계수없음/NaN/Inf) 또는현재칩수신없음은CAP/퓨전에0xFFFFFFFF를표시한다. ToF I2C수신실패도ToF/퓨전에같은값으로구분한다. 최초표본전/명시적보상reset의초기값과 sensingOFF 제어는 별개다. 이 정책은 '통신실패 때 새 숫자를 만들어냄'을 뜻하지 않는다.
+- 과거500mm/4000mm 출력차단상한은 현재 거리 계산에서 정수표현한계(INT32_MAX,ToF보정uint16 65535)로확장한다. 음수거리/로그비양수 입력의기존수학처리는유지한다. 보정표밖/품질불량수치의정확도는실측미검증이다.
+- CAN ID/프레임배치/속도/하드웨어/I2C/XSHUT/ToF모드/EMA계수/드리프트수식은유지한다. 센서6은현재30번대(0x31~0x38/0x3E)와양쪽Long을유지한다. 다른센서ToF모드/CAN선택은이요청으로변경하지않는다. ASIC→ToF 단계적시작검사도유지한다.
+- 센서1 전체강제빌드통과. 센서7은설정1~4전부통과,최종Debug는기본설정1. 전체생산C ARM가상검증4560개실패0. 센서4버스대기시간은숫자시험에서0으로설정했으므로실제시간/마감성능검증이아니다. 가상결과는실물감지/거리정확도통과를뜻하지않는다.
+- 완료(KST): 2026-10-20T15:52:28.822747+09:00. 소스/빌드/가상검증까지만. 플래시/프로브/전원재인가/모터/신규실측없음.
+- 작업기록: C:/Users/SongYoungBin/Desktop/Soc/작업_기록/20261020_센서1_8_현재측정값계산_품질범위게이트해제_01

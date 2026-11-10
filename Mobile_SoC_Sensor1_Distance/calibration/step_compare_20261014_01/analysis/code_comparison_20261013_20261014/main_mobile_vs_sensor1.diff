@@ -1,0 +1,248 @@
+--- C:\Users\SongYoungBin\Desktop\Soc\Mobile_SoC\Core\Src\main.c
++++ C:\Users\SongYoungBin\Desktop\Soc\Mobile_SoC_Experiments\Mobile_SoC_Sensor1_Distance\Core\Src\main.c
+@@ -134,10 +134,11 @@
+ #include "tim.h"
+ #include "gpio.h"
+ 
+ /* Private includes ----------------------------------------------------------*/
+ /* USER CODE BEGIN Includes */
++#include "sensor1_distance_calibration.h"
+ #include "stm32f7xx_hal.h"
+ #include <stdio.h>
+ #include <math.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -995,10 +996,11 @@
+ 
+ void InitializeCANProtocol(void)
+ {
+ 	state.onOff_ID = CAN_CH0;
+ 	state.onOff_sensing = 1;
++	/* Continue automatic curve collection from the measured initial seeds. */
+ 	state.onOff_cftool = 1;
+ 	/* 0: DisatanceData, 1: RawData */
+ 	state.onOff_rawData = 0;
+ 	state.onOff_reset = 0;
+ }
+@@ -2485,53 +2487,26 @@
+ }
+ 
+ #if (CalibrationDistance || CurveFitting)
+ void CalibrateDistance(void)
+ {
+-	/* Calibration with the Preset Parameter */
+-	#if 1
+-	//dist.Q1 = (47.5855*exp(0.0006*(fdc.ch000 - OFFSET1)) + 140.7543*exp(0.0035*(fdc.ch000 - OFFSET1)));
+-	// dist.Q1 = (64.5997*exp(0.0002*(dComps.fdc_Q1 - 2*Offset1)) + 157.1550*exp(0.0019*(dComps.fdc_Q1 - 2*Offset1))); 잘못된거
+-	// dist.Q1 = (74.9278*exp(0.0002*(dComps.fdc_Q1 - 2*Offset1)) + 162.1087*exp(0.0021*(dComps.fdc_Q1 - 2*Offset1))); // 잘된거
+-	dist.Q1 = (63.5379*exp(0.0003*(dComps.fdc_Q1 - 2*Offset1)) + 163.1883*exp(0.0046*(dComps.fdc_Q1 - 2*Offset1)));
+-	//dist.Q1 = (114.1*exp(0.0002948*(dComps.fdc_Q1 - 2*Offset1)) + 81.34*exp(0.00001624*(dComps.fdc_Q1 - 2*Offset1)));
+-	//dist.Q1 = (81.43*exp(0.00001144*(dComps.fdc_Q1 - 2*Offset1)) + 146.7*exp(0.0002138*(dComps.fdc_Q1 - 2*Offset1)));
+-	#else
+-	dist.Q1 = (91.4*exp(0.0000124*(dComps.fdc_Q1 - 2*Offset1)) + 136.7*exp(0.0002797*(dComps.fdc_Q1 - 2*Offset1)));
+-	#endif
+-
+-	#if FDC_ADD
+-	dist.Q2 = (12.89*exp(-0.000007192*(dComps.fdc_Q2 - 2*Offset1)) + 220.1*exp(0.0001462*(dComps.fdc_Q2 - 2*Offset2)));
+-	#endif
++    /* New fitted model followed by its affine correction, applied exactly once. */
++    dist.Q1 = Sensor1CalibratedCapDistance(dComps.fdc_Q1, 500U);
++
++    #if FDC_ADD
++    dist.Q2 = (12.89*exp(-0.000007192*(dComps.fdc_Q2 - 2*Offset1)) + 220.1*exp(0.0001462*(dComps.fdc_Q2 - 2*Offset2)));
++    #endif
+ }
+ 
+ void CalibrateDistanceNormalized(void)
+ {
+-	/* MATLAB fit input normalization: x_norm = (x - mean) / std. */
+-	const int64_t centered_x = (int64_t)dComps.fdc_Q1 - 40000000LL;
+-	const float normalized_x = (float)centered_x / 28306.0f;
+-	const float distance_q1 =
+-			230.2f * expf(20.06f * normalized_x) +
+-			95.63f * expf(0.7003f * normalized_x);
+-
+-	/* Limit the normalized-fit distance to the valid 0..350 range. */
+-	if (!isfinite(distance_q1) || (distance_q1 >= 350.0f))
+-	{
+-		dist.Normalized_Q1 = 350U;
+-	}
+-	else if (distance_q1 <= 0.0f)
+-	{
+-		dist.Normalized_Q1 = 0U;
+-	}
+-	else
+-	{
+-		dist.Normalized_Q1 = (uint32_t)distance_q1;
+-	}
+-
+-	#if FDC_ADD
+-	dist.Q2 = (12.89*exp(-0.000007192*(dComps.fdc_Q2 - 2*Offset1)) + 220.1*exp(0.0001462*(dComps.fdc_Q2 - 2*Offset2)));
+-	#endif
++    /* Match the active calibrated CAP model, retaining the existing350mm limit. */
++    dist.Normalized_Q1 = Sensor1CalibratedCapDistance(dComps.fdc_Q1, 350U);
++
++    #if FDC_ADD
++    dist.Q2 = (12.89*exp(-0.000007192*(dComps.fdc_Q2 - 2*Offset1)) + 220.1*exp(0.0001462*(dComps.fdc_Q2 - 2*Offset2)));
++    #endif
+ }
+ #endif
+ 
+ #if KalmanFilters
+ void InitializeKalmanFilters(void)
+@@ -2992,11 +2967,12 @@
+ 			quality_status = VL53L1X_GetRangeStatus(&hi2c1, tof.address[0] << 1, &range_status);
+ 			status = VL53L1X_ClearInterrupt(&hi2c1, tof.address[0] << 1);
+ 		}
+ 		if (status == 0)
+ 		{
+-			tof.distance[0] = (uint16_t)(1.0f * distance + 0.0f);
++			tof.distance[0] = Sensor1CorrectToFDistance(distance,
++			        (uint8_t)(quality_status == 0 && range_status == 0U));
+ 			tof_read_count++;
+ 			mobile_tof_tick = HAL_GetTick();
+ 			mobile_tof_seen = 1U;
+ 			mobile_tof_range_status = range_status;
+ 			mobile_tof_quality_valid = (uint8_t)(quality_status == 0 && range_status == 0U);
+@@ -3056,69 +3032,70 @@
+ 	cvf.Sum_X = cvf.X[1]+cvf.X[2]+cvf.X[3]+cvf.X[4]+cvf.X[5]+cvf.X[6]+cvf.X[7]+cvf.X[8]+cvf.X[9]+cvf.X[10]
+ 				+cvf.X[11]+cvf.X[12]+cvf.X[13]+cvf.X[14]+cvf.X[15]+cvf.X[16]+cvf.X[17]+cvf.X[18]+cvf.X[19]+cvf.X[20]
+ 				+cvf.X[21]+cvf.X[22]+cvf.X[23]+cvf.X[24]+cvf.X[25];
+ 	cvf.Mean_X = cvf.Sum_X / 25;
+ 
+-	cvf.MeanData_Q1[0] = 4.00E+07;
+-	cvf.dataQ1_curr[0] = 4.00E+07;
+-	cvf.dataQ1_prev[0] = 4.00E+07;
+-
++	cvf.MeanData_Q1[0] = SENSOR1_CAP_BASELINE_COUNT;
++	cvf.dataQ1_curr[0] = SENSOR1_CAP_BASELINE_COUNT;
++	cvf.dataQ1_prev[0] = SENSOR1_CAP_BASELINE_COUNT;
++
++	/* Existing25 slots:27..3cm. Recorded low-signal26cm value is retained. */
+ 	#if 1
+-	cvf.MeanData_Q1[0] = 4.00E+07;
+-	cvf.MeanData_Q1[1] = 80;
+-	cvf.MeanData_Q1[2] = 80;
+-	cvf.MeanData_Q1[3] = 80;
+-	cvf.MeanData_Q1[4] = 80;
+-	cvf.MeanData_Q1[5] = 80;
+-	cvf.MeanData_Q1[6] = 100;
+-	cvf.MeanData_Q1[7] = 377;
+-	cvf.MeanData_Q1[8] = 400;
+-	cvf.MeanData_Q1[9] = 506;
+-	cvf.MeanData_Q1[10] = 813;
+-	cvf.MeanData_Q1[11] = 1151;
+-	cvf.MeanData_Q1[12] = 1595;
+-	cvf.MeanData_Q1[13] = 1857;
+-	cvf.MeanData_Q1[14] = 2188;
+-	cvf.MeanData_Q1[15] = 2846;
+-	cvf.MeanData_Q1[16] = 4231;
+-	cvf.MeanData_Q1[17] = 5054;
+-	cvf.MeanData_Q1[18] = 6337;
+-	cvf.MeanData_Q1[19] = 7887;
+-	cvf.MeanData_Q1[20] = 10092;
+-	cvf.MeanData_Q1[21] = 12326;
+-	cvf.MeanData_Q1[22] = 14846;
+-	cvf.MeanData_Q1[23] = 19088;
+-	cvf.MeanData_Q1[24] = 25246;
+-	cvf.MeanData_Q1[25] = 35039;
+-
+-
+-	cvf.dataQ1_curr[0] = 4.00E+07;								cvf.dataQ1_prev[0] = 4.00E+07;
+-	cvf.dataQ1_curr[1] = 4.00E+07 - cvf.MeanData_Q1[1];			cvf.dataQ1_prev[1] = 4.00E+07 - cvf.MeanData_Q1[1];
+-	cvf.dataQ1_curr[2] = 4.00E+07 - cvf.MeanData_Q1[2];			cvf.dataQ1_prev[2] = 4.00E+07 - cvf.MeanData_Q1[2];
+-	cvf.dataQ1_curr[3] = 4.00E+07 - cvf.MeanData_Q1[3];			cvf.dataQ1_prev[3] = 4.00E+07 - cvf.MeanData_Q1[3];
+-	cvf.dataQ1_curr[4] = 4.00E+07 - cvf.MeanData_Q1[4];			cvf.dataQ1_prev[4] = 4.00E+07 - cvf.MeanData_Q1[4];
+-	cvf.dataQ1_curr[5] = 4.00E+07 - cvf.MeanData_Q1[5];			cvf.dataQ1_prev[5] = 4.00E+07 - cvf.MeanData_Q1[5];
+-	cvf.dataQ1_curr[6] = 4.00E+07 - cvf.MeanData_Q1[6];			cvf.dataQ1_prev[6] = 4.00E+07 - cvf.MeanData_Q1[6];
+-	cvf.dataQ1_curr[7] = 4.00E+07 - cvf.MeanData_Q1[7];			cvf.dataQ1_prev[7] = 4.00E+07 - cvf.MeanData_Q1[7];
+-	cvf.dataQ1_curr[8] = 4.00E+07 - cvf.MeanData_Q1[8];			cvf.dataQ1_prev[8] = 4.00E+07 - cvf.MeanData_Q1[8];
+-	cvf.dataQ1_curr[9] = 4.00E+07 - cvf.MeanData_Q1[9];			cvf.dataQ1_prev[9] = 4.00E+07 - cvf.MeanData_Q1[9];
+-	cvf.dataQ1_curr[10] = 4.00E+07 - cvf.MeanData_Q1[10];		cvf.dataQ1_prev[10] = 4.00E+07 - cvf.MeanData_Q1[10];
+-	cvf.dataQ1_curr[11] = 4.00E+07 - cvf.MeanData_Q1[11];		cvf.dataQ1_prev[11] = 4.00E+07 - cvf.MeanData_Q1[11];
+-	cvf.dataQ1_curr[12] = 4.00E+07 - cvf.MeanData_Q1[12];		cvf.dataQ1_prev[12] = 4.00E+07 - cvf.MeanData_Q1[12];
+-	cvf.dataQ1_curr[13] = 4.00E+07 - cvf.MeanData_Q1[13];		cvf.dataQ1_prev[13] = 4.00E+07 - cvf.MeanData_Q1[13];
+-	cvf.dataQ1_curr[14] = 4.00E+07 - cvf.MeanData_Q1[14];		cvf.dataQ1_prev[14] = 4.00E+07 - cvf.MeanData_Q1[14];
+-	cvf.dataQ1_curr[15] = 4.00E+07 - cvf.MeanData_Q1[15];		cvf.dataQ1_prev[15] = 4.00E+07 - cvf.MeanData_Q1[15];
+-	cvf.dataQ1_curr[16] = 4.00E+07 - cvf.MeanData_Q1[16];		cvf.dataQ1_prev[16] = 4.00E+07 - cvf.MeanData_Q1[16];
+-	cvf.dataQ1_curr[17] = 4.00E+07 - cvf.MeanData_Q1[17];		cvf.dataQ1_prev[17] = 4.00E+07 - cvf.MeanData_Q1[17];
+-	cvf.dataQ1_curr[18] = 4.00E+07 - cvf.MeanData_Q1[18];		cvf.dataQ1_prev[18] = 4.00E+07 - cvf.MeanData_Q1[18];
+-	cvf.dataQ1_curr[19] = 4.00E+07 - cvf.MeanData_Q1[19];		cvf.dataQ1_prev[19] = 4.00E+07 - cvf.MeanData_Q1[19];
+-	cvf.dataQ1_curr[20] = 4.00E+07 - cvf.MeanData_Q1[20];		cvf.dataQ1_prev[20] = 4.00E+07 - cvf.MeanData_Q1[20];
+-	cvf.dataQ1_curr[21] = 4.00E+07 - cvf.MeanData_Q1[21];		cvf.dataQ1_prev[21] = 4.00E+07 - cvf.MeanData_Q1[21];
+-	cvf.dataQ1_curr[22] = 4.00E+07 - cvf.MeanData_Q1[22];		cvf.dataQ1_prev[22] = 4.00E+07 - cvf.MeanData_Q1[22];
+-	cvf.dataQ1_curr[23] = 4.00E+07 - cvf.MeanData_Q1[23];		cvf.dataQ1_prev[23] = 4.00E+07 - cvf.MeanData_Q1[23];
+-	cvf.dataQ1_curr[24] = 4.00E+07 - cvf.MeanData_Q1[24];		cvf.dataQ1_prev[24] = 4.00E+07 - cvf.MeanData_Q1[24];
+-	cvf.dataQ1_curr[25] = 4.00E+07 - cvf.MeanData_Q1[25];		cvf.dataQ1_prev[25] = 4.00E+07 - cvf.MeanData_Q1[25];
++	cvf.MeanData_Q1[0] = SENSOR1_CAP_BASELINE_COUNT;
++	cvf.MeanData_Q1[1] = 180; /* 27cm, measured approach mean */
++	cvf.MeanData_Q1[2] = 86; /* 26cm, measured approach mean */
++	cvf.MeanData_Q1[3] = 230; /* 25cm, measured approach mean */
++	cvf.MeanData_Q1[4] = 247; /* 24cm, measured approach mean */
++	cvf.MeanData_Q1[5] = 351; /* 23cm, measured approach mean */
++	cvf.MeanData_Q1[6] = 414; /* 22cm, measured approach mean */
++	cvf.MeanData_Q1[7] = 554; /* 21cm, measured approach mean */
++	cvf.MeanData_Q1[8] = 605; /* 20cm, measured approach mean */
++	cvf.MeanData_Q1[9] = 817; /* 19cm, measured approach mean */
++	cvf.MeanData_Q1[10] = 942; /* 18cm, measured approach mean */
++	cvf.MeanData_Q1[11] = 1273; /* 17cm, measured approach mean */
++	cvf.MeanData_Q1[12] = 1430; /* 16cm, measured approach mean */
++	cvf.MeanData_Q1[13] = 1725; /* 15cm, measured approach mean */
++	cvf.MeanData_Q1[14] = 2119; /* 14cm, measured approach mean */
++	cvf.MeanData_Q1[15] = 2645; /* 13cm, measured approach mean */
++	cvf.MeanData_Q1[16] = 3432; /* 12cm, measured approach mean */
++	cvf.MeanData_Q1[17] = 4307; /* 11cm, measured approach mean */
++	cvf.MeanData_Q1[18] = 5459; /* 10cm, measured approach mean */
++	cvf.MeanData_Q1[19] = 7038; /* 9cm, measured approach mean */
++	cvf.MeanData_Q1[20] = 9078; /* 8cm, measured approach mean */
++	cvf.MeanData_Q1[21] = 12242; /* 7cm, measured approach mean */
++	cvf.MeanData_Q1[22] = 17028; /* 6cm, measured approach mean */
++	cvf.MeanData_Q1[23] = 24066; /* 5cm, measured approach mean */
++	cvf.MeanData_Q1[24] = 34688; /* 4cm, measured approach mean */
++	cvf.MeanData_Q1[25] = 53939; /* 3cm, measured approach mean */
++
++
++	cvf.dataQ1_curr[0] = SENSOR1_CAP_BASELINE_COUNT;								cvf.dataQ1_prev[0] = SENSOR1_CAP_BASELINE_COUNT;
++	cvf.dataQ1_curr[1] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[1];			cvf.dataQ1_prev[1] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[1];
++	cvf.dataQ1_curr[2] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[2];			cvf.dataQ1_prev[2] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[2];
++	cvf.dataQ1_curr[3] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[3];			cvf.dataQ1_prev[3] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[3];
++	cvf.dataQ1_curr[4] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[4];			cvf.dataQ1_prev[4] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[4];
++	cvf.dataQ1_curr[5] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[5];			cvf.dataQ1_prev[5] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[5];
++	cvf.dataQ1_curr[6] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[6];			cvf.dataQ1_prev[6] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[6];
++	cvf.dataQ1_curr[7] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[7];			cvf.dataQ1_prev[7] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[7];
++	cvf.dataQ1_curr[8] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[8];			cvf.dataQ1_prev[8] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[8];
++	cvf.dataQ1_curr[9] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[9];			cvf.dataQ1_prev[9] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[9];
++	cvf.dataQ1_curr[10] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[10];		cvf.dataQ1_prev[10] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[10];
++	cvf.dataQ1_curr[11] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[11];		cvf.dataQ1_prev[11] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[11];
++	cvf.dataQ1_curr[12] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[12];		cvf.dataQ1_prev[12] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[12];
++	cvf.dataQ1_curr[13] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[13];		cvf.dataQ1_prev[13] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[13];
++	cvf.dataQ1_curr[14] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[14];		cvf.dataQ1_prev[14] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[14];
++	cvf.dataQ1_curr[15] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[15];		cvf.dataQ1_prev[15] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[15];
++	cvf.dataQ1_curr[16] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[16];		cvf.dataQ1_prev[16] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[16];
++	cvf.dataQ1_curr[17] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[17];		cvf.dataQ1_prev[17] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[17];
++	cvf.dataQ1_curr[18] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[18];		cvf.dataQ1_prev[18] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[18];
++	cvf.dataQ1_curr[19] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[19];		cvf.dataQ1_prev[19] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[19];
++	cvf.dataQ1_curr[20] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[20];		cvf.dataQ1_prev[20] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[20];
++	cvf.dataQ1_curr[21] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[21];		cvf.dataQ1_prev[21] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[21];
++	cvf.dataQ1_curr[22] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[22];		cvf.dataQ1_prev[22] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[22];
++	cvf.dataQ1_curr[23] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[23];		cvf.dataQ1_prev[23] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[23];
++	cvf.dataQ1_curr[24] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[24];		cvf.dataQ1_prev[24] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[24];
++	cvf.dataQ1_curr[25] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[25];		cvf.dataQ1_prev[25] = SENSOR1_CAP_BASELINE_COUNT - cvf.MeanData_Q1[25];
+ 	#endif
+ 
+ 
+ 	#if FDC_ADD
+ 	cvf.MeanData_Q2[0] = 4.00E+07;
+@@ -3916,11 +3893,11 @@
+ 	const float cap_distance = (float)cvf.FilteredDistance_Q1;
+ 	const float tof_distance = (float)tof.distance[0];
+ 
+ 	fusion.FusedDistance_Q1_valid = 0U;
+ 	fusion.std_CapRaw_Q1 = sample.stdDOinit_fdcQ1;
+-	fusion.std_ToF_Q1 = 1.8f;
++	fusion.std_ToF_Q1 = 1.8f * (float)SENSOR1_TOF_GAIN;
+ 
+ 	if ((n_data < n_samplingLR) ||
+ 		(fdc.ch0_valid == 0U) || (fdc.ch1_valid == 0U) ||
+ 		(tof.state[0] == 0U) ||
+ 		!isfinite(coefficient) || (fabsf(coefficient) <= 1.0e-9f) ||

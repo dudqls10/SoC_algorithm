@@ -1,0 +1,2198 @@
+{
+  "completed.1": {
+    "address": 536871040,
+    "size": 1
+  },
+  "object.0": {
+    "address": 536871044,
+    "size": 24
+  },
+  "s_cached_status": {
+    "address": 536871260,
+    "size": 1
+  },
+  "s_last_transfer_elapsed_ms": {
+    "address": 536871262,
+    "size": 2
+  },
+  "FDC_I2C3LineState": {
+    "address": 134223413,
+    "size": 112
+  },
+  "FDC_IsValidRegister": {
+    "address": 134223193,
+    "size": 46
+  },
+  "FDC_RegisterVerifyMask": {
+    "address": 134223241,
+    "size": 172
+  },
+  "FDC_ReadBytes": {
+    "address": 134223525,
+    "size": 112
+  },
+  "FDC_ReadChannel": {
+    "address": 134223941,
+    "size": 212
+  },
+  "FDC_InitWriteVerified": {
+    "address": 134224345,
+    "size": 232
+  },
+  "FDC_ReadbackMatches": {
+    "address": 134225337,
+    "size": 66
+  },
+  "__NVIC_SystemReset": {
+    "address": 134227949,
+    "size": 44
+  },
+  "Sensor1CorrectToFDistance": {
+    "address": 134227993,
+    "size": 252
+  },
+  "Sensor1CalibratedCapDistance": {
+    "address": 134228249,
+    "size": 480
+  },
+  "FDCRecoveryReset": {
+    "address": 134228729,
+    "size": 32
+  },
+  "FDCRecoveryArm": {
+    "address": 134228761,
+    "size": 40
+  },
+  "FDCRecoveryDue": {
+    "address": 134228801,
+    "size": 114
+  },
+  "DriftSeedDetectionWindow": {
+    "address": 134228915,
+    "size": 212
+  },
+  "DriftIntegralReference": {
+    "address": 134229127,
+    "size": 104
+  },
+  "DriftObjectDetected": {
+    "address": 134229231,
+    "size": 298
+  },
+  "DriftGateSelfTest": {
+    "address": 134229529,
+    "size": 1156
+  },
+  "DriftNoiseReferenceReset": {
+    "address": 134230685,
+    "size": 26
+  },
+  "DriftNoiseReferenceReject": {
+    "address": 134230711,
+    "size": 32
+  },
+  "DriftNoiseReferenceSigma": {
+    "address": 134230743,
+    "size": 40
+  },
+  "DriftNoiseReferenceAllowsLearning": {
+    "address": 134230783,
+    "size": 48
+  },
+  "DriftNoiseReferenceStep": {
+    "address": 134230833,
+    "size": 548
+  },
+  "DriftFitGainScaled": {
+    "address": 134231385,
+    "size": 208
+  },
+  "DriftOffsetFromMeans": {
+    "address": 134231593,
+    "size": 128
+  },
+  "DriftCompensatedResidual": {
+    "address": 134231721,
+    "size": 108
+  },
+  "DriftModelMathSelfTest": {
+    "address": 134231833,
+    "size": 1056
+  },
+  "DriftLearningGuardPause": {
+    "address": 134232889,
+    "size": 86
+  },
+  "DriftLearningGuardReset": {
+    "address": 134232977,
+    "size": 60
+  },
+  "DriftLearningGuardSeed": {
+    "address": 134233041,
+    "size": 540
+  },
+  "DriftLearningGuardStep": {
+    "address": 134233585,
+    "size": 1560
+  },
+  "DriftLearningGuardTakePair": {
+    "address": 134235145,
+    "size": 298
+  },
+  "DriftLearningGuardCommit": {
+    "address": 134235443,
+    "size": 126
+  },
+  "EMA2PrecisionStep": {
+    "address": 134235569,
+    "size": 464
+  },
+  "EMA2PrecisionSelfTest": {
+    "address": 134236033,
+    "size": 596
+  },
+  "EMA2LegacyConstantBias": {
+    "address": 134236629,
+    "size": 120
+  },
+  "EvaluationClockInit": {
+    "address": 134236749,
+    "size": 164
+  },
+  "EvaluationNowUs": {
+    "address": 134236913,
+    "size": 20
+  },
+  "tof_init_stage": {
+    "address": 536886882,
+    "size": 1
+  },
+  "tof_init_status": {
+    "address": 536886883,
+    "size": 1
+  },
+  "tof_read_status": {
+    "address": 536886884,
+    "size": 1
+  },
+  "tof_read_count": {
+    "address": 536886886,
+    "size": 2
+  },
+  "tof_error_count": {
+    "address": 536886888,
+    "size": 2
+  },
+  "tof_line_before_request": {
+    "address": 536886890,
+    "size": 1
+  },
+  "tof_line_after_request": {
+    "address": 536886891,
+    "size": 1
+  },
+  "tof_line_after_shutdown": {
+    "address": 536886892,
+    "size": 1
+  },
+  "tof_boot_hal_error": {
+    "address": 536886893,
+    "size": 1
+  },
+  "tof_boot_hal_state": {
+    "address": 536886894,
+    "size": 1
+  },
+  "tof_boot_isr": {
+    "address": 536886896,
+    "size": 2
+  },
+  "mobile_fdc_read_count": {
+    "address": 536889230,
+    "size": 1
+  },
+  "mobile_tof_tick": {
+    "address": 536889240,
+    "size": 4
+  },
+  "mobile_tof_seen": {
+    "address": 536889244,
+    "size": 1
+  },
+  "mobile_tof_quality_valid": {
+    "address": 536889245,
+    "size": 1
+  },
+  "ema2_accumulator_Q1": {
+    "address": 536889272,
+    "size": 8
+  },
+  "eval_stage_elapsed_us": {
+    "address": 536940516,
+    "size": 32
+  },
+  "mobile_fdc_raw_ch0": {
+    "address": 537116104,
+    "size": 4
+  },
+  "mobile_fdc_raw_ch1": {
+    "address": 537116108,
+    "size": 4
+  },
+  "mobile_fdc_raw_status": {
+    "address": 537116112,
+    "size": 1
+  },
+  "mobile_can_snapshot": {
+    "address": 537116116,
+    "size": 32
+  },
+  "CaptureMobileCANTelemetry": {
+    "address": 134238065,
+    "size": 684
+  },
+  "CAN_SendUInt32Pair": {
+    "address": 134238749,
+    "size": 96
+  },
+  "recovery_schedule.12": {
+    "address": 537116148,
+    "size": 12
+  },
+  "consecutive_i2c_failures.11": {
+    "address": 537116160,
+    "size": 1
+  },
+  "TrainDelayedQ1Pair": {
+    "address": 134242233,
+    "size": 1748
+  },
+  "previous_learning.10": {
+    "address": 537116164,
+    "size": 4
+  },
+  "previous_pair_valid.9": {
+    "address": 537116168,
+    "size": 1
+  },
+  "previous_signal_reset.8": {
+    "address": 537116172,
+    "size": 4
+  },
+  "previous_signals.7": {
+    "address": 537116176,
+    "size": 24
+  },
+  "previous_reset.6": {
+    "address": 537116200,
+    "size": 4
+  },
+  "previous_coefficient.5": {
+    "address": 537116208,
+    "size": 8
+  },
+  "previous_offset.4": {
+    "address": 537116216,
+    "size": 8
+  },
+  "previous_flags.3": {
+    "address": 537116224,
+    "size": 4
+  },
+  "last_tick.2": {
+    "address": 537116228,
+    "size": 4
+  },
+  "ToF_GetI2C1LineState": {
+    "address": 134252101,
+    "size": 68
+  },
+  "last_read_tick.1": {
+    "address": 537116232,
+    "size": 4
+  },
+  "consecutive_errors.0": {
+    "address": 537116236,
+    "size": 1
+  },
+  "__NVIC_SetPriorityGrouping": {
+    "address": 134265673,
+    "size": 72
+  },
+  "__NVIC_GetPriorityGrouping": {
+    "address": 134265745,
+    "size": 28
+  },
+  "__NVIC_EnableIRQ": {
+    "address": 134265773,
+    "size": 60
+  },
+  "__NVIC_SetPriority": {
+    "address": 134265833,
+    "size": 84
+  },
+  "NVIC_EncodePriority": {
+    "address": 134265917,
+    "size": 102
+  },
+  "SysTick_Config": {
+    "address": 134266021,
+    "size": 68
+  },
+  "I2C_WaitOnFlagUntilTimeout": {
+    "address": 134272125,
+    "size": 178
+  },
+  "I2C_TransferConfig": {
+    "address": 134273029,
+    "size": 236
+  },
+  "I2C_WaitOnTXISFlagUntilTimeout": {
+    "address": 134272303,
+    "size": 142
+  },
+  "I2C_WaitOnSTOPFlagUntilTimeout": {
+    "address": 134272445,
+    "size": 134
+  },
+  "I2C_Flush_TXDR": {
+    "address": 134272053,
+    "size": 72
+  },
+  "I2C_RequestMemoryWrite": {
+    "address": 134271717,
+    "size": 168
+  },
+  "I2C_RequestMemoryRead": {
+    "address": 134271885,
+    "size": 168
+  },
+  "I2C_IsErrorOccurred": {
+    "address": 134272581,
+    "size": 448
+  },
+  "status_rtn": {
+    "address": 134289916,
+    "size": 24
+  },
+  "_I2CMemRead": {
+    "address": 134285289,
+    "size": 160
+  },
+  "one": {
+    "address": 536871032,
+    "size": 8
+  },
+  "tiny": {
+    "address": 536871024,
+    "size": 8
+  },
+  "ln2HI": {
+    "address": 134289960,
+    "size": 16
+  },
+  "ln2LO": {
+    "address": 134289944,
+    "size": 16
+  },
+  "halF": {
+    "address": 134289976,
+    "size": 16
+  },
+  "with_errno": {
+    "address": 134289109,
+    "size": 36
+  },
+  "xflow": {
+    "address": 134289145,
+    "size": 50
+  },
+  "fdc_init_last_reg": {
+    "address": 536871204,
+    "size": 1
+  },
+  "RTC_Alarm_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "EXTI2_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "can1TxHeader": {
+    "address": 536871108,
+    "size": 24
+  },
+  "APBPrescTable": {
+    "address": 134289816,
+    "size": 8
+  },
+  "__aeabi_dcmpun": {
+    "address": 134220493,
+    "size": 44
+  },
+  "TIM8_CC_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "drift_model_gain_lower_hits": {
+    "address": 536940600,
+    "size": 4
+  },
+  "fdc_bus_clear_before": {
+    "address": 536871249,
+    "size": 1
+  },
+  "__aeabi_dcmple": {
+    "address": 134220433,
+    "size": 18
+  },
+  "fdc_soc_ready_seen": {
+    "address": 536871255,
+    "size": 1
+  },
+  "HAL_GPIO_DeInit": {
+    "address": 134267929,
+    "size": 588
+  },
+  "__cmpdf2": {
+    "address": 134220237,
+    "size": 122
+  },
+  "DebugMon_Handler": {
+    "address": 134262051,
+    "size": 14
+  },
+  "log": {
+    "address": 134286145,
+    "size": 124
+  },
+  "FDC_RawToFrequencyHz": {
+    "address": 134251491,
+    "size": 296
+  },
+  "sqrt": {
+    "address": 134286269,
+    "size": 88
+  },
+  "UART8_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "drift_eval_last_us": {
+    "address": 536940568,
+    "size": 4
+  },
+  "RecordEvaluationTrace": {
+    "address": 134249401,
+    "size": 432
+  },
+  "fdc_diag_first_status": {
+    "address": 536871215,
+    "size": 1
+  },
+  "fdc_readback_rd0": {
+    "address": 536871241,
+    "size": 1
+  },
+  "SPI4_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "MX_GPIO_Init": {
+    "address": 134226945,
+    "size": 220
+  },
+  "fdc_diag_last_error": {
+    "address": 536871235,
+    "size": 1
+  },
+  "__eqdf2": {
+    "address": 134220237,
+    "size": 122
+  },
+  "eval_clock_self_test_failed": {
+    "address": 536889312,
+    "size": 4
+  },
+  "n_PMsamplingLR": {
+    "address": 536889248,
+    "size": 1
+  },
+  "__floatdidf": {
+    "address": 134219069,
+    "size": 90
+  },
+  "MX_TIM7_Init": {
+    "address": 134262477,
+    "size": 112
+  },
+  "HAL_RCC_GetPCLK1Freq": {
+    "address": 134276849,
+    "size": 40
+  },
+  "TIM1_CC_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "HAL_NVIC_SetPriority": {
+    "address": 134266153,
+    "size": 88
+  },
+  "vl53l1_diag_status": {
+    "address": 537116653,
+    "size": 1
+  },
+  "DMA2_Stream5_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "HardFault_Handler": {
+    "address": 134262005,
+    "size": 8
+  },
+  "MergeData": {
+    "address": 134251429,
+    "size": 62
+  },
+  "fdc_diag_last_isr": {
+    "address": 536871238,
+    "size": 2
+  },
+  "hi2c3": {
+    "address": 536871348,
+    "size": 84
+  },
+  "DMA1_Stream5_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "round": {
+    "address": 134287257,
+    "size": 140
+  },
+  "fdc_diag_first_xfer_size": {
+    "address": 536871222,
+    "size": 2
+  },
+  "SysTick_Handler": {
+    "address": 134262079,
+    "size": 12
+  },
+  "VL53L1_WrByte": {
+    "address": 134285529,
+    "size": 96
+  },
+  "VL53L1X_SensorInit": {
+    "address": 134283053,
+    "size": 292
+  },
+  "fdc_config_readback_mask": {
+    "address": 536871240,
+    "size": 1
+  },
+  "HAL_GPIO_WritePin": {
+    "address": 134268581,
+    "size": 88
+  },
+  "drift_model_math_self_test_failed": {
+    "address": 536940580,
+    "size": 4
+  },
+  "PVD_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "drift_eval_valid_cycles": {
+    "address": 536940548,
+    "size": 4
+  },
+  "InitializeCANProtocol": {
+    "address": 134239521,
+    "size": 48
+  },
+  "TAMP_STAMP_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "HAL_TIM_IRQHandler": {
+    "address": 134281365,
+    "size": 526
+  },
+  "VL53L1_ReadMulti": {
+    "address": 134285449,
+    "size": 78
+  },
+  "HAL_RCC_GetHCLKFreq": {
+    "address": 134276825,
+    "size": 24
+  },
+  "PendSV_Handler": {
+    "address": 134262065,
+    "size": 14
+  },
+  "HAL_TIMEx_CommutCallback": {
+    "address": 134282993,
+    "size": 20
+  },
+  "NMI_Handler": {
+    "address": 134261997,
+    "size": 8
+  },
+  "HAL_NVIC_EnableIRQ": {
+    "address": 134266241,
+    "size": 48
+  },
+  "eval_tim6_interrupts": {
+    "address": 536889300,
+    "size": 4
+  },
+  "EXTI3_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "HAL_RCC_GetSysClockFreq": {
+    "address": 134276429,
+    "size": 396
+  },
+  "cvf": {
+    "address": 536886904,
+    "size": 2256
+  },
+  "__gtdf2": {
+    "address": 134220221,
+    "size": 138
+  },
+  "__errno": {
+    "address": 134285885,
+    "size": 12
+  },
+  "fdc_readback_cscr": {
+    "address": 536871244,
+    "size": 1
+  },
+  "DeviceCheck": {
+    "address": 134239409,
+    "size": 112
+  },
+  "HAL_I2C_Init": {
+    "address": 134268669,
+    "size": 588
+  },
+  "HAL_I2C_MspDeInit": {
+    "address": 134227825,
+    "size": 124
+  },
+  "TIM8_TRG_COM_TIM14_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "assert_failed": {
+    "address": 134261901,
+    "size": 22
+  },
+  "HAL_MspInit": {
+    "address": 134261925,
+    "size": 72
+  },
+  "__aeabi_d2lz": {
+    "address": 134221429,
+    "size": 46
+  },
+  "ceil": {
+    "address": 134287009,
+    "size": 248
+  },
+  "DriftModelInitializationSelfTest": {
+    "address": 134240057,
+    "size": 488
+  },
+  "drift_eval_object_reference": {
+    "address": 536870916,
+    "size": 4
+  },
+  "TIM1_UP_TIM10_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "countDO": {
+    "address": 536889258,
+    "size": 1
+  },
+  "FDC_ReadReg": {
+    "address": 134223875,
+    "size": 66
+  },
+  "vl53l1_diag_write_ok": {
+    "address": 537116658,
+    "size": 1
+  },
+  "FDC_InitWithRetry": {
+    "address": 134226493,
+    "size": 336
+  },
+  "PerformSensorFusion": {
+    "address": 134261061,
+    "size": 828
+  },
+  "__aeabi_cdcmple": {
+    "address": 134220377,
+    "size": 16
+  },
+  "FDC_ReadCH0Data": {
+    "address": 134224153,
+    "size": 32
+  },
+  "LinearRegression": {
+    "address": 134243985,
+    "size": 4312
+  },
+  "__aeabi_fadd": {
+    "address": 134220853,
+    "size": 352
+  },
+  "TIM8_UP_TIM13_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "HAL_PWREx_EnableOverDrive": {
+    "address": 134273705,
+    "size": 160
+  },
+  "__subsf3": {
+    "address": 134220849,
+    "size": 356
+  },
+  "I2C3_ER_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "CAN_receive": {
+    "address": 134239029,
+    "size": 184
+  },
+  "FDC_RestartConversion": {
+    "address": 134225137,
+    "size": 200
+  },
+  "HAL_GPIO_Init": {
+    "address": 134266313,
+    "size": 1616
+  },
+  "hi2c1": {
+    "address": 536871264,
+    "size": 84
+  },
+  "drift_learning_candidate_rejects": {
+    "address": 537116100,
+    "size": 4
+  },
+  "MX_CAN1_Init": {
+    "address": 134222241,
+    "size": 108
+  },
+  "memcpy": {
+    "address": 134285969,
+    "size": 28
+  },
+  "__aeabi_cdrcmple": {
+    "address": 134220361,
+    "size": 32
+  },
+  "__floatsidf": {
+    "address": 134218949,
+    "size": 34
+  },
+  "MX_I2C1_Init": {
+    "address": 134227165,
+    "size": 128
+  },
+  "__ltdf2": {
+    "address": 134220229,
+    "size": 130
+  },
+  "TxMailBox1": {
+    "address": 536871140,
+    "size": 4
+  },
+  "VL53L1X_GetInterruptPolarity": {
+    "address": 134283395,
+    "size": 86
+  },
+  "EXTI0_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "I2C2_EV_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "_I2CBuffer": {
+    "address": 537116396,
+    "size": 256
+  },
+  "DMA1_Stream2_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "CAN1_RX0_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "drift_eval_zero_variance_skips": {
+    "address": 536940564,
+    "size": 4
+  },
+  "FPU_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "HAL_Delay": {
+    "address": 134262989,
+    "size": 72
+  },
+  "FDC_ReadCH0Sample": {
+    "address": 134224281,
+    "size": 64
+  },
+  "SystemCoreClock": {
+    "address": 536870928,
+    "size": 4
+  },
+  "__fpclassifyd": {
+    "address": 134286485,
+    "size": 84
+  },
+  "OTG_HS_WKUP_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "uwTickFreq": {
+    "address": 536870936,
+    "size": 1
+  },
+  "HAL_CAN_Start": {
+    "address": 134264741,
+    "size": 136
+  },
+  "roundf": {
+    "address": 134287397,
+    "size": 72
+  },
+  "FDC_ConversionTimeUs": {
+    "address": 134251985,
+    "size": 50
+  },
+  "__aeabi_i2f": {
+    "address": 134221213,
+    "size": 28
+  },
+  "KalmanFilter": {
+    "address": 134248721,
+    "size": 500
+  },
+  "UsageFault_Handler": {
+    "address": 134262029,
+    "size": 8
+  },
+  "__fixunsdfsi": {
+    "address": 134220617,
+    "size": 64
+  },
+  "GetSensingData": {
+    "address": 134240545,
+    "size": 1336
+  },
+  "DMA2_Stream2_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "n_samplingDI": {
+    "address": 536889255,
+    "size": 1
+  },
+  "HAL_GPIO_ReadPin": {
+    "address": 134268517,
+    "size": 64
+  },
+  "__aeabi_ui2d": {
+    "address": 134218917,
+    "size": 30
+  },
+  "fdc_bus_clear_count": {
+    "address": 536871248,
+    "size": 1
+  },
+  "vl53l1_diag_state": {
+    "address": 537116655,
+    "size": 1
+  },
+  "SPI1_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "FDC_WarmupAndDiscard": {
+    "address": 134226829,
+    "size": 116
+  },
+  "__udivmoddi4": {
+    "address": 134221537,
+    "size": 698
+  },
+  "HAL_CAN_ConfigFilter": {
+    "address": 134264133,
+    "size": 608
+  },
+  "InitializeKalmanFilters": {
+    "address": 134248501,
+    "size": 220
+  },
+  "HAL_TIM_OC_DelayElapsedCallback": {
+    "address": 134281891,
+    "size": 20
+  },
+  "fdc_recovery_retry_count": {
+    "address": 536889232,
+    "size": 4
+  },
+  "canFilter1": {
+    "address": 536871068,
+    "size": 40
+  },
+  "VL53L1X_GetTimingBudgetInMs": {
+    "address": 134284249,
+    "size": 268
+  },
+  "TIM6_DAC_IRQHandler": {
+    "address": 134262093,
+    "size": 20
+  },
+  "FDC_CaptureConfigReadback": {
+    "address": 134225405,
+    "size": 732
+  },
+  "fdc_readback_shcr": {
+    "address": 536871245,
+    "size": 1
+  },
+  "TIM1_BRK_TIM9_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "InitializeCurveFitting": {
+    "address": 134253037,
+    "size": 2084
+  },
+  "__aeabi_dcmplt": {
+    "address": 134220413,
+    "size": 18
+  },
+  "uwTick": {
+    "address": 537116392,
+    "size": 4
+  },
+  "SystemClock_Config": {
+    "address": 134237849,
+    "size": 216
+  },
+  "can1Rx0Data": {
+    "address": 536871132,
+    "size": 8
+  },
+  "HAL_SYSTICK_Config": {
+    "address": 134266289,
+    "size": 24
+  },
+  "__extendsfdf2": {
+    "address": 134218985,
+    "size": 66
+  },
+  "__aeabi_ddiv": {
+    "address": 134219757,
+    "size": 464
+  },
+  "__adddf3": {
+    "address": 134218285,
+    "size": 630
+  },
+  "DMA2_Stream3_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "__aeabi_dmul": {
+    "address": 134219161,
+    "size": 596
+  },
+  "ema2_precision_self_test_failed": {
+    "address": 536889284,
+    "size": 4
+  },
+  "HAL_I2C_GetError": {
+    "address": 134271693,
+    "size": 24
+  },
+  "GetToFData": {
+    "address": 134252613,
+    "size": 424
+  },
+  "__libc_init_array": {
+    "address": 134285897,
+    "size": 72
+  },
+  "__ieee754_exp": {
+    "address": 134287473,
+    "size": 756
+  },
+  "can_tx_fail_count": {
+    "address": 536871160,
+    "size": 4
+  },
+  "SAI2_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "__floatunsidf": {
+    "address": 134218917,
+    "size": 30
+  },
+  "eval_tim7_coalesced": {
+    "address": 536889296,
+    "size": 4
+  },
+  "HAL_CAN_MspInit": {
+    "address": 134222349,
+    "size": 136
+  },
+  "HAL_I2C_DeInit": {
+    "address": 134269257,
+    "size": 152
+  },
+  "USART6_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "HAL_CAN_GetTxMailboxesFreeLevel": {
+    "address": 134265441,
+    "size": 106
+  },
+  "dist": {
+    "address": 536871552,
+    "size": 20
+  },
+  "state": {
+    "address": 536871432,
+    "size": 13
+  },
+  "FDC_ReadReg32": {
+    "address": 134223777,
+    "size": 98
+  },
+  "drift_audit_kalman_gain0_bits": {
+    "address": 537115736,
+    "size": 4
+  },
+  "drift_model_reset_count": {
+    "address": 536940588,
+    "size": 4
+  },
+  "VL53L1X_StopRanging": {
+    "address": 134283531,
+    "size": 50
+  },
+  "fdc_init_status": {
+    "address": 536871205,
+    "size": 1
+  },
+  "drift_model_object_learning_violations": {
+    "address": 536940608,
+    "size": 4
+  },
+  "__aeabi_d2f": {
+    "address": 134220681,
+    "size": 158
+  },
+  "USART3_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "__aeabi_d2ulz": {
+    "address": 134221477,
+    "size": 60
+  },
+  "__aeabi_fsub": {
+    "address": 134220849,
+    "size": 356
+  },
+  "HAL_CAN_AddTxMessage": {
+    "address": 134264877,
+    "size": 564
+  },
+  "HAL_I2C_Master_Transmit": {
+    "address": 134269409,
+    "size": 560
+  },
+  "TIM7_flag": {
+    "address": 536889228,
+    "size": 1
+  },
+  "FDC_ReadCH1Data": {
+    "address": 134224185,
+    "size": 32
+  },
+  "HAL_I2C_Mem_Read": {
+    "address": 134270549,
+    "size": 592
+  },
+  "Reset_Handler": {
+    "address": 134262721,
+    "size": 56
+  },
+  "flag_di": {
+    "address": 536889254,
+    "size": 1
+  },
+  "peroid_sampling": {
+    "address": 536889252,
+    "size": 2
+  },
+  "TIM_Base_SetConfig": {
+    "address": 134281973,
+    "size": 332
+  },
+  "CAN1_RX1_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "__fixdfsi": {
+    "address": 134220537,
+    "size": 78
+  },
+  "UART5_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "HAL_TIM_Base_Start_IT": {
+    "address": 134280953,
+    "size": 412
+  },
+  "HAL_I2CEx_ConfigDigitalFilter": {
+    "address": 134273489,
+    "size": 216
+  },
+  "fdc_diag_first_op": {
+    "address": 536871213,
+    "size": 1
+  },
+  "__floatdisf": {
+    "address": 134221257,
+    "size": 124
+  },
+  "fdc_readback_ccr": {
+    "address": 536871247,
+    "size": 1
+  },
+  "DMA2_Stream0_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "uwTickPrio": {
+    "address": 536870932,
+    "size": 4
+  },
+  "HAL_Init": {
+    "address": 134262803,
+    "size": 26
+  },
+  "__sf": {
+    "address": 537116660,
+    "size": 312
+  },
+  "MX_TIM6_Init": {
+    "address": 134262365,
+    "size": 112
+  },
+  "drift_audit_kalman_x0_before_bits": {
+    "address": 537115728,
+    "size": 4
+  },
+  "TIM4_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "__aeabi_dadd": {
+    "address": 134218285,
+    "size": 630
+  },
+  "fdc_diag_first_error": {
+    "address": 536871216,
+    "size": 1
+  },
+  "__ledf2": {
+    "address": 134220229,
+    "size": 130
+  },
+  "__math_oflow": {
+    "address": 134289217,
+    "size": 16
+  },
+  "__aeabi_ul2d": {
+    "address": 134219053,
+    "size": 106
+  },
+  "HAL_CAN_ActivateNotification": {
+    "address": 134265549,
+    "size": 100
+  },
+  "QUADSPI_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "I2C1_EV_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "DMA1_Stream6_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "fdc_bus_clear_stopped": {
+    "address": 536871252,
+    "size": 1
+  },
+  "TwinSensorCompensation": {
+    "address": 134248297,
+    "size": 52
+  },
+  "vl53l1_diag_phase": {
+    "address": 537116652,
+    "size": 1
+  },
+  "RecordDriftModelAudit": {
+    "address": 134249833,
+    "size": 1596
+  },
+  "FDC_ClearI2C3Bus": {
+    "address": 134224577,
+    "size": 560
+  },
+  "__aeabi_dcmpgt": {
+    "address": 134220473,
+    "size": 18
+  },
+  "DMA1_Stream1_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "UART4_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "lastCanError": {
+    "address": 536871156,
+    "size": 4
+  },
+  "TIM3_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "RCC_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "fdc_diag_first_cr2": {
+    "address": 536871228,
+    "size": 4
+  },
+  "__aeabi_dcmpge": {
+    "address": 134220453,
+    "size": 18
+  },
+  "GetFilteredData": {
+    "address": 134242021,
+    "size": 212
+  },
+  "TIM8_BRK_TIM12_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "fdc_soc_ready_status": {
+    "address": 536870912,
+    "size": 1
+  },
+  "__aeabi_dsub": {
+    "address": 134218281,
+    "size": 634
+  },
+  "Default_Handler": {
+    "address": 134262800,
+    "size": 2
+  },
+  "AHBPrescTable": {
+    "address": 134289800,
+    "size": 16
+  },
+  "fdc_diag_first_reg": {
+    "address": 536871214,
+    "size": 1
+  },
+  "HAL_CAN_GetError": {
+    "address": 134265649,
+    "size": 24
+  },
+  "slewLimiter": {
+    "address": 536889208,
+    "size": 20
+  },
+  "__floatundidf": {
+    "address": 134219053,
+    "size": 106
+  },
+  "drift_learning_guard": {
+    "address": 537115744,
+    "size": 296
+  },
+  "VL53L1_RdWord": {
+    "address": 134285781,
+    "size": 88
+  },
+  "__floatsisf": {
+    "address": 134221213,
+    "size": 28
+  },
+  "VL53L1X_BootState": {
+    "address": 134284919,
+    "size": 64
+  },
+  "EXTI15_10_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "drift_detection_entry_threshold": {
+    "address": 536870924,
+    "size": 4
+  },
+  "drift_detection_baseline_sigma": {
+    "address": 536870920,
+    "size": 4
+  },
+  "ADC_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "drift_model_large_step_events": {
+    "address": 536940612,
+    "size": 4
+  },
+  "ema2_initialized": {
+    "address": 536889264,
+    "size": 1
+  },
+  "AchieveCurveFittingData": {
+    "address": 134255121,
+    "size": 5064
+  },
+  "HAL_RCC_ClockConfig": {
+    "address": 134275581,
+    "size": 848
+  },
+  "HAL_NVIC_SetPriorityGrouping": {
+    "address": 134266089,
+    "size": 64
+  },
+  "fdc_soc_ready_attempts": {
+    "address": 536871257,
+    "size": 1
+  },
+  "VL53L1X_GetDistanceMode": {
+    "address": 134284837,
+    "size": 82
+  },
+  "DMA1_Stream7_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "TIM6_flag": {
+    "address": 536889229,
+    "size": 1
+  },
+  "can1_rx0_flag": {
+    "address": 536871152,
+    "size": 1
+  },
+  "ema2_fdc_Q1": {
+    "address": 536889260,
+    "size": 4
+  },
+  "SPI5_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "TIM7_IRQHandler": {
+    "address": 134262113,
+    "size": 20
+  },
+  "fdc_diag_last_reg": {
+    "address": 536871233,
+    "size": 1
+  },
+  "SDMMC1_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "CAN_transmit": {
+    "address": 134238845,
+    "size": 184
+  },
+  "__aeabi_i2d": {
+    "address": 134218949,
+    "size": 34
+  },
+  "TIM5_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "drift_detection_recent_sigma": {
+    "address": 537116088,
+    "size": 4
+  },
+  "DMA2_Stream7_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "HAL_TIM_Base_Init": {
+    "address": 134280377,
+    "size": 576
+  },
+  "HAL_TIM_PeriodElapsedCallback": {
+    "address": 134262169,
+    "size": 148
+  },
+  "I2C3_EV_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "FDC_ReadCH1Sample": {
+    "address": 134224217,
+    "size": 64
+  },
+  "__floatundisf": {
+    "address": 134221241,
+    "size": 140
+  },
+  "__aeabi_ldiv0": {
+    "address": 134222237,
+    "size": 2
+  },
+  "EXTI9_5_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "__divdf3": {
+    "address": 134219757,
+    "size": 464
+  },
+  "fdc_diag_last_state": {
+    "address": 536871236,
+    "size": 1
+  },
+  "_I2CWrite": {
+    "address": 134285137,
+    "size": 152
+  },
+  "RTC_WKUP_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "__aeabi_ui2f": {
+    "address": 134221205,
+    "size": 36
+  },
+  "can1Tx0Data": {
+    "address": 536871144,
+    "size": 8
+  },
+  "__muldf3": {
+    "address": 134219161,
+    "size": 596
+  },
+  "HAL_I2C_IsDeviceReady": {
+    "address": 134271141,
+    "size": 524
+  },
+  "CalibrateDistanceNormalized": {
+    "address": 134248465,
+    "size": 36
+  },
+  "eval_tim6_coalesced": {
+    "address": 536889304,
+    "size": 4
+  },
+  "HAL_GetTick": {
+    "address": 134262965,
+    "size": 24
+  },
+  "tof": {
+    "address": 536886852,
+    "size": 30
+  },
+  "flag_algorithmDO": {
+    "address": 536889256,
+    "size": 1
+  },
+  "eval_tim7_interrupts": {
+    "address": 536889292,
+    "size": 4
+  },
+  "fdc_readback_st0": {
+    "address": 536871242,
+    "size": 2
+  },
+  "SPI2_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "drift_model_sensor_variance": {
+    "address": 536940616,
+    "size": 8
+  },
+  "RecoverFDCI2C": {
+    "address": 134241881,
+    "size": 140
+  },
+  "OTG_HS_EP1_IN_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "InitializeCompensation": {
+    "address": 134239569,
+    "size": 484
+  },
+  "memset": {
+    "address": 134285869,
+    "size": 16
+  },
+  "MemManage_Handler": {
+    "address": 134262013,
+    "size": 8
+  },
+  "main": {
+    "address": 134236937,
+    "size": 912
+  },
+  "drift_learning_input_ch0": {
+    "address": 537116092,
+    "size": 4
+  },
+  "CAN_Send": {
+    "address": 134222669,
+    "size": 200
+  },
+  "DMA1_Stream0_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "htim6": {
+    "address": 537116240,
+    "size": 76
+  },
+  "__aeabi_l2f": {
+    "address": 134221257,
+    "size": 124
+  },
+  "count_sampling": {
+    "address": 536889246,
+    "size": 2
+  },
+  "CAN1_TX_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "flag_DOinit": {
+    "address": 536889257,
+    "size": 1
+  },
+  "SVC_Handler": {
+    "address": 134262037,
+    "size": 14
+  },
+  "__truncdfsf2": {
+    "address": 134220681,
+    "size": 158
+  },
+  "SystemConfiguration": {
+    "address": 134239213,
+    "size": 196
+  },
+  "fdc_diag_first_state": {
+    "address": 536871217,
+    "size": 1
+  },
+  "__aeabi_l2d": {
+    "address": 134219069,
+    "size": 90
+  },
+  "HAL_TIM_IC_CaptureCallback": {
+    "address": 134281911,
+    "size": 20
+  },
+  "VL53L1X_GetDistance": {
+    "address": 134284983,
+    "size": 60
+  },
+  "fdc": {
+    "address": 536871448,
+    "size": 104
+  },
+  "VL53L1X_CheckForDataReady": {
+    "address": 134283581,
+    "size": 112
+  },
+  "DriftCompensation": {
+    "address": 134248349,
+    "size": 80
+  },
+  "__aeabi_ul2f": {
+    "address": 134221241,
+    "size": 140
+  },
+  "exp": {
+    "address": 134286001,
+    "size": 144
+  },
+  "MX_I2C3_Init": {
+    "address": 134227293,
+    "size": 128
+  },
+  "ApplyEMA2Filter": {
+    "address": 134249225,
+    "size": 176
+  },
+  "EXTI4_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "VL53L1_RdByte": {
+    "address": 134285737,
+    "size": 44
+  },
+  "VL53L1X_SetTimingBudgetInMs": {
+    "address": 134283693,
+    "size": 556
+  },
+  "drift_eval_max_us": {
+    "address": 536940572,
+    "size": 4
+  },
+  "finite": {
+    "address": 134286357,
+    "size": 22
+  },
+  "fdc_soc_ready_elapsed_ms": {
+    "address": 536871258,
+    "size": 2
+  },
+  "drift_noise_reference": {
+    "address": 537116040,
+    "size": 48
+  },
+  "dComps": {
+    "address": 536871576,
+    "size": 200
+  },
+  "HAL_I2C_GetState": {
+    "address": 134271665,
+    "size": 28
+  },
+  "SystemInit": {
+    "address": 134262133,
+    "size": 36
+  },
+  "CAN_Filter_Init": {
+    "address": 134222485,
+    "size": 184
+  },
+  "RNG_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "fdc_bus_clear_pulsed": {
+    "address": 536871251,
+    "size": 1
+  },
+  "__fixunsdfdi": {
+    "address": 134221477,
+    "size": 60
+  },
+  "__nedf2": {
+    "address": 134220237,
+    "size": 122
+  },
+  "fdc_diag_last_op": {
+    "address": 536871232,
+    "size": 1
+  },
+  "fdc_diag_first_valid": {
+    "address": 536871212,
+    "size": 1
+  },
+  "eval_trace": {
+    "address": 536889316,
+    "size": 51200
+  },
+  "HAL_I2CEx_ConfigAnalogFilter": {
+    "address": 134273265,
+    "size": 224
+  },
+  "HAL_TIM_PWM_PulseFinishedCallback": {
+    "address": 134281931,
+    "size": 20
+  },
+  "fdc_diag_last_status": {
+    "address": 536871234,
+    "size": 1
+  },
+  "__fixdfdi": {
+    "address": 134221429,
+    "size": 46
+  },
+  "fdc_bus_clear_status": {
+    "address": 536871254,
+    "size": 1
+  },
+  "fdc_init_i2c_error": {
+    "address": 536871208,
+    "size": 4
+  },
+  "fdc_readback_dccr": {
+    "address": 536871246,
+    "size": 1
+  },
+  "VL53L1X_GetRangeStatus": {
+    "address": 134285045,
+    "size": 92
+  },
+  "fdc_diag_first_isr": {
+    "address": 536871218,
+    "size": 2
+  },
+  "FDC_RawToCountMilli": {
+    "address": 134251787,
+    "size": 198
+  },
+  "__aeabi_frsub": {
+    "address": 134220841,
+    "size": 364
+  },
+  "HAL_InitTick": {
+    "address": 134262829,
+    "size": 96
+  },
+  "VL51L1X_DEFAULT_CONFIGURATION": {
+    "address": 134289824,
+    "size": 91
+  },
+  "_impure_ptr": {
+    "address": 536870940,
+    "size": 4
+  },
+  "HAL_IncTick": {
+    "address": 134262925,
+    "size": 40
+  },
+  "OTG_HS_EP1_OUT_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "__ieee754_log": {
+    "address": 134288233,
+    "size": 876
+  },
+  "VL53L1X_StartRanging": {
+    "address": 134283481,
+    "size": 50
+  },
+  "HAL_TIMEx_Break2Callback": {
+    "address": 134283033,
+    "size": 20
+  },
+  "vl53l1_diag_cr2": {
+    "address": 537116656,
+    "size": 2
+  },
+  "WWDG_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "drift_only_fdc_Q1": {
+    "address": 536889268,
+    "size": 4
+  },
+  "HAL_I2C_MspInit": {
+    "address": 134227421,
+    "size": 404
+  },
+  "fdc_diag_first_elapsed_ms": {
+    "address": 536871224,
+    "size": 2
+  },
+  "FDC_Init": {
+    "address": 134226137,
+    "size": 356
+  },
+  "drift_learning_input_ch1": {
+    "address": 537116096,
+    "size": 4
+  },
+  "HAL_TIM_TriggerCallback": {
+    "address": 134281951,
+    "size": 20
+  },
+  "VL53L1_WrWord": {
+    "address": 134285625,
+    "size": 112
+  },
+  "fdc_bus_clear_after_init": {
+    "address": 536871253,
+    "size": 1
+  },
+  "TIM2_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "HAL_TIMEx_MasterConfigSynchronization": {
+    "address": 134282305,
+    "size": 688
+  },
+  "drift_eval_frozen_samples": {
+    "address": 536940560,
+    "size": 4
+  },
+  "__aeabi_d2uiz": {
+    "address": 134220617,
+    "size": 64
+  },
+  "drift_model_audit_overwritten": {
+    "address": 536940596,
+    "size": 4
+  },
+  "nan": {
+    "address": 134286385,
+    "size": 16
+  },
+  "OTG_FS_WKUP_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "TIM1_TRG_COM_TIM11_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "OTG_HS_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "drift_model_audit": {
+    "address": 536940624,
+    "size": 175104
+  },
+  "__ieee754_sqrt": {
+    "address": 134286569,
+    "size": 436
+  },
+  "HAL_CAN_Init": {
+    "address": 134263061,
+    "size": 1070
+  },
+  "EXTI1_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "vl53l1_diag_error": {
+    "address": 537116654,
+    "size": 1
+  },
+  "__aeabi_dcmpeq": {
+    "address": 134220393,
+    "size": 18
+  },
+  "SDMMC2_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "fdc_diag_first_lines": {
+    "address": 536871226,
+    "size": 1
+  },
+  "HAL_TIM_Base_MspInit": {
+    "address": 134262589,
+    "size": 132
+  },
+  "fmax": {
+    "address": 134286401,
+    "size": 84
+  },
+  "drift_audit_kalman_p0_before_bits": {
+    "address": 537115732,
+    "size": 4
+  },
+  "hcan1": {
+    "address": 536871164,
+    "size": 40
+  },
+  "UART7_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "VL53L1X_SetDistanceMode": {
+    "address": 134284517,
+    "size": 320
+  },
+  "n_PMdata": {
+    "address": 536889250,
+    "size": 1
+  },
+  "USART2_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "HAL_RCC_OscConfig": {
+    "address": 134273865,
+    "size": 1716
+  },
+  "__floatunsisf": {
+    "address": 134221205,
+    "size": 36
+  },
+  "fdc_bus_clear_released": {
+    "address": 536871250,
+    "size": 1
+  },
+  "__aeabi_d2iz": {
+    "address": 134220537,
+    "size": 78
+  },
+  "__math_uflow": {
+    "address": 134289201,
+    "size": 16
+  },
+  "HAL_RCCEx_PeriphCLKConfig": {
+    "address": 134276889,
+    "size": 3488
+  },
+  "drift_eval_self_test_failed": {
+    "address": 536940576,
+    "size": 4
+  },
+  "_impure_data": {
+    "address": 536870944,
+    "size": 76
+  },
+  "I2C2_ER_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "SplitData": {
+    "address": 134252035,
+    "size": 66
+  },
+  "FDC_RecordDiagnostic": {
+    "address": 134222869,
+    "size": 324
+  },
+  "fdc_soc_ready_error": {
+    "address": 536871256,
+    "size": 1
+  },
+  "DMA2_Stream1_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "mobile_tof_range_status": {
+    "address": 536870913,
+    "size": 1
+  },
+  "ExpCurvefitting": {
+    "address": 134260185,
+    "size": 876
+  },
+  "__aeabi_idiv0": {
+    "address": 134222237,
+    "size": 2
+  },
+  "__unorddf2": {
+    "address": 134220493,
+    "size": 44
+  },
+  "CAN1_SCE_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "ema2_legacy_constant_bias": {
+    "address": 536889288,
+    "size": 4
+  },
+  "FLASH_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "DMA2_Stream4_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "BusFault_Handler": {
+    "address": 134262021,
+    "size": 8
+  },
+  "USART1_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "FDC_WriteReg32": {
+    "address": 134223637,
+    "size": 140
+  },
+  "kalman": {
+    "address": 536886672,
+    "size": 180
+  },
+  "CalibrateDistance": {
+    "address": 134248429,
+    "size": 36
+  },
+  "OTG_FS_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "ema2_selected_alpha": {
+    "address": 536889280,
+    "size": 4
+  },
+  "SPI3_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "htim7": {
+    "address": 537116316,
+    "size": 76
+  },
+  "drift_model_gain_upper_hits": {
+    "address": 536940604,
+    "size": 4
+  },
+  "__aeabi_cdcmpeq": {
+    "address": 134220377,
+    "size": 16
+  },
+  "__gedf2": {
+    "address": 134220221,
+    "size": 138
+  },
+  "DMA1_Stream4_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "vl53l1_diag_read_ok": {
+    "address": 537116659,
+    "size": 1
+  },
+  "fdc_recovery_retry_success_count": {
+    "address": 536889236,
+    "size": 4
+  },
+  "HAL_I2C_Mem_Write": {
+    "address": 134269969,
+    "size": 580
+  },
+  "I2C1_ER_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "FMC_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "__aeabi_f2d": {
+    "address": 134218985,
+    "size": 66
+  },
+  "drift_eval_learning_updates": {
+    "address": 536940556,
+    "size": 4
+  },
+  "HAL_TIMEx_BreakCallback": {
+    "address": 134283013,
+    "size": 20
+  },
+  "TIM_Configuration": {
+    "address": 134262317,
+    "size": 48
+  },
+  "sample": {
+    "address": 536871776,
+    "size": 14896
+  },
+  "LPTIM1_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "n_data": {
+    "address": 536889249,
+    "size": 1
+  },
+  "drift_eval_invalid_skips": {
+    "address": 536940552,
+    "size": 4
+  },
+  "drift_model_audit_sequence": {
+    "address": 536940592,
+    "size": 4
+  },
+  "__subdf3": {
+    "address": 134218281,
+    "size": 634
+  },
+  "VL53L1X_ClearInterrupt": {
+    "address": 134283345,
+    "size": 50
+  },
+  "drift_model_init_self_test_failed": {
+    "address": 536940584,
+    "size": 4
+  },
+  "DMA2_Stream6_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "__addsf3": {
+    "address": 134220853,
+    "size": 352
+  },
+  "eval_trace_sequence": {
+    "address": 536889308,
+    "size": 4
+  },
+  "SAI1_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "InitializeToF": {
+    "address": 134252169,
+    "size": 444
+  },
+  "DMA1_Stream3_IRQHandler": {
+    "address": 134262801,
+    "size": 2
+  },
+  "fdc_diag_first_xfer_count": {
+    "address": 536871220,
+    "size": 2
+  },
+  "Error_Handler": {
+    "address": 134261889,
+    "size": 12
+  },
+  "fusion": {
+    "address": 536889160,
+    "size": 48
+  }
+}

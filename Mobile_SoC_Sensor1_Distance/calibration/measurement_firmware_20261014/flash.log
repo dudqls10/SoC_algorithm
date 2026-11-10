@@ -1,0 +1,18 @@
+SEGGER J-Link Commander V7.50a (Compiled Jul  8 2021 18:22:32)
+DLL version V7.50a, compiled Jul  8 2021 18:21:11
+
+J-Link Commander will now exit on Error
+
+J-Link Command File read successfully.
+Processing script file...
+
+J-Link connection not established yet but required for command.
+Connecting to J-Link via USB...Updating firmware:  J-Link V9 compiled May  7 2021 16:26:12
+Replacing firmware: J-Link V9 compiled Oct 12 2012 BTL     
+Waiting for new firmware to boot
+FAILED: Communication timed out: Requested 4 bytes, received 0 bytes !
+Could not read J-Link capabilities.
+Cannot connect to J-Link
+
+Script processing completed.
+

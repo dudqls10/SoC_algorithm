@@ -1,0 +1,3 @@
+exec DisableAutoUpdateFW
+usb 59768883
+exit

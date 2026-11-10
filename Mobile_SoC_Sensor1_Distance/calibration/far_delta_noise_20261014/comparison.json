@@ -1,0 +1,320 @@
+{
+  "source": "C:\\Users\\SongYoungBin\\Desktop\\Soc\\Mobile_SoC_Experiments\\Mobile_SoC_Sensor1_Distance\\calibration\\continuous_20mms_20261014_01",
+  "speed_mm_s": 20,
+  "time_per_cm_s": 0.5,
+  "definitions": {
+    "distance_delta": "mean at nearer cm minus mean at farther cm, distance bins +/-5mm; 30cm bin clipped at scan start",
+    "stationary_sample_sigma": "sample std of stationary baseline x, NOT std of a difference",
+    "stationary_halfsecond_delta": "mean of new nonoverlapping 0.5s bin minus mean of previous 0.5s bin; separately estimated sigma of differences",
+    "three_sigma_exceedance": "empirical count, not Gaussian false alarm assumption",
+    "observed_idle": "No firmware identity or detector internal threshold recorded in this original experiment; cannot assert crossings caused actual idle transitions"
+  },
+  "channels": {
+    "raw0": {
+      "stationary": {
+        "n": 1410,
+        "duration_s": 22.398499999999785,
+        "mean": 8267647.804255319,
+        "sigma": 248.3031412334392,
+        "threshold_3sigma": 744.9094237003176,
+        "min": 8266734.0,
+        "max": 8268119.0,
+        "max_abs_deviation": 913.8042553188279,
+        "beyond_3sigma_count": 5,
+        "beyond_negative_3sigma_count": 5,
+        "fraction_beyond_3sigma": 0.0035460992907801418
+      },
+      "stationary_halfsecond_delta": {
+        "n": 44,
+        "sigma": 76.8307599045697,
+        "threshold_3sigma": 230.4922797137091,
+        "min": -198.72222222201526,
+        "max": 219.25793650746346,
+        "max_abs": 219.25793650746346,
+        "beyond_3sigma_count": 0
+      },
+      "distance_means": {
+        "30": {
+          "n": 16,
+          "mean": 8267668.4375,
+          "actual_distance_mm": 298.02933025909493
+        },
+        "29": {
+          "n": 25,
+          "mean": 8267638.56,
+          "actual_distance_mm": 290.00468806640134
+        },
+        "28": {
+          "n": 26,
+          "mean": 8267543.115384615,
+          "actual_distance_mm": 279.85012577990284
+        },
+        "27": {
+          "n": 37,
+          "mean": 8267493.972972973,
+          "actual_distance_mm": 270.0370554116407
+        },
+        "26": {
+          "n": 38,
+          "mean": 8267520.578947368,
+          "actual_distance_mm": 260.04598972530385
+        },
+        "25": {
+          "n": 36,
+          "mean": 8267377.333333333,
+          "actual_distance_mm": 250.05975454698466
+        },
+        "24": {
+          "n": 30,
+          "mean": 8267360.4,
+          "actual_distance_mm": 240.38092673577168
+        },
+        "23": {
+          "n": 25,
+          "mean": 8267288.08,
+          "actual_distance_mm": 229.94733098745186
+        },
+        "22": {
+          "n": 25,
+          "mean": 8267184.32,
+          "actual_distance_mm": 219.9588263473604
+        },
+        "21": {
+          "n": 30,
+          "mean": 8267062.466666667,
+          "actual_distance_mm": 209.49204070628556
+        },
+        "20": {
+          "n": 37,
+          "mean": 8266971.675675675,
+          "actual_distance_mm": 200.08497488978347
+        }
+      },
+      "adjacent_1cm": [
+        {
+          "from_cm": 30,
+          "to_cm": 29,
+          "delta_count": -29.877500000409782,
+          "delta_over_stationary_sample_3sigma": 0.04010890324355692,
+          "delta_over_stationary_halfsecond_delta_3sigma": 0.12962473206269712
+        },
+        {
+          "from_cm": 29,
+          "to_cm": 28,
+          "delta_count": -95.4446153845638,
+          "delta_over_stationary_sample_3sigma": 0.1281291555024841,
+          "delta_over_stationary_halfsecond_delta_3sigma": 0.41409029188792823
+        },
+        {
+          "from_cm": 28,
+          "to_cm": 27,
+          "delta_count": -49.14241164177656,
+          "delta_over_stationary_sample_3sigma": 0.06597098932869308,
+          "delta_over_stationary_halfsecond_delta_3sigma": 0.2132063238856225
+        },
+        {
+          "from_cm": 27,
+          "to_cm": 26,
+          "delta_count": 26.60597439482808,
+          "delta_over_stationary_sample_3sigma": 0.035717059750249386,
+          "delta_over_stationary_halfsecond_delta_3sigma": 0.11543108701026754
+        },
+        {
+          "from_cm": 26,
+          "to_cm": 25,
+          "delta_count": -143.24561403505504,
+          "delta_over_stationary_sample_3sigma": 0.1922993715443769,
+          "delta_over_stationary_halfsecond_delta_3sigma": 0.6214768417101788
+        },
+        {
+          "from_cm": 25,
+          "to_cm": 24,
+          "delta_count": -16.933333332650363,
+          "delta_over_stationary_sample_3sigma": 0.0227320702274573,
+          "delta_over_stationary_halfsecond_delta_3sigma": 0.07346594581685337
+        },
+        {
+          "from_cm": 24,
+          "to_cm": 23,
+          "delta_count": -72.32000000029802,
+          "delta_over_stationary_sample_3sigma": 0.09708562907024369,
+          "delta_over_stationary_halfsecond_delta_3sigma": 0.3137632205734855
+        },
+        {
+          "from_cm": 23,
+          "to_cm": 22,
+          "delta_count": -103.75999999977648,
+          "delta_over_stationary_sample_3sigma": 0.13929210276915477,
+          "delta_over_stationary_halfsecond_delta_3sigma": 0.45016692155006305
+        },
+        {
+          "from_cm": 22,
+          "to_cm": 21,
+          "delta_count": -121.85333333350718,
+          "delta_over_stationary_sample_3sigma": 0.16358140930504547,
+          "delta_over_stationary_halfsecond_delta_3sigma": 0.5286655738962681
+        },
+        {
+          "from_cm": 21,
+          "to_cm": 20,
+          "delta_count": -90.7909909915179,
+          "delta_over_stationary_sample_3sigma": 0.12188192027497262,
+          "delta_over_stationary_halfsecond_delta_3sigma": 0.3939003558136003
+        }
+      ]
+    },
+    "compensated": {
+      "stationary": {
+        "n": 1410,
+        "duration_s": 22.398499999999785,
+        "mean": 40000229.590070926,
+        "sigma": 73.78683865878016,
+        "threshold_3sigma": 221.36051597634048,
+        "min": 39999808.0,
+        "max": 40000432.0,
+        "max_abs_deviation": 421.590070925653,
+        "beyond_3sigma_count": 31,
+        "beyond_negative_3sigma_count": 31,
+        "fraction_beyond_3sigma": 0.02198581560283688
+      },
+      "stationary_halfsecond_delta": {
+        "n": 44,
+        "sigma": 68.85337983728147,
+        "threshold_3sigma": 206.5601395118444,
+        "min": -175.94590643793344,
+        "max": 186.4722222238779,
+        "max_abs": 186.4722222238779,
+        "beyond_3sigma_count": 0
+      },
+      "distance_means": {
+        "30": {
+          "n": 16,
+          "mean": 40000286.4375,
+          "actual_distance_mm": 298.02933025909493
+        },
+        "29": {
+          "n": 25,
+          "mean": 40000272.76,
+          "actual_distance_mm": 290.00468806640134
+        },
+        "28": {
+          "n": 26,
+          "mean": 40000263.23076923,
+          "actual_distance_mm": 279.85012577990284
+        },
+        "27": {
+          "n": 37,
+          "mean": 40000059.94594595,
+          "actual_distance_mm": 270.0370554116407
+        },
+        "26": {
+          "n": 38,
+          "mean": 40000154.65789474,
+          "actual_distance_mm": 260.04598972530385
+        },
+        "25": {
+          "n": 36,
+          "mean": 40000010.61111111,
+          "actual_distance_mm": 250.05975454698466
+        },
+        "24": {
+          "n": 30,
+          "mean": 39999993.7,
+          "actual_distance_mm": 240.38092673577168
+        },
+        "23": {
+          "n": 25,
+          "mean": 39999888.92,
+          "actual_distance_mm": 229.94733098745186
+        },
+        "22": {
+          "n": 25,
+          "mean": 39999826.28,
+          "actual_distance_mm": 219.9588263473604
+        },
+        "21": {
+          "n": 30,
+          "mean": 39999686.833333336,
+          "actual_distance_mm": 209.49204070628556
+        },
+        "20": {
+          "n": 37,
+          "mean": 39999635.45945946,
+          "actual_distance_mm": 200.08497488978347
+        }
+      },
+      "adjacent_1cm": [
+        {
+          "from_cm": 30,
+          "to_cm": 29,
+          "delta_count": -13.677500002086163,
+          "delta_over_stationary_sample_3sigma": 0.0617883453232827,
+          "delta_over_stationary_halfsecond_delta_3sigma": 0.06621558270830795
+        },
+        {
+          "from_cm": 29,
+          "to_cm": 28,
+          "delta_count": -9.529230765998363,
+          "delta_over_stationary_sample_3sigma": 0.04304846654322431,
+          "delta_over_stationary_halfsecond_delta_3sigma": 0.046132960543686825
+        },
+        {
+          "from_cm": 28,
+          "to_cm": 27,
+          "delta_count": -203.28482328355312,
+          "delta_over_stationary_sample_3sigma": 0.9183427423221252,
+          "delta_over_stationary_halfsecond_delta_3sigma": 0.9841435223851431
+        },
+        {
+          "from_cm": 27,
+          "to_cm": 26,
+          "delta_count": 94.71194878965616,
+          "delta_over_stationary_sample_3sigma": 0.4278628840916652,
+          "delta_over_stationary_halfsecond_delta_3sigma": 0.458519969116429
+        },
+        {
+          "from_cm": 26,
+          "to_cm": 25,
+          "delta_count": -144.04678362607956,
+          "delta_over_stationary_sample_3sigma": 0.6507338627701591,
+          "delta_over_stationary_halfsecond_delta_3sigma": 0.6973600229284302
+        },
+        {
+          "from_cm": 25,
+          "to_cm": 24,
+          "delta_count": -16.91111110895872,
+          "delta_over_stationary_sample_3sigma": 0.07639624001764714,
+          "delta_over_stationary_halfsecond_delta_3sigma": 0.08187015727683035
+        },
+        {
+          "from_cm": 24,
+          "to_cm": 23,
+          "delta_count": -104.7800000011921,
+          "delta_over_stationary_sample_3sigma": 0.4733454814154446,
+          "delta_over_stationary_halfsecond_delta_3sigma": 0.5072614699467894
+        },
+        {
+          "from_cm": 23,
+          "to_cm": 22,
+          "delta_count": -62.64000000059605,
+          "delta_over_stationary_sample_3sigma": 0.2829772948636023,
+          "delta_over_stationary_halfsecond_delta_3sigma": 0.3032530872056474
+        },
+        {
+          "from_cm": 22,
+          "to_cm": 21,
+          "delta_count": -139.44666666537523,
+          "delta_over_stationary_sample_3sigma": 0.6299527539964698,
+          "delta_over_stationary_halfsecond_delta_3sigma": 0.6750899132568566
+        },
+        {
+          "from_cm": 21,
+          "to_cm": 20,
+          "delta_count": -51.3738738745451,
+          "delta_over_stationary_sample_3sigma": 0.23208237317280223,
+          "delta_over_stationary_halfsecond_delta_3sigma": 0.24871145999395136
+        }
+      ]
+    }
+  }
+}

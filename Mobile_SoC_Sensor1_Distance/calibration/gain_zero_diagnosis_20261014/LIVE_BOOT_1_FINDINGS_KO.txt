@@ -1,0 +1,87 @@
+기존 22cm 보드: 1차 재부팅 실측 결과 / 2026-10-14
+
+후속 갱신:2·3차도 수행했으며 최신 종합 결과와 기록 공백은 LIVE_BOOT_COMPARISON_KO.txt 및 boot_comparison.json을 참고.
+
+진행 상태
+- 사용자가 오늘 22cm를 측정했던 기존 보드 연결, CAN USB 재연결, 실험판 30cm 유지를 확인함.
+- 센서 전원 10초 OFF 후 ON을 사용자에게 안내했고, 1차 재인가 완료 답변을 받음.
+- 최종 재기동부터 3분 이상의 CAN 및 RAM 진단 기록을 확보함.
+- 이 문서의 작성 시점에는2차 답변 대기 상태였음. 이후2·3차 수행 완료(최신 종합 보고서 참고).
+- 2·3차 반복 시험을 완료한 결과가 아님. 오늘 앞선 22cm 거리 시험 당시의 부팅 기록도 아님.
+- 이번 작업에서 펌웨어 변경/플래시, 모터 이동, 센서 설정 명령, SWD halt/reset/target memory write 명령은 보내지 않음.
+
+실행 이미지와 읽기 방식
+- STM32 Cortex-M7 CPUID 0x411fc271, J-Link VTref 3.306V 확인.
+- 실제 Flash의 모든 ELF PT_LOAD flash 구간이 Sensor1 ELF와 일치함.
+- ELF SHA256 4ec2d08914b313e4735c68d23808e82a5215cbb8a7f3b9418b444ef769e515f6.
+- 10/13 26cm 시험의 ELF와 전체 이미지가 동일한 것은 아님. 현재 Sensor1 이미지의 실행을 확인함.
+- 별도 코드 비교에서 회귀/보상/EMA/보호 함수의 소스는 이전 기준과 동일함을 확인했음. 거리 보정 등 기존 변경 내역은 code_comparison_20261013_20261014 참고.
+- 커스텀 SoC 자체의 현재 Flash 이미지는 이번에 읽지 않았음. 10/13 저녁 SoC 수정 영향은 별도 대조가 필요함.
+- 기존 V7.50가 아닌 CubeIDE J-Link V8.10d 사용. ForceAttachTarget=1, SetAllowStopMode=0, InhibitConnectRetries=1, DisableAutoUpdateFW를 connect 전에 설정함.
+
+초기화와 첫 gain: 실측으로 확인한 내용
+- 전원 재인가 전 RAM gain 0.0133, EMA alpha 0.1199999973(설정값0.12).
+- 전원 조작 구간에 짧은 기동 구간(epoch1) 뒤 최종 기동(epoch2)이 기록됨. 최종 기동만 1차 분석 대상으로 사용함. 전원 차단 중 정지/부분 초기화 RAM 값을 정상 모델 결과로 해석하지 않음.
+- 최종 기동 초기에 gain0.4000의 provisional 상태와 표본 수집이 확인됨.
+- 약22.782초에 첫 완성 모델이 생성됨:
+  coefficient112 -> gain0.0112
+  offset8164207
+  numerator25852
+  denominator2304743
+  sensor_variance1099074
+  mean_CH0 8285985 / mean_CH1 10872990
+  learning_updates81 (초기 표본 적재의 카운터가 포함되어, 완성 모델81회 학습을 뜻하지 않음)
+- 사용된 80개 입력(learning_updates2..81)을 감사 기록에서 복원해 정수 평균/공분산/분산을 다시 계산함. 기록된 모든 값과 정확히 일치함.
+- CH0/CH1 표본 상관계수 약0.016243. 이번 첫 모델의 작은 gain은 실제 입력의 낮은 공분산으로 설명됨.
+- 분자는 양수이고 분모는 양수임. 이번 기동에서 gain0으로 하한 제한된 것은 아님.
+- 이후 3분 구간 동안 계수112, offset8164207, learning_updates81이 유지됨. 후속 모델 갱신은0회.
+- 초기화가 gain을 계속0으로 고정하거나 회귀 산술이 기록과 다르게 계산된 증거는 이 기동에서 확인되지 않음.
+
+후속 학습을 막은 실제 경로
+1. 첫 모델이 ready가 되면 noise_reference.ready까지 추가 학습을 보류함.
+2. noise_reference 측정은 guard.allowed, reason0, detector/EMA 준비, object0, 유효 ToF를 모두 요구함.
+3. ToF 기준은 초기16개 값으로296.3125mm, sigma1.210307mm로 잡힘.
+4. ToF 근접 진입 경계=296.3125-max(5,4*sigma)=291.3125mm.
+   해제 경계=296.3125-max(3,2*sigma)=293.3125mm.
+5. 사용자 확인상30cm 고정인데, 첫 모델 이후3분까지 기록된 ToF는283~300mm임.
+   동일 구간 평가 기록15727개 중3707개가 진입 경계 아래에 있음.
+   반복된 TOF_NEAR가 안정 대기 시간을 초기화함.
+6. guard가 허용되기 전 연속2초 안정 구간이 필요하고, 그 뒤 잡음 기준에는1초 settle+5초 및500표본 이상이 필요함.
+7. 실제 기록에서 first-fit 이후 허용 구간은 매우 짧았고, 잡음 기준 표본은0, ready0을 유지함.
+8. 약32.521초에는 RESIDUAL, 약32.571초에는 OBJECT 판정도 추가됨. 실제 실험판은30cm에 있으므로 이 조건을 무물체 실측이라고 부르지 않음.
+9. noise.ready0이므로 정상 표본 재학습도 시작되지 않음. 초기 모델을 보정할 기회가 막힌 경로가 확인됨.
+
+실측 입력을 사용한 오프라인 원인 분리
+- replay_boot1_guard.c를 production drift_learning_guard.h 및 drift_noise_reference.h로 컴파일함(MSVC C11 /W4 /WX 성공).
+- 첫 모델 이후~180초 평가 입력15726개를 사용함. 실제 filtered CH0/CH1, ToF, object flags 및 직전 EMA 값을 투입함.
+- 모델은 실제 첫 모델로 고정하며, MCU 전체 펌웨어의 bit-exact replay는 아님. evaluation tick의 근사 주기를 사용하고 ToF 품질 유효를 가정함. 선택 구간에서 입력 CH0/CH1 invalid 표본은0임.
+- 기록된 입력: noise_ready0, peak_samples0.
+- ToF만296mm로 고정한 가상 비교: noise_ready1, 약30.881초에501표본으로 준비 완료.
+- object만0으로 바꾼 가상 비교: noise_ready0, peak_samples0.
+- ToF 고정과 object0 가상 비교: noise_ready1, 약30.881초 준비 완료.
+- 따라서 이 첫 기동의 초기 잡음 기준 실패는 실제 ToF 변동만으로도 설명되는 흐름임. 코드에서 ToF 보호를 제거하라는 결론이나 실기기에서 수정 후 성공한 결과를 뜻하지 않음.
+
+기존 결과와의 연결 및 한계
+- 10/13 RAM gain0.7358과 이번0.0112는 크게 다름.
+- 앞선10/14 22cm 거리 시험의 gain약0은 CAN 출력 회귀로 추정했던 값임. 그때 RAM을 직접 읽어 확정한 값이 아니므로, 이번0.0112와 동일한 부팅이라고 단정하지 않음.
+- 제가 추가한 보호/잡음 기준 준비 순서가 초기 모델의 후속 학습을 막는 경로는 실제 재부팅 기록과 코드 재생으로 확인됨.
+- 첫 모델의 작은 gain 자체는 초기 입력의 낮은 상관으로 설명되며, 왜10/13과 초기 입력 상관이 달랐는지는 반복 기동 및 센싱/SoC 조건을 더 비교해야 함.
+- 26→22cm 차이 전부를 이 경로로 정량 확정한 것은 아님. 과거 데이터의 raw CH0 반응 및 복귀 drift 차이, SoC 수정 이력도 남아 있음.
+- 2차 재인가 대기 중 장시간 연장 구간에서는 FDC invalid/INVALID 보류가 별도로 관측됨. 1차180초 구간의 입력 invalid0과 구분해야 함. I2C/센서 취득 오류 원인은 이 보고서에서 확정하지 않음.
+- 모터 COM9가 없어 실제 위치를 PC에서 재검증하지 못했으며, 위치는 사용자의30cm 유지 확인에 근거함.
+
+수집 품질과 원본
+- live_boot_01/continuous/states.jsonl: 약0.5초 RAM 상태 원본.
+- live_boot_01/continuous/audit.csv: 커밋 완료 감사 레코드, 첫 최종 기동 sequence1부터 확보.
+- live_boot_01/continuous/evaluation.csv: 회차별 원시/필터/EMA/ToF 평가 레코드. 링의 in-flight entry를 제외하고 읽음. 말단 레코드는 한 사이클 지연되며 SWD 실패/재접속 구간의 누락은 이벤트로 기록함.
+- live_boot_01/continuous/can/can_events.csv 및 snapshots.csv: 수신 CAN 원본 및 해석값. 평균화/다운샘플링하지 않음.
+- initial attach 이전의 덮어쓴 링 구간은 과거 부팅(epoch0)임. 새로 기록한 최종 부팅의 bootstrap80개는 완전히 복원됨.
+- 초기 DLL 수집기는 SWD 읽기 실패 뒤 멈춰 STOP에 응답하지 않아 해당 수집기 프로세스만 종료함. CAN 종료 summary는 생성되지 않았음. 이미 flush된 원본은 보존됨.
+- live_boot_02는 CLI 하위 프로세스8초 timeout을 적용하여 같은 문제가 CAN 수집 전체를 멈추지 않게 함.
+- 초기 compact 이벤트의 object라는 키는 flag_algorithmDO(검출 알고리즘 활성화)의 라벨 오류였음. 실제 object 판정은 audit/evaluation flags bit2와 CAN line_bits bit6로 분석했고, 이후 코드 라벨을 detector_enabled로 수정함. 원본 이벤트는 덮어쓰지 않음.
+- 실제 진단 스크립트와 입력/결과 해시는 recorded_replay_result.json 및 firmware_identity_v8/result.json 참고.
+
+현재 다음 단계
+- 2차 전원 재인가 완료 답변 후 최종 기동부터180초 기록하고, 첫 gain과 ToF 기준/허용구간/잡음 준비/후속 갱신을 비교.
+- 필요 시 같은 방법으로3차를 진행하여 음수 최초 공분산→gain0 하한 제한까지 실제로 관측되는지 확인.
+- 수정 검증 단계에서는 첫 모델 신뢰도/기동 안정화와 정상 운전 물체 보호를 구분해야 함. 초기 ToF 잡음 기준의 대표성과 clear 연속 구간의 실패 처리도 검토 대상임.

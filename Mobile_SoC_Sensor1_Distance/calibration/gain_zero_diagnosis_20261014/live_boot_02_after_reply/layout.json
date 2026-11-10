@@ -1,0 +1,283 @@
+{
+  "firmware_sha256": "8cdef58fe86c587d46e9d981133e9c44d8b806660f29345503fafec765430192",
+  "evaluation": {
+    "elf": "C:\\Users\\SongYoungBin\\.codex\\visualizations\\2026\\10\\02\\01a0fcdc-55de-7463-a319-ade97ad00ae3\\noise_live_20261013\\firmware\\Mobile_SoC.elf",
+    "address": 536889316,
+    "bytes": 51200,
+    "entry_size": 100,
+    "depth": 512,
+    "sequence_address": 536889308,
+    "fields": {
+      "sequence": {
+        "offset": 0,
+        "size": 4,
+        "signed": false
+      },
+      "tick_ms": {
+        "offset": 4,
+        "size": 4,
+        "signed": false
+      },
+      "raw_ch0": {
+        "offset": 8,
+        "size": 4,
+        "signed": false
+      },
+      "raw_ch1": {
+        "offset": 12,
+        "size": 4,
+        "signed": false
+      },
+      "filtered_ch0": {
+        "offset": 16,
+        "size": 4,
+        "signed": false
+      },
+      "filtered_ch1": {
+        "offset": 20,
+        "size": 4,
+        "signed": false
+      },
+      "pre_ema": {
+        "offset": 24,
+        "size": 4,
+        "signed": false
+      },
+      "post_ema": {
+        "offset": 28,
+        "size": 4,
+        "signed": false
+      },
+      "alpha_ppm": {
+        "offset": 32,
+        "size": 4,
+        "signed": false
+      },
+      "flags": {
+        "offset": 36,
+        "size": 4,
+        "signed": false
+      },
+      "learning_updates": {
+        "offset": 40,
+        "size": 4,
+        "signed": false
+      },
+      "coefficient": {
+        "offset": 44,
+        "size": 4,
+        "signed": true
+      },
+      "offset": {
+        "offset": 48,
+        "size": 4,
+        "signed": true
+      },
+      "cap_mm": {
+        "offset": 52,
+        "size": 4,
+        "signed": true
+      },
+      "fusion_mm": {
+        "offset": 56,
+        "size": 4,
+        "signed": true
+      },
+      "tof_mm": {
+        "offset": 60,
+        "size": 4,
+        "signed": false
+      },
+      "total_us": {
+        "offset": 64,
+        "size": 4,
+        "signed": false
+      },
+      "stage_us": {
+        "offset": 68,
+        "size": 32,
+        "signed": false
+      }
+    }
+  },
+  "audit": {
+    "elf": "C:\\Users\\SongYoungBin\\.codex\\visualizations\\2026\\10\\02\\01a0fcdc-55de-7463-a319-ade97ad00ae3\\noise_live_20261013\\firmware\\Mobile_SoC.elf",
+    "address": 536940624,
+    "bytes": 175104,
+    "entry_size": 152,
+    "depth": 1152,
+    "sequence_address": 536940592,
+    "fields": {
+      "sequence": {
+        "offset": 0,
+        "size": 4,
+        "signed": false
+      },
+      "tick_ms": {
+        "offset": 4,
+        "size": 4,
+        "signed": false
+      },
+      "filtered_ch0": {
+        "offset": 8,
+        "size": 4,
+        "signed": false
+      },
+      "filtered_ch1": {
+        "offset": 12,
+        "size": 4,
+        "signed": false
+      },
+      "pre_ema": {
+        "offset": 16,
+        "size": 4,
+        "signed": false
+      },
+      "post_ema": {
+        "offset": 20,
+        "size": 4,
+        "signed": false
+      },
+      "numerator": {
+        "offset": 24,
+        "size": 8,
+        "signed": true
+      },
+      "denominator": {
+        "offset": 32,
+        "size": 8,
+        "signed": true
+      },
+      "sensor_variance": {
+        "offset": 40,
+        "size": 8,
+        "signed": true
+      },
+      "offset": {
+        "offset": 48,
+        "size": 8,
+        "signed": true
+      },
+      "coefficient": {
+        "offset": 56,
+        "size": 4,
+        "signed": true
+      },
+      "learning_updates": {
+        "offset": 60,
+        "size": 4,
+        "signed": false
+      },
+      "flags": {
+        "offset": 64,
+        "size": 4,
+        "signed": false
+      },
+      "mean_ch0": {
+        "offset": 68,
+        "size": 4,
+        "signed": false
+      },
+      "mean_ch1": {
+        "offset": 72,
+        "size": 4,
+        "signed": false
+      },
+      "object_mean": {
+        "offset": 76,
+        "size": 4,
+        "signed": false
+      },
+      "object_reference": {
+        "offset": 80,
+        "size": 4,
+        "signed": false
+      },
+      "drift_us": {
+        "offset": 84,
+        "size": 4,
+        "signed": false
+      },
+      "model_reset_count": {
+        "offset": 88,
+        "size": 4,
+        "signed": false
+      },
+      "raw_ch0": {
+        "offset": 92,
+        "size": 4,
+        "signed": false
+      },
+      "raw_ch1": {
+        "offset": 96,
+        "size": 4,
+        "signed": false
+      },
+      "kalman_input_ch0": {
+        "offset": 100,
+        "size": 4,
+        "signed": false
+      },
+      "kalman_input_ch1": {
+        "offset": 104,
+        "size": 4,
+        "signed": false
+      },
+      "kalman_x0_before_bits": {
+        "offset": 108,
+        "size": 4,
+        "signed": false
+      },
+      "kalman_p0_before_bits": {
+        "offset": 112,
+        "size": 4,
+        "signed": false
+      },
+      "kalman_gain0_bits": {
+        "offset": 116,
+        "size": 4,
+        "signed": false
+      },
+      "large_step_flags": {
+        "offset": 120,
+        "size": 4,
+        "signed": false
+      },
+      "sample_diagnostics": {
+        "offset": 124,
+        "size": 4,
+        "signed": false
+      },
+      "learning_input_ch0": {
+        "offset": 128,
+        "size": 4,
+        "signed": false
+      },
+      "learning_input_ch1": {
+        "offset": 132,
+        "size": 4,
+        "signed": false
+      },
+      "detection_baseline_sigma": {
+        "offset": 136,
+        "size": 4,
+        "signed": false
+      },
+      "detection_recent_sigma": {
+        "offset": 140,
+        "size": 4,
+        "signed": false
+      },
+      "detection_entry_threshold": {
+        "offset": 144,
+        "size": 4,
+        "signed": false
+      },
+      "noise_reference_samples": {
+        "offset": 148,
+        "size": 4,
+        "signed": false
+      }
+    }
+  }
+}

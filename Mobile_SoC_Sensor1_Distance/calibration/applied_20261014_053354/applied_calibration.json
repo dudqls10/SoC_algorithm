@@ -1,0 +1,170 @@
+{
+  "status": "source_applied_full_debug_build_and_numeric_verification_passed",
+  "project": "Mobile_SoC_Sensor1_Distance",
+  "source_measurements": "calibration/continuous_20mms_20261014_01",
+  "tof_fit_file": "tof_fit_8_to_30cm.json",
+  "cap_fit_file": "fit_candidates.json",
+  "table_mapping": [
+    {
+      "index": 1,
+      "distance_cm": 27,
+      "delta_count": 180
+    },
+    {
+      "index": 2,
+      "distance_cm": 26,
+      "delta_count": 86
+    },
+    {
+      "index": 3,
+      "distance_cm": 25,
+      "delta_count": 230
+    },
+    {
+      "index": 4,
+      "distance_cm": 24,
+      "delta_count": 247
+    },
+    {
+      "index": 5,
+      "distance_cm": 23,
+      "delta_count": 351
+    },
+    {
+      "index": 6,
+      "distance_cm": 22,
+      "delta_count": 414
+    },
+    {
+      "index": 7,
+      "distance_cm": 21,
+      "delta_count": 554
+    },
+    {
+      "index": 8,
+      "distance_cm": 20,
+      "delta_count": 605
+    },
+    {
+      "index": 9,
+      "distance_cm": 19,
+      "delta_count": 817
+    },
+    {
+      "index": 10,
+      "distance_cm": 18,
+      "delta_count": 942
+    },
+    {
+      "index": 11,
+      "distance_cm": 17,
+      "delta_count": 1273
+    },
+    {
+      "index": 12,
+      "distance_cm": 16,
+      "delta_count": 1430
+    },
+    {
+      "index": 13,
+      "distance_cm": 15,
+      "delta_count": 1725
+    },
+    {
+      "index": 14,
+      "distance_cm": 14,
+      "delta_count": 2119
+    },
+    {
+      "index": 15,
+      "distance_cm": 13,
+      "delta_count": 2645
+    },
+    {
+      "index": 16,
+      "distance_cm": 12,
+      "delta_count": 3432
+    },
+    {
+      "index": 17,
+      "distance_cm": 11,
+      "delta_count": 4307
+    },
+    {
+      "index": 18,
+      "distance_cm": 10,
+      "delta_count": 5459
+    },
+    {
+      "index": 19,
+      "distance_cm": 9,
+      "delta_count": 7038
+    },
+    {
+      "index": 20,
+      "distance_cm": 8,
+      "delta_count": 9078
+    },
+    {
+      "index": 21,
+      "distance_cm": 7,
+      "delta_count": 12242
+    },
+    {
+      "index": 22,
+      "distance_cm": 6,
+      "delta_count": 17028
+    },
+    {
+      "index": 23,
+      "distance_cm": 5,
+      "delta_count": 24066
+    },
+    {
+      "index": 24,
+      "distance_cm": 4,
+      "delta_count": 34688
+    },
+    {
+      "index": 25,
+      "distance_cm": 3,
+      "delta_count": 53939
+    }
+  ],
+  "curve_structure": "existing27..3cm,25slots; array sizes unchanged",
+  "automatic_curve_collection_default": 0,
+  "can_can_reenable_auto_curve_collection": true,
+  "firmware_flashed": false,
+  "other_projects_unchanged": {
+    "Mobile_SoC_Sensor2_DistanceAngle": true,
+    "Mobile_SoC_Sensor3_Temperature": true,
+    "Mobile_SoC_Sensor4_Collision": true
+  },
+  "main_h_unchanged": true,
+  "binary_sha256": "ef8375b0b67a2899c973bf5bfd7cbe85b19dbeccb3c060b8007569dcda7b1e95",
+  "binary_bytes": 72408,
+  "numeric_verification": {
+    "executed_production_C_functions_in_ARM_emulator": true,
+    "hardware_used": false,
+    "completed": true,
+    "failure_bitmask": 0,
+    "checks": [
+      "Invalid/zero/out-of-range ToF stays invalid",
+      "8..30cm linear correction",
+      "CAP formula and affine correction vs independent fit-file calculation",
+      "CAP bounds and extreme uint32 inputs",
+      "All25 recorded deltas map to existing27..3cm slots",
+      "Baseline and seeded raw buffers agree",
+      "Curve arrays remain30elements",
+      "Original25point logarithmic regression matches independent calculation",
+      "Both active CAP paths use calibrated model",
+      "Measured table protected against automatic overwrite at startup"
+    ],
+    "production_header_sha256": "c8b7bc468694add60fbd2db68e7fc14b3d0f096d31821dd97c3e69ae23f22172",
+    "test_build_note": "Soft-float ARM exercises the same C; firmware is separately built for Cortex-M7 hard-float."
+  },
+  "build_warnings": [
+    "C:/ST/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: Mobile_SoC_Sensor1_Distance.elf has a LOAD segment with RWX permissions"
+  ],
+  "hardware_validation_pending": true
+}

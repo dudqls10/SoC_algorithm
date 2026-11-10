@@ -1,0 +1,38 @@
+{
+  "purpose": "User requested return to30cm and the historical experiment speed",
+  "speed_mm_s": 20,
+  "speed_pulse_s": 20000,
+  "pulses_per_mm": 1000,
+  "target_command_pulse": 0,
+  "coordinate_reset": false,
+  "drive_rom_written": false,
+  "experiment_resumed": false,
+  "success": true,
+  "started_epoch_s": 1791955271.3794518,
+  "before": [
+    0,
+    131072,
+    578,
+    5767168,
+    83637,
+    83637,
+    0,
+    0,
+    65535
+  ],
+  "motion_command_sent": true,
+  "after": [
+    0,
+    131072,
+    576,
+    72351744,
+    0,
+    -4,
+    4,
+    0,
+    65535
+  ],
+  "gap_mm": 300.004,
+  "restore_speed_result": 0,
+  "ended_epoch_s": 1791955277.9049954
+}

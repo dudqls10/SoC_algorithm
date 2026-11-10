@@ -1,0 +1,8 @@
+{"host_epoch_s": 1791980583.938118, "kind": "read_unavailable", "detail": "KeyError('drift_model_audit_entry_size')"}
+{"host_epoch_s": 1791980585.0722227, "kind": "read_unavailable", "detail": "KeyError('drift_model_audit_entry_size')"}
+{"host_epoch_s": 1791980586.1948876, "kind": "read_unavailable", "detail": "KeyError('drift_model_audit_entry_size')"}
+{"host_epoch_s": 1791980587.350095, "kind": "read_unavailable", "detail": "KeyError('drift_model_audit_entry_size')"}
+{"host_epoch_s": 1791980588.4912102, "kind": "read_unavailable", "detail": "KeyError('drift_model_audit_entry_size')"}
+{"host_epoch_s": 1791980589.616419, "kind": "read_unavailable", "detail": "KeyError('drift_model_audit_entry_size')"}
+{"host_epoch_s": 1791980590.758055, "kind": "read_unavailable", "detail": "KeyError('drift_model_audit_entry_size')"}
+{"host_epoch_s": 1791980590.8482254, "kind": "stopped", "state_samples": 0, "reboot_epochs": 0, "halt_reset_write_commands_sent": 0, "sensor_commands_sent": 0, "motor_commands_sent": 0}

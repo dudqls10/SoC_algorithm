@@ -1,0 +1,189 @@
+{
+  "project": "Mobile_SoC_Sensor1_Distance",
+  "status": "prepared_not_measured",
+  "distance_points": [
+    {
+      "gap_cm": 30,
+      "gap_mm": 300,
+      "measured": false
+    },
+    {
+      "gap_cm": 29,
+      "gap_mm": 290,
+      "measured": false
+    },
+    {
+      "gap_cm": 28,
+      "gap_mm": 280,
+      "measured": false
+    },
+    {
+      "gap_cm": 27,
+      "gap_mm": 270,
+      "measured": false
+    },
+    {
+      "gap_cm": 26,
+      "gap_mm": 260,
+      "measured": false
+    },
+    {
+      "gap_cm": 25,
+      "gap_mm": 250,
+      "measured": false
+    },
+    {
+      "gap_cm": 24,
+      "gap_mm": 240,
+      "measured": false
+    },
+    {
+      "gap_cm": 23,
+      "gap_mm": 230,
+      "measured": false
+    },
+    {
+      "gap_cm": 22,
+      "gap_mm": 220,
+      "measured": false
+    },
+    {
+      "gap_cm": 21,
+      "gap_mm": 210,
+      "measured": false
+    },
+    {
+      "gap_cm": 20,
+      "gap_mm": 200,
+      "measured": false
+    },
+    {
+      "gap_cm": 19,
+      "gap_mm": 190,
+      "measured": false
+    },
+    {
+      "gap_cm": 18,
+      "gap_mm": 180,
+      "measured": false
+    },
+    {
+      "gap_cm": 17,
+      "gap_mm": 170,
+      "measured": false
+    },
+    {
+      "gap_cm": 16,
+      "gap_mm": 160,
+      "measured": false
+    },
+    {
+      "gap_cm": 15,
+      "gap_mm": 150,
+      "measured": false
+    },
+    {
+      "gap_cm": 14,
+      "gap_mm": 140,
+      "measured": false
+    },
+    {
+      "gap_cm": 13,
+      "gap_mm": 130,
+      "measured": false
+    },
+    {
+      "gap_cm": 12,
+      "gap_mm": 120,
+      "measured": false
+    },
+    {
+      "gap_cm": 11,
+      "gap_mm": 110,
+      "measured": false
+    },
+    {
+      "gap_cm": 10,
+      "gap_mm": 100,
+      "measured": false
+    },
+    {
+      "gap_cm": 9,
+      "gap_mm": 90,
+      "measured": false
+    },
+    {
+      "gap_cm": 8,
+      "gap_mm": 80,
+      "measured": false
+    },
+    {
+      "gap_cm": 7,
+      "gap_mm": 70,
+      "measured": false
+    },
+    {
+      "gap_cm": 6,
+      "gap_mm": 60,
+      "measured": false
+    },
+    {
+      "gap_cm": 5,
+      "gap_mm": 50,
+      "measured": false
+    },
+    {
+      "gap_cm": 4,
+      "gap_mm": 40,
+      "measured": false
+    },
+    {
+      "gap_cm": 3,
+      "gap_mm": 30,
+      "measured": false
+    },
+    {
+      "gap_cm": 2,
+      "gap_mm": 20,
+      "measured": false
+    },
+    {
+      "gap_cm": 1,
+      "gap_mm": 10,
+      "measured": false
+    }
+  ],
+  "can_ids": [
+    "0x41",
+    "0x42",
+    "0x43",
+    "0x44"
+  ],
+  "can_bitrate": 1000000,
+  "motor": {
+    "port": "COM9",
+    "baud": 115200,
+    "slave": 0,
+    "pulses_per_mm": 1000,
+    "previous_zero_gap_mm": 300,
+    "approach_sign": 1,
+    "speed_ceiling_mm_s": 20,
+    "coordinate_confirmation_required_before_motion": true
+  },
+  "measurement": {
+    "settle_s": 2,
+    "record_s": 5,
+    "ground_truth": "jig distance, millimetres; never ToF",
+    "repeat_reverse_for_validation": true
+  },
+  "fit": {
+    "tof_linear_minimum_ground_truth_mm": 40,
+    "cap_fit_range_mm": [
+      10,
+      300
+    ],
+    "curve_table_baseline": "separately measured no-target baseline; 30cm target value is not automatically no-target",
+    "calibration_values": "pending real measurements"
+  },
+  "reference_script": "C:/Users/SongYoungBin/Documents/Codex/2026-10-08/w/outputs/ch0_inb0_cap_connected_internal_on_16384us_20261012_173006/scripts/run_short_repeat.py"
+}

@@ -1,0 +1,67 @@
+재부팅 후 gain0 유지: 코드 경로 진단 및 실측 판정 계획
+2026-10-14 / 대상:22cm 측정했던 Sensor1 기존 보드
+
+이번에 수행한 범위
+- 모터/센서 명령, 리셋, Flash 없이 오프라인 코드 조사와 C 재현 시험만 수행.
+- 현재 production 헤더4개, 실제 main.h의 구조체, main.c의 TrainDelayedQ1Pair 함수를 그대로 추출하여 MSVC C11 /W4 /WX로 컴파일·실행.
+- 가상120초의9개 시나리오에서 기대한 잠김·회복·물체 보호 결과를 모두 재현. 실패 bitmask0.
+- 출력:offline/result.json, test_console.log, gain_zero_harness.c, train_delayed_production.inc.
+- 합성 filtered CH0/CH1 입력이며 실제10/14 부팅 로그를 재생한 결과는 아님. 첫 모델 이후 구간을 시험하며 detector/EMA ready 및 유효한 ToF를 가정. 물체 플래그는 명시적으로 주입.
+
+초기화 자체와0으로 학습되는 경우를 분리
+1. InitializeCompensation이 dComps와 보호/잡음 상태를0으로 지움.
+2. 하지만 초기80개 회귀 표본을 모으는 동안 provisional gain은0.4000임. 초기화만으로 계속0인 구조라고 볼 수 없음.
+3. 첫 fit의 numerator<0이면 기존 하한 규칙에 의해0으로 제한될 수 있음. numerator=0도0이 될 수 있음.
+4. denominator=0이면 기존 계수를 유지함. 이번 시험에서 provisional0.4000이 유지되었으며, 분모0을 곧바로 gain0으로 해석하면 안 됨.
+5. 첫 fit 이후의 gain0 유지와 첫 fit 자체가 이루어지지 않은 상태는 별도의 고장 유형임.
+
+제가 추가한 보호/잡음 기준 경로에서 확인한 조건부 고착
+- 첫 모델이 만들어져 guard.ready=1이면 noise_reference.ready=1이 될 때까지 추가 회귀학습을 보류함.
+- noise 기준은 guard.allowed=1, reason=0, object=0, detector/EMA/ToF 유효 조건을 만족해야 측정됨.
+- Seed 뒤에는 최소2초 clear 확인이 필요하고 clear 평균 잔차가 guard.noise 이하여야 허용됨.
+- 잔차 평균이1.5*guard.noise 이상으로200ms 지속되면 reason8(RESIDUAL)로 보류하며 대기 표본을 폐기함.
+- 기존 기준에서 계속 어긋난 상태이면, 기준을 바꿀 회귀 표본도 차단되어 초기 모델 오차가 남을 수 있음.
+- noise 기준이 이미 ready인 경우에도 잔차 보호가 추가학습을 막을 수 있음.
+- 이는 gain0만의 특수 조건이 아님. 양수 gain의 첫 모델도 같은 잔차 조건에서 동결됨.
+- 실제 물체 유입도 학습을 막아야 하므로, 이 경로의 존재만으로 보호 로직 전체를 결함이라고 단정하지 않음.
+
+실제 C 함수 시험 결과 (guard.noise=50인 합성 기동 조건)
+1. 첫 fit0 + 안정된 입력:11.2초 뒤 재학습 표본이 들어오기 시작,120초 뒤 gain0.4951,137회 갱신.
+2. 첫 fit0 직후 +60count 지속:120초 동안 gain0/갱신0/noise-ready0/reason32(WAIT_CLEAR).
+3. 첫 fit0 뒤 +200count 지속:120초 동안 gain0/갱신0/noise-ready0/reason8(RESIDUAL), object=0.
+4. +200count였다가30초에 원래 기준으로 복귀:40.8초 뒤 재학습 시작, 최종 gain0.4951.
+5. 첫 fit 약0.4955 뒤 +200count:양수 gain도 갱신0/reason8로 동결.
+6. noise-ready 이후 +200count:noise-ready1을 유지해도 변화 후 갱신0, 후보 거부1회, reason8.
+7. 실제 물체 플래그1:갱신0/reason1(OBJECT)로 보호 유지.
+8. 첫 fit의 reference 분산0:provisional gain0.4000 유지, 후속 정상 표본에서 회복.
+9. +60count 발생 전1초의 clear 이력 존재:평균 clear 판정을 통과해 재학습 및 회복. 같은 최종 잔차라도 기동 중 발생 시점이 결과에 영향을 줄 수 있음.
+
+실측 절차
+A. 대상 고정:22cm 결과가 나온 기존 보드, 같은 전극·배선·실험판·30cm 상대 기준. 새 v1 센서 결과와 구분.
+B. 이미지 식별:STM32 및 커스텀 SoC의 실행 이미지/해시를 확인하고 해당 ELF와 RAM 진단 schema를 맞춤. 이전 SWD 연결 실패를 먼저 해소해야 함.
+C. 모터를 움직이지 않고 같은 준비 조건에서 사용자 전원 재인가3회. 매회 부팅부터180초 기록. 전원 OFF 시간과 재인가 시각도 기록하며, 짧은 OFF를 냉간으로 간주하지 않음.
+D.30cm에도 실험판이 있으므로 무물체라고 표시하지 않음. 필요하면 별도의 실제 무물체 대조 기록으로 보호가 정당한지 분리.
+E. RAM의 기존 감사 링/상태를 읽어 기록. CAN count, ToF, 센서 유효 상태와 시간축을 함께 보존. 읽기에 halt/reset을 사용하지 않음.
+
+필수 기록값
+- 시간/기동 단계:n_data, flag_DOinit, ema2_initialized, drift_model_reset_count.
+- 첫 fit:coefficient(gain=coefficient*0.0001),offset,numerator,denominator,sensor_variance 및 하한 clipping/분산0 표시.
+- 보호:guard.ready,allowed,reason,noise,residual_mean,clear 경과시간,quarantine 대기 표본수.
+- 광학 기준:ToF 실제값,유효/갱신상태,tof_reference,tof_noise,tof_count,tof_near.
+- 잡음 기준:noise.ready,collecting,sample_count,clear_since_tick,first_sample_tick,last_tick,sigma.
+- 갱신:learning_updates,frozen_samples,learning_candidate_rejects,zero_variance_skips.
+- 입력/출력:raw CH0/CH1,Kalman 후 CH0/CH1,EMA 전후값,object 플래그/판정 기준.
+
+로그로 내릴 판정
+1. 처음 gain이0이 된 순간 numerator<0/denominator>0/하한 clipping이면 초기 fit 결과가0인 것.
+2. n_data가80에 못 도달하면 회귀 이전의 표본 취득/허용 문제.
+3. 첫 모델 뒤 gain0,updates 정지,noise.ready0,reason32 또는8이 지속되면 이번 재현과 같은 보호/기준 측정 고착 경로.
+4. noise.ready1인데 updates가 멈추면 reason 비트와 candidate_rejects를 보고 잔차·물체·ToF·무효·후보 거부를 분리.
+5. 학습 갱신이 계속 일어나면서 gain0이면 단순 잠김으로 보지 않고 실제 공분산/분산 및 허용 범위를 검토.
+6. 고착은 양수 gain에서도 가능하므로 정상 초기 gain이 나온 재시작과 같이 비교.
+
+현재 결론
+제가 넣은 보호 및 잡음 기준 측정 순서가 첫 모델의 기준 오차를 유지시키는 코드 경로는 오프라인에서 확인됨.
+오늘22cm 시험에 그 경로가 실제 발생했는지는 부팅 로그와 RAM 계수가 없어 아직 확정하지 못함.
+원인 확인 후에는 초기 모델 검증/안정화 단계와 정상 운전 중 물체 보호의 조건을 어떻게 구분할지 수정안을 판단해야 함.
+회귀계수 강제 복원이나 보호 해제를 해결책으로 간주하지 않으며, 수정 검증에는 무물체 기동 안정성과 실제 물체 반응 보존을 함께 사용.

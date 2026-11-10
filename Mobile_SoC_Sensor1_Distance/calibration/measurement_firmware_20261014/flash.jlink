@@ -1,0 +1,9 @@
+r
+h
+savebin "C:\Users\SongYoungBin\Desktop\Soc\Mobile_SoC_Experiments\Mobile_SoC_Sensor1_Distance\calibration\measurement_firmware_20261014\board_flash_before.bin", 0x08000000, 0x80000
+loadbin "C:\Users\SongYoungBin\Desktop\Soc\Mobile_SoC_Experiments\Mobile_SoC_Sensor1_Distance\calibration\measurement_firmware_20261014\firmware\Mobile_SoC_Sensor1_Distance.bin", 0x08000000
+verifybin "C:\Users\SongYoungBin\Desktop\Soc\Mobile_SoC_Experiments\Mobile_SoC_Sensor1_Distance\calibration\measurement_firmware_20261014\firmware\Mobile_SoC_Sensor1_Distance.bin", 0x08000000
+savebin "C:\Users\SongYoungBin\Desktop\Soc\Mobile_SoC_Experiments\Mobile_SoC_Sensor1_Distance\calibration\measurement_firmware_20261014\board_flash_readback.bin", 0x08000000, 0x12138
+r
+g
+exit

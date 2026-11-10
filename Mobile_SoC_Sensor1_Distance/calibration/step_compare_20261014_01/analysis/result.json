@@ -1,0 +1,264 @@
+{
+  "success": true,
+  "method": "historical1cm5s; first1s excluded, baseline/final first5s excluded; sample sigma ddof1",
+  "step_hold_count": 58,
+  "dwell_observed_range_s": [
+    5.031,
+    5.047
+  ],
+  "baseline": {
+    "raw_ch0": {
+      "n": 1556,
+      "mean": 8268666.59125964,
+      "sigma": 249.6996344049171,
+      "min": 8267744,
+      "max": 8269119,
+      "threshold_3sigma": 749.0989032147513
+    },
+    "raw_ch1": {
+      "n": 1556,
+      "mean": 10873109.61118252,
+      "sigma": 278.5706347822285,
+      "min": 10872370,
+      "max": 10874139,
+      "threshold_3sigma": 835.7119043466855
+    },
+    "post_ema": {
+      "n": 1556,
+      "mean": 40001285.37339332,
+      "sigma": 65.53029813224683,
+      "min": 40000941,
+      "max": 40001527,
+      "threshold_3sigma": 196.59089439674048
+    }
+  },
+  "returned_baseline": {
+    "raw_ch0": {
+      "n": 1550,
+      "mean": 8268875.530322581,
+      "sigma": 253.48095387993743,
+      "min": 8267919,
+      "max": 8269247,
+      "delta_from_start": 208.9390629408881,
+      "return_shift_ratio_3sigma": 0.2789205297781481
+    },
+    "raw_ch1": {
+      "n": 1550,
+      "mean": 10872893.807096774,
+      "sigma": 262.351457952785,
+      "min": 10872000,
+      "max": 10873803,
+      "delta_from_start": -215.8040857464075,
+      "return_shift_ratio_3sigma": 0.258227846969718
+    },
+    "post_ema": {
+      "n": 1550,
+      "mean": 40001495.56387097,
+      "sigma": 78.34503966435375,
+      "min": 40001043,
+      "max": 40001637,
+      "delta_from_start": 210.1904776468873,
+      "return_shift_ratio_3sigma": 1.0691770760384327
+    }
+  },
+  "detection": {
+    "raw_ch0": {
+      "target_negative": {
+        "approach_farthest_cm": 18.0,
+        "retreat_farthest_cm": 18.0,
+        "both_contiguous_from1cm_max_cm": 18,
+        "turnaround1cm_measured_once": true
+      },
+      "absolute": {
+        "approach_farthest_cm": 18.0,
+        "retreat_farthest_cm": 18.0,
+        "both_contiguous_from1cm_max_cm": 18,
+        "turnaround1cm_measured_once": true
+      },
+      "linear_return_drift_correction_sensitivity": {
+        "approach_farthest_cm": 18.0,
+        "retreat_farthest_cm": 19.0,
+        "both_contiguous_from1cm_max_cm": 18,
+        "turnaround1cm_measured_once": true
+      }
+    },
+    "raw_ch1": {
+      "target_negative": {
+        "approach_farthest_cm": 7.0,
+        "retreat_farthest_cm": 7.0,
+        "both_contiguous_from1cm_max_cm": 0,
+        "turnaround1cm_measured_once": true
+      },
+      "absolute": {
+        "approach_farthest_cm": 7.0,
+        "retreat_farthest_cm": 7.0,
+        "both_contiguous_from1cm_max_cm": 2,
+        "turnaround1cm_measured_once": true
+      },
+      "linear_return_drift_correction_sensitivity": {
+        "approach_farthest_cm": 7.0,
+        "retreat_farthest_cm": 7.0,
+        "both_contiguous_from1cm_max_cm": 0,
+        "turnaround1cm_measured_once": true
+      }
+    },
+    "post_ema": {
+      "target_negative": {
+        "approach_farthest_cm": 23.0,
+        "retreat_farthest_cm": 22.0,
+        "both_contiguous_from1cm_max_cm": 22,
+        "turnaround1cm_measured_once": true
+      },
+      "absolute": {
+        "approach_farthest_cm": 23.0,
+        "retreat_farthest_cm": 30.0,
+        "both_contiguous_from1cm_max_cm": 22,
+        "turnaround1cm_measured_once": true
+      },
+      "linear_return_drift_correction_sensitivity": {
+        "approach_farthest_cm": 23.0,
+        "retreat_farthest_cm": 25.0,
+        "both_contiguous_from1cm_max_cm": 23,
+        "turnaround1cm_measured_once": true
+      }
+    }
+  },
+  "previous_detection": {
+    "raw_ch0": {
+      "absolute": {
+        "approach_farthest_cm": 23.0,
+        "retreat_farthest_cm": 20.0,
+        "both_farthest_cm": 20.0,
+        "both_contiguous_from1cm_max_cm": 20,
+        "turnaround1cm_measured_once": true
+      },
+      "target_negative": {
+        "approach_farthest_cm": 23.0,
+        "retreat_farthest_cm": 20.0,
+        "both_farthest_cm": 20.0,
+        "both_contiguous_from1cm_max_cm": 20,
+        "turnaround1cm_measured_once": true
+      },
+      "linear_return_drift_correction_sensitivity": {
+        "approach_farthest_cm": 23.0,
+        "retreat_farthest_cm": 20.0,
+        "both_farthest_cm": 20.0,
+        "both_contiguous_from1cm_max_cm": 20,
+        "turnaround1cm_measured_once": true
+      }
+    },
+    "raw_ch1": {
+      "absolute": {
+        "approach_farthest_cm": 3.0,
+        "retreat_farthest_cm": 3.0,
+        "both_farthest_cm": 3.0,
+        "both_contiguous_from1cm_max_cm": 3,
+        "turnaround1cm_measured_once": true
+      },
+      "target_negative": {
+        "approach_farthest_cm": null,
+        "retreat_farthest_cm": null,
+        "both_farthest_cm": null,
+        "both_contiguous_from1cm_max_cm": 0,
+        "turnaround1cm_measured_once": true
+      },
+      "linear_return_drift_correction_sensitivity": {
+        "approach_farthest_cm": null,
+        "retreat_farthest_cm": null,
+        "both_farthest_cm": null,
+        "both_contiguous_from1cm_max_cm": 0,
+        "turnaround1cm_measured_once": true
+      }
+    },
+    "post_ema": {
+      "absolute": {
+        "approach_farthest_cm": 29.0,
+        "retreat_farthest_cm": 26.0,
+        "both_farthest_cm": 26.0,
+        "both_contiguous_from1cm_max_cm": 26,
+        "turnaround1cm_measured_once": true
+      },
+      "target_negative": {
+        "approach_farthest_cm": 29.0,
+        "retreat_farthest_cm": 26.0,
+        "both_farthest_cm": 26.0,
+        "both_contiguous_from1cm_max_cm": 26,
+        "turnaround1cm_measured_once": true
+      },
+      "linear_return_drift_correction_sensitivity": {
+        "approach_farthest_cm": 29.0,
+        "retreat_farthest_cm": 25.0,
+        "both_farthest_cm": 25.0,
+        "both_contiguous_from1cm_max_cm": 25,
+        "turnaround1cm_measured_once": true
+      }
+    }
+  },
+  "previous_baseline": {
+    "raw_ch0": {
+      "n": 1588,
+      "mean": 8346598.183879093,
+      "sigma": 256.660974626495,
+      "min": 8345825,
+      "max": 8346943,
+      "threshold_3sigma": 769.9829238794849
+    },
+    "raw_ch1": {
+      "n": 1588,
+      "mean": 10905918.032745592,
+      "sigma": 89.96934399559451,
+      "min": 10905551,
+      "max": 10906186,
+      "threshold_3sigma": 269.90803198678356
+    },
+    "post_ema": {
+      "n": 1588,
+      "mean": 40000534.89735516,
+      "sigma": 77.39234761099333,
+      "min": 40000333,
+      "max": 40000717,
+      "threshold_3sigma": 232.17704283297996
+    }
+  },
+  "complete_snapshots": 24291,
+  "incomplete_or_phase_crossing_bundles": 87,
+  "CAN_error_frames": 0,
+  "CAN_receiver_overruns": 0,
+  "excluded_invalid_samples": {
+    "raw_ch0": 0,
+    "raw_ch1": 0,
+    "post_ema": 0
+  },
+  "learning_parity_observed_transitions": 0,
+  "maximum_hold_position_error_pulse": 0,
+  "final_motor_status": [
+    0,
+    131072,
+    578,
+    72876032,
+    0,
+    0,
+    0,
+    0,
+    65535
+  ],
+  "parameter_restore": {
+    "1": 0,
+    "4": 0
+  },
+  "live_firmware_identity": {
+    "epoch_s": 1791966287.1585183,
+    "halt_reset_write_commands": 0,
+    "identified": false,
+    "connect_result": -1,
+    "failure": "RuntimeError('Read-only SWD attachment unavailable')"
+  },
+  "historical_data_root": "C:\\Users\\SongYoungBin\\.codex\\visualizations\\2026\\10\\02\\01a0fcdc-55de-7463-a319-ade97ad00ae3\\step_sigma_once_20261013",
+  "limits": [
+    "30cm target-present relative baseline.",
+    "One roundtrip; sample counts are not independent repeat trials.",
+    "Current running firmware identity not verified when SWD attachment unavailable.",
+    "Hardware, environment and chip firmware differences are not isolated by this comparison.",
+    "Linear baseline interpolation is an auxiliary sensitivity calculation, not measured drift removal."
+  ]
+}

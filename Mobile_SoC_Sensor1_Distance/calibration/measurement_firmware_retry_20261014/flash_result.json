@@ -1,0 +1,22 @@
+{
+  "project": "Mobile_SoC_Sensor1_Distance",
+  "flash_verified": true,
+  "full_readback_matches": true,
+  "flashed_epoch_s": 1791954486.1041775,
+  "sha256": "8cdef58fe86c587d46e9d981133e9c44d8b806660f29345503fafec765430192",
+  "bytes": 74040,
+  "motor_status": [
+    0,
+    0,
+    64,
+    4194304,
+    0,
+    0,
+    0,
+    0,
+    65535
+  ],
+  "motor_commands_sent": 0,
+  "full_sensor_power_cycle_pending": true,
+  "board_flash_backup": "C:\\Users\\SongYoungBin\\Desktop\\Soc\\Mobile_SoC_Experiments\\Mobile_SoC_Sensor1_Distance\\calibration\\measurement_firmware_retry_20261014\\board_flash_before.bin"
+}

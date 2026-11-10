@@ -1,0 +1,63 @@
+{
+  "epoch_s": 1791980408.787211,
+  "halt_reset_write_commands_sent": 0,
+  "identified": true,
+  "jlink_executable": "C:\\ST\\STM32CubeIDE_1.17.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltools.jlink.win32_2.3.0.202409170845\\tools\\bin\\JLink.exe",
+  "process_exit_code": 0,
+  "jlink_log_tail": "SEGGER J-Link Commander V8.10d (Compiled Oct 24 2024 10:01:14)\nDLL version V8.10d, compiled Oct 24 2024 09:58:28\n\nJ-Link Commander will now exit on Error\n\nJ-Link Command File read successfully.\nProcessing script file...\nJ-Link>exec DisableAutoUpdateFW\nJ-Link>exec ForceAttachTarget=1\nJ-Link connection not established yet but required for command.\nConnecting to J-Link via USB...O.K.\nFirmware: J-Link V9 compiled May  7 2021 16:26:12\nHardware version: V9.70\nJ-Link uptime (since boot): N/A (Not supported by this model)\nS/N: 59768883\nLicense(s): RDI, GDB, FlashDL, FlashBP, JFlash\nVTref=3.306V\nJ-Link>exec SetAllowStopMode=0\nJ-Link>exec InhibitConnectRetries=1\nJ-Link>connect\nDevice \"STM32F722RE\" selected.\n\n\nConnecting to target via SWD\nInitTarget() start\nSWD selected. Executing JTAG -> SWD switching sequence.\nDAP initialized successfully.\nInitTarget() end - Took 11.1ms\nFound SW-DP with ID 0x5BA02477\nDPIDR: 0x5BA02477\nCoreSight SoC-400 or earlier\nScanning AP map to find all available APs\nAP[1]: Stopped AP scan as end of AP map has been reached\nAP[0]: AHB-AP (IDR: 0x74770001, ADDR: 0x00000000)\nIterating through AP map to find AHB-AP to use\nAP[0]: Core found\nAP[0]: AHB-AP ROM base: 0xE00FD000\nCPUID register: 0x411FC271. Implementer code: 0x41 (ARM)\nCache: L1 I/D-cache present\nFound Cortex-M7 r1p1, Little endian.\nFPUnit: 8 code (BP) slots and 0 literal slots\nCoreSight components:\nROMTbl[0] @ E00FD000\n[0][0]: E00FE000 CID B105100D PID 000BB4C8 ROM Table\nROMTbl[1] @ E00FE000\n[1][0]: E00FF000 CID B105100D PID 000BB4C7 ROM Table\nROMTbl[2] @ E00FF000\n[2][0]: E000E000 CID B105E00D PID 000BB00C SCS-M7\n[2][1]: E0001000 CID B105E00D PID 000BB002 DWT\n[2][2]: E0002000 CID B105E00D PID 000BB00E FPB-M7\n[2][3]: E0000000 CID B105E00D PID 000BB001 ITM\n[1][1]: E0041000 CID B105900D PID 001BB975 ETM-M7\n[0][1]: E0040000 CID B105900D PID 000BB9A9 TPIU-M7\nI-Cache L1: 8 KB, 128 Sets, 32 Bytes/Line, 2-Way\nD-Cache L1: 8 KB, 64 Sets, 32 Bytes/Line, 4-Way\nMemory zones:\n  Zone: \"Default\" Description: Default access mode\nCortex-M7 identified.\nJ-Link>savebin \"C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/live_boot_01/firmware_identity_v8/cpuid.bin\", 0xE000ED00, 4\nOpening binary file for writing... [C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/live_boot_01/firmware_identity_v8/cpuid.bin]\nReading 4 bytes from addr 0xE000ED00 into file...O.K.\nJ-Link>savebin \"C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/live_boot_01/firmware_identity_v8/flash.bin\", 0x08000000, 0x12138\nOpening binary file for writing... [C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/live_boot_01/firmware_identity_v8/flash.bin]\nReading 74040 bytes from addr 0x08000000 into file...O.K.\nJ-Link>exit\n\nScript processing completed.\n\nOnDisconnectTarget() start\nOnDisconnectTarget() end - Took 1.12ms\n\n",
+  "cpuid": "0x411fc271",
+  "matched_elf": "C:\\Users\\SongYoungBin\\Desktop\\Soc\\Mobile_SoC_Experiments\\Mobile_SoC_Sensor1_Distance\\Debug\\Mobile_SoC_Sensor1_Distance.elf",
+  "candidates": [
+    {
+      "path": "C:\\Users\\SongYoungBin\\.codex\\visualizations\\2026\\10\\02\\01a0fcdc-55de-7463-a319-ade97ad00ae3\\step_sigma_once_20261013\\firmware_reference\\Mobile_SoC.elf",
+      "elf_sha256": "928446c74b4c725bfda6deeb0b5fecff4a91c804602df64627fe98fa94c940dd",
+      "matches": false,
+      "segments": [
+        {
+          "address": "0x8000000",
+          "bytes": 73912,
+          "matches": false
+        },
+        {
+          "address": "0x80120b8",
+          "bytes": 128,
+          "matches": false
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\SongYoungBin\\Desktop\\Soc\\Mobile_SoC\\Debug\\Mobile_SoC.elf",
+      "elf_sha256": "928446c74b4c725bfda6deeb0b5fecff4a91c804602df64627fe98fa94c940dd",
+      "matches": false,
+      "segments": [
+        {
+          "address": "0x8000000",
+          "bytes": 73912,
+          "matches": false
+        },
+        {
+          "address": "0x80120b8",
+          "bytes": 128,
+          "matches": false
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\SongYoungBin\\Desktop\\Soc\\Mobile_SoC_Experiments\\Mobile_SoC_Sensor1_Distance\\Debug\\Mobile_SoC_Sensor1_Distance.elf",
+      "elf_sha256": "4ec2d08914b313e4735c68d23808e82a5215cbb8a7f3b9418b444ef769e515f6",
+      "matches": true,
+      "segments": [
+        {
+          "address": "0x8000000",
+          "bytes": 72280,
+          "matches": true
+        },
+        {
+          "address": "0x8011a58",
+          "bytes": 128,
+          "matches": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "tick_ms": 448421,
+  "gain": 0.0112,
+  "numerator": 25852,
+  "denominator": 2304743,
+  "n_data": 80,
+  "learning_updates": 81,
+  "reason": [
+    "INVALID"
+  ],
+  "allowed": 0,
+  "residual_mean": 138.81567999990656,
+  "noise": 117.19532066039415,
+  "noise_ready": 0,
+  "noise_samples": 0,
+  "detector_enabled": 1,
+  "DOinit": 1,
+  "alpha": 0.11999999731779099
+}

@@ -1,0 +1,27 @@
+{
+  "previous": {
+    "source": "C:\\Users\\SongYoungBin\\.codex\\visualizations\\2026\\10\\02\\01a0fcdc-55de-7463-a319-ade97ad00ae3\\step_sigma_once_20261013\\measurement\\can_events.csv",
+    "sha256": "ac89a5ff9a479b76f2f7c21477128b8b097f3515de98365e8b0b1c7ee315d071",
+    "raw_ch0_samples": 25161,
+    "ema_samples": 25160,
+    "origin_ns": 14712494679500,
+    "values_changed": false,
+    "averaged": false,
+    "resampled": false,
+    "deduplicated": false,
+    "invalid_status_samples_excluded": false
+  },
+  "current": {
+    "source": "C:\\Users\\SongYoungBin\\Desktop\\Soc\\Mobile_SoC_Experiments\\Mobile_SoC_Sensor1_Distance\\calibration\\step_compare_20261014_01\\measurement\\can_events.csv",
+    "sha256": "101b141752abaef0ff65f067bf42d8855db222c57cc61862176892a868dde766",
+    "raw_ch0_samples": 24379,
+    "ema_samples": 24379,
+    "origin_ns": 13396203000000,
+    "values_changed": false,
+    "averaged": false,
+    "resampled": false,
+    "deduplicated": false,
+    "invalid_status_samples_excluded": false
+  },
+  "plot_simplification": false
+}

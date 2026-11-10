@@ -1,0 +1,23 @@
+{
+  "epoch_s": 1791953699.0799751,
+  "motion_commands_sent": 0,
+  "configuration_commands_sent": 0,
+  "can_application_frames_sent": 0,
+  "serial_ports": {
+    "\\Device\\BthModem3": "COM3",
+    "\\Device\\BthModem4": "COM4",
+    "\\Device\\BthModem5": "COM11",
+    "\\Device\\BthModem0": "COM12",
+    "\\Device\\BthModem2": "COM5",
+    "\\Device\\BthModem1": "COM6",
+    "\\Device\\VCP0": "COM9"
+  },
+  "motor_connected": false,
+  "can_enumeration_end": "StopIteration()",
+  "can_devices": [
+    {
+      "hardware_id": "HW590896",
+      "description": "USB-to-CAN V2 compact"
+    }
+  ]
+}

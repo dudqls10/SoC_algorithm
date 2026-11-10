@@ -1,0 +1,8 @@
+exec DisableAutoUpdateFW
+exec ForceAttachTarget=1
+exec SetAllowStopMode=0
+exec InhibitConnectRetries=1
+connect
+savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/live_boot_01/firmware_identity_v8/cpuid.bin", 0xE000ED00, 4
+savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/live_boot_01/firmware_identity_v8/flash.bin", 0x08000000, 0x12138
+exit

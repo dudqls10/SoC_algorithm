@@ -1,0 +1,20 @@
+{
+  "tick_ms": 237311,
+  "gain": 0.0994,
+  "numerator": 255475,
+  "denominator": 2569127,
+  "n_data": 80,
+  "learning_updates": 81,
+  "reason": [
+    "TOF_NEAR"
+  ],
+  "allowed": 0,
+  "residual_mean": 50.990400000009686,
+  "noise": 110.0841981435976,
+  "noise_ready": 0,
+  "noise_samples": 0,
+  "detector_enabled": 1,
+  "object_detected": 0,
+  "DOinit": 1,
+  "alpha": 0.11999999731779099
+}

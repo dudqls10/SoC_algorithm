@@ -1,0 +1,14 @@
+--- C:\Users\SongYoungBin\.codex\visualizations\2026\10\02\01a0fcdc-55de-7463-a319-ade97ad00ae3\step_sigma_once_20261013\raw_freeze_diagnosis\swd_pinmux_fix_1791882849205759100\before_project\example\nxp3110\Makefile
++++ C:\Users\SongYoungBin\.codex\visualizations\2026\10\02\01a0fcdc-55de-7463-a319-ade97ad00ae3\step_sigma_once_20261013\raw_freeze_diagnosis\safe_ram_build_1791886086708768300\after_firmware\Makefile
+@@ -1,9 +1,10 @@
+ ##
+ # Program file
+ TARGET  = main.elf
+-LINKER_SCRIPT ?= ../../common/lds/flash.ld
++# Board workaround: avoid observed bit-8 errors in upper data SRAM.
++LINKER_SCRIPT ?= nxp3110_safe_ram.ld
+ SOURCES	 = ../../common/print_util.c
+ SOURCES	 += main.c
+ SOURCES	 += m25p16.c
+ SOURCES	 += timer_test.c
+ SOURCES	 += wdt_test.c

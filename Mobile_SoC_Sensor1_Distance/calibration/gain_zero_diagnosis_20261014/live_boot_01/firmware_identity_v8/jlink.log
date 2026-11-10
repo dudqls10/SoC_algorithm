@@ -1,0 +1,71 @@
+SEGGER J-Link Commander V8.10d (Compiled Oct 24 2024 10:01:14)
+DLL version V8.10d, compiled Oct 24 2024 09:58:28
+
+J-Link Commander will now exit on Error
+
+J-Link Command File read successfully.
+Processing script file...
+J-Link>exec DisableAutoUpdateFW
+J-Link>exec ForceAttachTarget=1
+J-Link connection not established yet but required for command.
+Connecting to J-Link via USB...O.K.
+Firmware: J-Link V9 compiled May  7 2021 16:26:12
+Hardware version: V9.70
+J-Link uptime (since boot): N/A (Not supported by this model)
+S/N: 59768883
+License(s): RDI, GDB, FlashDL, FlashBP, JFlash
+VTref=3.306V
+J-Link>exec SetAllowStopMode=0
+J-Link>exec InhibitConnectRetries=1
+J-Link>connect
+Device "STM32F722RE" selected.
+
+
+Connecting to target via SWD
+InitTarget() start
+SWD selected. Executing JTAG -> SWD switching sequence.
+DAP initialized successfully.
+InitTarget() end - Took 11.1ms
+Found SW-DP with ID 0x5BA02477
+DPIDR: 0x5BA02477
+CoreSight SoC-400 or earlier
+Scanning AP map to find all available APs
+AP[1]: Stopped AP scan as end of AP map has been reached
+AP[0]: AHB-AP (IDR: 0x74770001, ADDR: 0x00000000)
+Iterating through AP map to find AHB-AP to use
+AP[0]: Core found
+AP[0]: AHB-AP ROM base: 0xE00FD000
+CPUID register: 0x411FC271. Implementer code: 0x41 (ARM)
+Cache: L1 I/D-cache present
+Found Cortex-M7 r1p1, Little endian.
+FPUnit: 8 code (BP) slots and 0 literal slots
+CoreSight components:
+ROMTbl[0] @ E00FD000
+[0][0]: E00FE000 CID B105100D PID 000BB4C8 ROM Table
+ROMTbl[1] @ E00FE000
+[1][0]: E00FF000 CID B105100D PID 000BB4C7 ROM Table
+ROMTbl[2] @ E00FF000
+[2][0]: E000E000 CID B105E00D PID 000BB00C SCS-M7
+[2][1]: E0001000 CID B105E00D PID 000BB002 DWT
+[2][2]: E0002000 CID B105E00D PID 000BB00E FPB-M7
+[2][3]: E0000000 CID B105E00D PID 000BB001 ITM
+[1][1]: E0041000 CID B105900D PID 001BB975 ETM-M7
+[0][1]: E0040000 CID B105900D PID 000BB9A9 TPIU-M7
+I-Cache L1: 8 KB, 128 Sets, 32 Bytes/Line, 2-Way
+D-Cache L1: 8 KB, 64 Sets, 32 Bytes/Line, 4-Way
+Memory zones:
+  Zone: "Default" Description: Default access mode
+Cortex-M7 identified.
+J-Link>savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/live_boot_01/firmware_identity_v8/cpuid.bin", 0xE000ED00, 4
+Opening binary file for writing... [C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/live_boot_01/firmware_identity_v8/cpuid.bin]
+Reading 4 bytes from addr 0xE000ED00 into file...O.K.
+J-Link>savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/live_boot_01/firmware_identity_v8/flash.bin", 0x08000000, 0x12138
+Opening binary file for writing... [C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/live_boot_01/firmware_identity_v8/flash.bin]
+Reading 74040 bytes from addr 0x08000000 into file...O.K.
+J-Link>exit
+
+Script processing completed.
+
+OnDisconnectTarget() start
+OnDisconnectTarget() end - Took 1.12ms
+

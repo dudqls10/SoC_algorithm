@@ -1,0 +1,53 @@
+Sensor1 학습 조건에서 ToF 제거 / 2026-10-14
+
+변경 범위
+사용자의 'tof 없애자' 요청을 직전 학습 보류 원인 설명에 이어, ToF를 CAP 보상 학습의 허용 조건에서 제외하는 변경으로 적용했다.
+Sensor1 전용 프로젝트에서만 main.c와 drift_learning_guard.h를 수정했다.
+ToF 거리 측정/보정/CAN 출력/거리 fusion은 그대로 사용한다. ToF 하드웨어 또는 드라이버 전체를 비활성화한 변경은 아니다.
+
+변경 내용
+1. LinearRegression에서 learning_tof_valid 계산과 기존 ToF 인자를 전달하는 guard 호출을 제거했다.
+2. 새 DriftLearningGuardStepCapOnly 함수를 호출한다. 이 함수는 이전 ToF count/near latch를 해제하고 광학 입력 없이 기존 CAP 보호를 실행한다.
+3. 잡음 기준 수집 noise_clear의 유효 ToF 필수 조건도 제거했다.
+4. CAP object 판정, 잔차 보호, 입력 invalid 처리, clear2초, 잡음 settle1초/window5초, delayed quarantine2400ms와 후보 검증은 유지했다.
+5. 기존 코드의 CAP-only 기준 갱신 주기64초가 선택된다. ToF 기준을 사용하는16초 경로는 Sensor1 학습에서 선택되지 않는다.
+6. DriftLearningGuard 구조체 레이아웃 및 CAN0x41~0x44 형식은 유지했다.
+
+수정 파일
+Core/Src/main.c
+Core/Inc/drift_learning_guard.h
+
+복구 자료
+before/Core 및 before/Debug: 변경 직전 소스와 ELF/BIN/HEX/MAP
+before_manifest.json: 변경 직전 파일 해시
+변경 직전 ELF SHA256:4ec2d08914b313e4735c68d23808e82a5215cbb8a7f3b9418b444ef769e515f6
+
+검증
+- 실제 production trainer 및 guard/noise/math/EMA 헤더를 사용하는 기존9개 합성 시나리오를 CAP-only 호출로 실행. 기대 결과9개 모두 통과(failure_bitmask0).
+- CAP-only guard 통합 검사: 과거 ToF near latch가 있어도 초기 표본 채택, ToF 없는 잡음 기준 ready, 지연 표본 채택을 확인.
+- 실제 object, 입력 invalid, 지속 잔차가 각각 학습을 차단하는 보호를 확인(failure_bitmask0).
+-1차 실측 입력15726개 재생: 기존 ToF 경로 noise_ready0, 수정된 production_CAP_only_guard noise_ready1.
+- 수정 경로의 잡음 기준은 약30.881초/501표본으로 준비 완료, ToF near cycles0.
+- 위 재생은 첫 모델 고정, evaluation tick 근사 주기 및 실측 object flag를 사용하는 host 부분 재생이다. 수정 펌웨어의 실제 부팅/거리 성능 검증 결과는 아니다.
+- ToF를 제외해도 object/잔차/입력 invalid 등 다른 보호 조건으로 학습이 보류될 수 있다. 모든 상황에서 연속 학습을 강제한 변경은 아니다.
+- MSVC C11 /W4 /WX 호스트 빌드 성공.
+- GNU STM32 GCC12.3.rel1, Debug 실제 펌웨어 빌드 성공.
+- 기본 샌드박스에서 ARM GCC 실행이 Error623으로 실패하여 네이티브 빌드 실행으로 완료했다. 호스트 검사는 성공 결과를 재사용했고 같은 검사를 불필요하게 반복 실행하지 않았다.
+- 링크의 RWX LOAD segment 경고는 변경 전 ELF에도 같은 segment flags7이 있던 기존 상태임을 확인했다. 이번 변경에서 새 segment 권한을 추가하지 않았다.
+
+수정 펌웨어
+firmware/Mobile_SoC_Sensor1_Distance.bin:72336bytes
+BIN SHA256:47f50c7cc9ad03dda9c328edff814583aa8ee80ce323d1b29819db898cd20f94
+ELF SHA256:29e3b44dc281843944dea2f84c09d700baaf2e4ab900a706c2475eaec2e76c06
+검증 결과:validation_result.json / host_tests/console.log / build.log
+소스 차이:Core_Src_main.c.diff / Core_Inc_drift_learning_guard.h.diff
+
+보드 반영 상태
+실기기 반영 전의 읽기 전용 식별/백업을 시도했으나 J-Link USB 연결 실패로 중단됐다.
+추가 USB 열거에서도 J-Link COM7, CAN 어댑터, 모터 COM9가 모두 보이지 않았다.
+실기기 플래시·리셋·정지·target write는 아직 수행하지 않았다. 커스텀 SoC 이미지를 변경하지 않았다.
+기존 Sensor1 보드 및 J-Link/CAN PC USB 연결 확인 답변을 기다린다.
+연결 후 기존 실행 이미지가 변경 전 ELF와 일치하는지 읽고, 실제 Flash를 별도 백업한 뒤 이 Sensor1 수정본만 적용·readback 검증한다.
+플래시 뒤 필요한 전체 센서 전원 재인가는 사용자에게 시점을 안내한다.
+
+현재 보드 반영이 대기 중이므로, 학습 갱신 복구 여부는 실기기에서 아직 확인하지 않았다.

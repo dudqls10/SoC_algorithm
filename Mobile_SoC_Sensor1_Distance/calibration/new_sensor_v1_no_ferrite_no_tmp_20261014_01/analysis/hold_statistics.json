@@ -1,0 +1,408 @@
+[
+  {
+    "phase": "approach_hold_290mm",
+    "cm": 29.0,
+    "direction": "approach",
+    "duration_s": 5.063,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_280mm",
+    "cm": 28.0,
+    "direction": "approach",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_270mm",
+    "cm": 27.0,
+    "direction": "approach",
+    "duration_s": 5.046,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_260mm",
+    "cm": 26.0,
+    "direction": "approach",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_250mm",
+    "cm": 25.0,
+    "direction": "approach",
+    "duration_s": 5.062,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_240mm",
+    "cm": 24.0,
+    "direction": "approach",
+    "duration_s": 5.062,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_230mm",
+    "cm": 23.0,
+    "direction": "approach",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_220mm",
+    "cm": 22.0,
+    "direction": "approach",
+    "duration_s": 5.063,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_210mm",
+    "cm": 21.0,
+    "direction": "approach",
+    "duration_s": 5.0,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_200mm",
+    "cm": 20.0,
+    "direction": "approach",
+    "duration_s": 5.046,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_190mm",
+    "cm": 19.0,
+    "direction": "approach",
+    "duration_s": 5.0,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_180mm",
+    "cm": 18.0,
+    "direction": "approach",
+    "duration_s": 5.062,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_170mm",
+    "cm": 17.0,
+    "direction": "approach",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_160mm",
+    "cm": 16.0,
+    "direction": "approach",
+    "duration_s": 5.062,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_150mm",
+    "cm": 15.0,
+    "direction": "approach",
+    "duration_s": 5.063,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_140mm",
+    "cm": 14.0,
+    "direction": "approach",
+    "duration_s": 5.0,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_130mm",
+    "cm": 13.0,
+    "direction": "approach",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_120mm",
+    "cm": 12.0,
+    "direction": "approach",
+    "duration_s": 5.062,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_110mm",
+    "cm": 11.0,
+    "direction": "approach",
+    "duration_s": 5.063,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_100mm",
+    "cm": 10.0,
+    "direction": "approach",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_090mm",
+    "cm": 9.0,
+    "direction": "approach",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_080mm",
+    "cm": 8.0,
+    "direction": "approach",
+    "duration_s": 5.063,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_070mm",
+    "cm": 7.0,
+    "direction": "approach",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_060mm",
+    "cm": 6.0,
+    "direction": "approach",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_050mm",
+    "cm": 5.0,
+    "direction": "approach",
+    "duration_s": 5.032,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_040mm",
+    "cm": 4.0,
+    "direction": "approach",
+    "duration_s": 5.062,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_030mm",
+    "cm": 3.0,
+    "direction": "approach",
+    "duration_s": 5.063,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_020mm",
+    "cm": 2.0,
+    "direction": "approach",
+    "duration_s": 5.0,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "approach_hold_010mm",
+    "cm": 1.0,
+    "direction": "approach",
+    "duration_s": 5.0,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_020mm",
+    "cm": 2.0,
+    "direction": "retreat",
+    "duration_s": 5.0,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_030mm",
+    "cm": 3.0,
+    "direction": "retreat",
+    "duration_s": 5.063,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_040mm",
+    "cm": 4.0,
+    "direction": "retreat",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_050mm",
+    "cm": 5.0,
+    "direction": "retreat",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_060mm",
+    "cm": 6.0,
+    "direction": "retreat",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_070mm",
+    "cm": 7.0,
+    "direction": "retreat",
+    "duration_s": 5.046,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_080mm",
+    "cm": 8.0,
+    "direction": "retreat",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_090mm",
+    "cm": 9.0,
+    "direction": "retreat",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_100mm",
+    "cm": 10.0,
+    "direction": "retreat",
+    "duration_s": 5.032,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_110mm",
+    "cm": 11.0,
+    "direction": "retreat",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_120mm",
+    "cm": 12.0,
+    "direction": "retreat",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_130mm",
+    "cm": 13.0,
+    "direction": "retreat",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_140mm",
+    "cm": 14.0,
+    "direction": "retreat",
+    "duration_s": 5.046,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_150mm",
+    "cm": 15.0,
+    "direction": "retreat",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_160mm",
+    "cm": 16.0,
+    "direction": "retreat",
+    "duration_s": 5.031,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_170mm",
+    "cm": 17.0,
+    "direction": "retreat",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_180mm",
+    "cm": 18.0,
+    "direction": "retreat",
+    "duration_s": 5.062,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_190mm",
+    "cm": 19.0,
+    "direction": "retreat",
+    "duration_s": 5.062,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_200mm",
+    "cm": 20.0,
+    "direction": "retreat",
+    "duration_s": 5.063,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_210mm",
+    "cm": 21.0,
+    "direction": "retreat",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_220mm",
+    "cm": 22.0,
+    "direction": "retreat",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_230mm",
+    "cm": 23.0,
+    "direction": "retreat",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_240mm",
+    "cm": 24.0,
+    "direction": "retreat",
+    "duration_s": 5.046,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_250mm",
+    "cm": 25.0,
+    "direction": "retreat",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_260mm",
+    "cm": 26.0,
+    "direction": "retreat",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_270mm",
+    "cm": 27.0,
+    "direction": "retreat",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_280mm",
+    "cm": 28.0,
+    "direction": "retreat",
+    "duration_s": 5.0,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_290mm",
+    "cm": 29.0,
+    "direction": "retreat",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  },
+  {
+    "phase": "retreat_hold_300mm",
+    "cm": 30.0,
+    "direction": "retreat",
+    "duration_s": 5.047,
+    "maximum_position_error_pulse": 0
+  }
+]

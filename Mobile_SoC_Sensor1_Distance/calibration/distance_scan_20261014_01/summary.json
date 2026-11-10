@@ -1,0 +1,1442 @@
+{
+  "project": "Mobile_SoC_Sensor1_Distance",
+  "image_sha256": "8cdef58fe86c587d46e9d981133e9c44d8b806660f29345503fafec765430192",
+  "success": false,
+  "motion_commands_sent": 0,
+  "sensor_commands_sent": 0,
+  "coordinate_reset": false,
+  "drive_rom_written": false,
+  "speed_mm_s": 20,
+  "settle_s": 2,
+  "record_s": 5,
+  "requested_cm": [
+    30,
+    29,
+    28,
+    27,
+    26,
+    25,
+    24,
+    23,
+    22,
+    21,
+    20,
+    19,
+    18,
+    17,
+    16,
+    15,
+    14,
+    13,
+    12,
+    11,
+    10,
+    9,
+    8,
+    7,
+    6,
+    5,
+    4,
+    3,
+    2,
+    1
+  ],
+  "baseline_policy": {
+    "target": 40000000,
+    "window_s": 10,
+    "mean_tolerance": 100,
+    "half_window_change_limit": 30,
+    "std_limit": 150,
+    "stable_windows": 5
+  },
+  "started_epoch_s": 1791954589.2656677,
+  "holds": [],
+  "initial_motor_status": [
+    0,
+    0,
+    64,
+    4194304,
+    0,
+    0,
+    0,
+    0,
+    65535
+  ],
+  "initial_parameters": {
+    "0": [
+      0,
+      9
+    ],
+    "1": [
+      0,
+      500000
+    ],
+    "2": [
+      0,
+      1
+    ],
+    "3": [
+      0,
+      100
+    ],
+    "4": [
+      0,
+      100
+    ],
+    "12": [
+      0,
+      134217727
+    ],
+    "13": [
+      0,
+      -134217727
+    ]
+  },
+  "failure": "RuntimeError('Stop requested')",
+  "stop_result": 0,
+  "stopped_status": [
+    0,
+    0,
+    64,
+    4194304,
+    0,
+    0,
+    0,
+    0,
+    65535
+  ],
+  "capture": {
+    "failure": null,
+    "ids": {
+      "0x43": 5634,
+      "0x44": 5634,
+      "0x41": 5634,
+      "0x42": 5634
+    },
+    "complete_snapshots": 5633,
+    "partial_discarded": 0,
+    "errors": [],
+    "controller_states": [
+      {
+        "host_monotonic_ns": 1678312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1678812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1679312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1679812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1680312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1680812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1681312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1681812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1682312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1682812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1683312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1683812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1684312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1684812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1685312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1685812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1686312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1686812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1687312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1687812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1688312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1688812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1689312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1689812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1690312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1690812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1691312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1691812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1692312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1692812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1693312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1693812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1694312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1694812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1695312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1695812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1696312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1696812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1697312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1697812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1698312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1698812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1699312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1699812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1700312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1700812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1701312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1701812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1702312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1702812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1703312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1703812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1704312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1704812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1705312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1705812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1706312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1706812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1707312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1707812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1708312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1708812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1709312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1709812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1710312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1710812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1711312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1711812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1712312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1712812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1713312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1713812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1714312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1714812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1715312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1715812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1716312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1716812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1717312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1717812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1718312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1718812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1719312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1719812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1720312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1720812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1721312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1721812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1722312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1722812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1723312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1723812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1724312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1724812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1725312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1725812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1726312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1726812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1727312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1727812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1728312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1728812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1729312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1729812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1730312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1730812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1731312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1731812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1732312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1732812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1733312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1733812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1734312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1734812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1735312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1735812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1736312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1736812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1737312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1737812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1738312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1738812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1739312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1739812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1740312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1740812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1741312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1741812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1742312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1742812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1743312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1743812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1744312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1744812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1745312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1745812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1746312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1746812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1747312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1747812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1748312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1748812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1749312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1749812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1750312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1750812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1751312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1751812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1752312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1752812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1753312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1753812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1754312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1754812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1755312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1755812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1756312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1756812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1757312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1757812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1758312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1758812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1759312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1759812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1760312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1760812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1761312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1761812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1762312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1762812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1763312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1763812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1764312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1764812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1765312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1765812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1766312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1766812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1767312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1767812000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 1768312000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      }
+    ],
+    "sensor_commands_sent": 0,
+    "controller_started_from_ininit": true,
+    "controller_reset_before_capture": false,
+    "controller_reset_denied": false,
+    "error_frame_monitoring_enabled": true,
+    "initial_controller_overrun_latched": false,
+    "initial_controller": {
+      "status": 16,
+      "opmode": 5,
+      "btr0": 0,
+      "btr1": 0
+    },
+    "recording_initial_controller": {
+      "status": 0,
+      "opmode": 5,
+      "btr0": 0,
+      "btr1": 20
+    },
+    "latest_snapshot": {
+      "host_monotonic_ns": 1768640000000,
+      "end_monotonic_ns": 1768656000000,
+      "span_ms": 16.0,
+      "raw0": 8267878,
+      "raw1": 10873657,
+      "compensated": 40000289,
+      "cap_mm": 679,
+      "fusion_mm": 262,
+      "tof_mm": 252,
+      "status_hex": "FFCF800000005878",
+      "status_bits": 255,
+      "line_bits": 207,
+      "hal_byte": 128,
+      "raw_flags": 0,
+      "tof_api": 0,
+      "can_queue_count": 0,
+      "read_count": 88,
+      "tof_count": 120,
+      "init_hal": 0,
+      "ch0_hal": 0,
+      "ch1_hal": 0,
+      "chip_type": 2,
+      "diagnostic_transport_valid": 1,
+      "chip_ready": 1,
+      "ch0_valid": 1,
+      "ch1_valid": 1,
+      "tof_ready": 1,
+      "tof_fresh": 1,
+      "fusion_valid": 1,
+      "ema_ready": 1,
+      "sensing_on": 1,
+      "phase": "baseline_30cm"
+    }
+  },
+  "ended_epoch_s": 1791954681.9730594
+}

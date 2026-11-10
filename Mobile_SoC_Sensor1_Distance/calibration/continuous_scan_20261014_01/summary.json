@@ -1,0 +1,165 @@
+{
+  "project": "Mobile_SoC_Sensor1_Distance",
+  "image_sha256": "8cdef58fe86c587d46e9d981133e9c44d8b806660f29345503fafec765430192",
+  "success": false,
+  "profile": "continuous 300->10->300mm, no intermediate dwells",
+  "speed_mm_s": 5.0,
+  "pulses_per_mm": 1000,
+  "zero_gap_mm": 300,
+  "mean_tolerance_count": 500,
+  "coordinate_reset": false,
+  "drive_rom_written": false,
+  "motion_commands_sent": 1,
+  "sensor_commands_sent": 0,
+  "events": [
+    {
+      "event": "MOVE_START",
+      "host_monotonic_ns": 2113281000000,
+      "phase": "return_to_30cm_before_baseline",
+      "target_pulse": 0,
+      "speed_mm_s": 20
+    }
+  ],
+  "started_epoch_s": 1791955024.0284114,
+  "initial_motor_status": [
+    0,
+    131072,
+    578,
+    5767168,
+    60000,
+    60000,
+    0,
+    0,
+    65535
+  ],
+  "initial_parameters": {
+    "0": [
+      0,
+      9
+    ],
+    "1": [
+      0,
+      500000
+    ],
+    "2": [
+      0,
+      1
+    ],
+    "3": [
+      0,
+      100
+    ],
+    "4": [
+      0,
+      100
+    ],
+    "12": [
+      0,
+      134217727
+    ],
+    "13": [
+      0,
+      -134217727
+    ]
+  },
+  "failure": "RuntimeError('Motor fault, following error, or envelope violation: (0, 131072, 584, 2354053120, 54862, 54962, -101, 19988, 65535)')",
+  "stop_result": 0,
+  "stopped_status": [
+    0,
+    131072,
+    576,
+    72351744,
+    53458,
+    53459,
+    -1,
+    0,
+    65535
+  ],
+  "parameter_restore_results": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0
+  },
+  "capture": {
+    "failure": null,
+    "ids": {
+      "0x43": 55,
+      "0x44": 54,
+      "0x41": 54,
+      "0x42": 54
+    },
+    "complete_snapshots": 53,
+    "partial_discarded": 0,
+    "errors": [],
+    "controller_states": [
+      {
+        "host_monotonic_ns": 2113078000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      },
+      {
+        "host_monotonic_ns": 2113578000000,
+        "status": 0,
+        "opmode": 5,
+        "receiver_overrun": false,
+        "fifo_percent": 0
+      }
+    ],
+    "sensor_commands_sent": 0,
+    "controller_started_from_ininit": true,
+    "controller_reset_before_capture": false,
+    "controller_reset_denied": false,
+    "error_frame_monitoring_enabled": true,
+    "initial_controller_overrun_latched": false,
+    "initial_controller": {
+      "status": 16,
+      "opmode": 5,
+      "btr0": 0,
+      "btr1": 0
+    },
+    "recording_initial_controller": {
+      "status": 0,
+      "opmode": 5,
+      "btr0": 0,
+      "btr1": 20
+    },
+    "latest_snapshot": {
+      "host_monotonic_ns": 2113781000000,
+      "end_monotonic_ns": 2113796000000,
+      "span_ms": 15.0,
+      "raw0": 8267594,
+      "raw1": 10873191,
+      "compensated": 40000065,
+      "cap_mm": 286,
+      "fusion_mm": 192,
+      "tof_mm": 192,
+      "status_hex": "FF8F800000002A3D",
+      "status_bits": 255,
+      "line_bits": 143,
+      "hal_byte": 128,
+      "raw_flags": 0,
+      "tof_api": 0,
+      "can_queue_count": 0,
+      "read_count": 42,
+      "tof_count": 61,
+      "init_hal": 0,
+      "ch0_hal": 0,
+      "ch1_hal": 0,
+      "chip_type": 2,
+      "diagnostic_transport_valid": 1,
+      "chip_ready": 1,
+      "ch0_valid": 1,
+      "ch1_valid": 1,
+      "tof_ready": 1,
+      "tof_fresh": 1,
+      "fusion_valid": 1,
+      "ema_ready": 1,
+      "sensing_on": 1,
+      "phase": "return_to_30cm_before_baseline"
+    }
+  },
+  "ended_epoch_s": 1791955027.1863692
+}

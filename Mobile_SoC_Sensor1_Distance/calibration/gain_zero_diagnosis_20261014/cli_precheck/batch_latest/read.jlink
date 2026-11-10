@@ -1,0 +1,24 @@
+exec DisableAutoUpdateFW
+exec ForceAttachTarget=1
+exec SetAllowStopMode=0
+exec InhibitConnectRetries=1
+connect
+savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/cli_precheck/batch_latest/cpuid.bin", 0xE000ED00, 0x4
+savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/cli_precheck/batch_latest/tick_before.bin", 0x2003BEE8, 0x4
+savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/cli_precheck/batch_latest/evaluation_before.bin", 0x200047DC, 0x4
+savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/cli_precheck/batch_latest/audit_before.bin", 0x20011030, 0x4
+savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/cli_precheck/batch_latest/state_0.bin", 0x20000000, 0x10
+savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/cli_precheck/batch_latest/state_1.bin", 0x2000012C, 0x8
+savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/cli_precheck/batch_latest/state_2.bin", 0x20000298, 0xC8
+savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/cli_precheck/batch_latest/state_3.bin", 0x20004790, 0x50
+savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/cli_precheck/batch_latest/state_4.bin", 0x20011004, 0x4C
+savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/cli_precheck/batch_latest/state_5.bin", 0x2003BC50, 0x180
+savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/cli_precheck/batch_latest/state_6.bin", 0x2003BEE8, 0x4
+savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/cli_precheck/batch_latest/audit_ring.bin", 0x20011050, 0x2AC00
+savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/cli_precheck/batch_latest/evaluation_ring.bin", 0x200047E4, 0xC800
+savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/cli_precheck/batch_latest/audit_after.bin", 0x20011030, 0x4
+savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/cli_precheck/batch_latest/evaluation_after.bin", 0x200047DC, 0x4
+savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/cli_precheck/batch_latest/tick_after.bin", 0x2003BEE8, 0x4
+savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/cli_precheck/batch_latest/flash_0.bin", 0x08000000, 0x11A58
+savebin "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/gain_zero_diagnosis_20261014/cli_precheck/batch_latest/flash_1.bin", 0x08011A58, 0x80
+exit

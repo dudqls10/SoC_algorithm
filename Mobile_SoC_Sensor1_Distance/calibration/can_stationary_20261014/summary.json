@@ -1,0 +1,185 @@
+{
+  "failure": null,
+  "ids": {
+    "0x41": 1002,
+    "0x42": 1001,
+    "0x43": 1001,
+    "0x44": 1001,
+    "0x45": 1001,
+    "0x46": 1001
+  },
+  "complete_snapshots": 1001,
+  "partial_discarded": 0,
+  "errors": [],
+  "controller_states": [
+    {
+      "host_monotonic_ns": 873859000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 874359000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 874859000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 875359000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 875859000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 876359000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 876859000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 877359000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 877859000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 878359000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 878859000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 879359000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 879859000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 880359000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 880859000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 881359000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 881859000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 882359000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 882859000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 883359000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    },
+    {
+      "host_monotonic_ns": 883859000000,
+      "status": 0,
+      "opmode": 5,
+      "receiver_overrun": false,
+      "fifo_percent": 0
+    }
+  ],
+  "sensor_commands_sent": 0,
+  "controller_started_from_ininit": true,
+  "controller_reset_before_capture": false,
+  "controller_reset_denied": false,
+  "error_frame_monitoring_enabled": true,
+  "initial_controller_overrun_latched": false,
+  "initial_controller": {
+    "status": 16,
+    "opmode": 0,
+    "btr0": 0,
+    "btr1": 0
+  },
+  "recording_initial_controller": {
+    "status": 0,
+    "opmode": 5,
+    "btr0": 0,
+    "btr1": 20
+  },
+  "latest_snapshot": null,
+  "mobile_four_frame_protocol_observed": false,
+  "motor_commands_sent": 0,
+  "decode_warning": "Observed 0x41..0x46: previous six-frame firmware. Mobile four-frame decoded snapshots are invalid and must not be used for calibration."
+}

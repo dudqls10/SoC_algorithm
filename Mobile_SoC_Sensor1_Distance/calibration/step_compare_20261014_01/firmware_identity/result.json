@@ -1,0 +1,7 @@
+{
+  "epoch_s": 1791966287.1585183,
+  "halt_reset_write_commands": 0,
+  "identified": false,
+  "connect_result": -1,
+  "failure": "RuntimeError('Read-only SWD attachment unavailable')"
+}

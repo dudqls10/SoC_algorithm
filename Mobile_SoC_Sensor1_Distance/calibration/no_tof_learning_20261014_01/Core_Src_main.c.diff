@@ -1,0 +1,29 @@
+--- before/Core/Src/main.c
++++ Core/Src/main.c
+@@ -1885,21 +1885,14 @@
+ 
+ 	/* Linear Regression */
+ 	uint32_t learning_tick = HAL_GetTick();
+-	uint8_t learning_tof_valid = (uint8_t)((tof.state[0] != 0U) &&
+-	        mobile_tof_seen && mobile_tof_quality_valid && tof_read_status == 0 &&
+-	        tof.distance[0] != 0U &&
+-	        (uint32_t)(learning_tick - mobile_tof_tick) <= DRIFT_LEARN_TOF_FRESH_MS);
+-	DriftLearningGuardStep(&drift_learning_guard, learning_tick, fdc.ch300, fdc.ch302,
+-	        1U, state.idle_fdcQ1, tof_read_count, tof.distance[0], learning_tof_valid);
+-	/* The first fitted model and existing clear/ToF/residual checks must
+-	 * be ready before measuring its post-EMA noise. Hold model updates
+-	 * during calibration so a moving offset cannot inflate that noise. */
++	DriftLearningGuardStepCapOnly(&drift_learning_guard, learning_tick,
++	        fdc.ch300, fdc.ch302, 1U, state.idle_fdcQ1);
++	/* Measure post-EMA noise after CAP clear/object/residual checks. ToF
++	 * output remains available to distance fusion, independently of learning.
++	 * Hold model updates while collecting the fixed-model noise reference. */
+ 	uint8_t noise_clear = (uint8_t)(drift_learning_guard.ready &&
+ 	        drift_learning_guard.allowed && drift_learning_guard.reason == 0U &&
+ 	        flag_DOinit && ema2_initialized && state.idle_fdcQ1 == 0U);
+-	#if ToF
+-	noise_clear = (uint8_t)(noise_clear && learning_tof_valid);
+-	#endif
+ 	DriftNoiseReferenceStep(&drift_noise_reference, learning_tick,
+ 	        dComps.fdc_Q1, noise_clear);
+ 	if((count_sampling % peroid_sampling) == 0)

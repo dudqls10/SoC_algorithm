@@ -1,0 +1,125 @@
+기존 22cm 보드: 초기화·gain·학습 보호 실측 비교
+2026-10-14 / 1·2·3차 사용자 전원 재인가 시험
+
+확인된 결론
+제가 추가한 ToF/잔차 학습 보호 및 잡음 기준 준비 순서 때문에, 첫 모델 뒤에 후속 학습이 막히는 흐름을 실제 보드에서 확인했다.
+초기화 뒤 provisional gain0.4000은 관측됐고, 완성된 첫 gain은 세 회 모두 입력 표본의 공분산/분산으로 정확히 설명됐다.
+세 회 모두 첫 gain은 양수였다. 이번 반복 시험에서 gain0 하한 제한 및 gain0 지속을 직접 재현한 것은 아니다.
+직접 확인한 현상은 부팅마다 달라진 작은 첫 gain이 잡음 기준 미완료와 학습 보류로 유지되는 것이다.
+오늘 앞선22cm 거리 시험 당시에도 정확히 같은 부팅 경로였는지는 그때 RAM/부팅 기록이 없어 확정하지 못한다.
+
+회차별 결과
+회차  첫 모델 시각  첫 gain  첫 모델 이후 갱신  잡음 기준 ready
+1     22.782초     0.0112   0회                 0
+2     30.382초     0.1134   0회                 0
+3     35.782초     0.0994   0회                 0
+
+세 회 모두 사용자 확인상 같은 기존 보드·30cm 위치, 전원10초 OFF 후 ON 조건이다.
+모터 COM9가 없어 실제 위치를 PC로 재검증하지 못했으며,30cm는 사용자 확인에 근거한다. 전원OFF시간도 전압 계측이 아닌 사용자 확인값이다.
+모터 이동, 센서 명령, 자동 리셋, Flash 및 target memory write/halt 명령을 보내지 않았다. 실행 펌웨어는 시험 내내 유지했다.
+
+첫 gain은 어떻게 달라졌는가
+회차  numerator  denominator  sensor_variance  표본 상관계수
+1     25852      2304743      1099074          0.0162431191
+2     402990     3552216      1107193          0.2032043126
+3     255475     2569127      994895           0.1597964022
+
+각 부팅의 완성 모델에 사용된80개 입력(learning_updates2..81)을 감사 기록에서 전부 복원했다.
+정수 평균 CH0/CH1, numerator, denominator, sensor_variance가 세 회 모두 RAM 기록과 정확히 일치한다.
+따라서 이 세 회에서는 회귀 산술이나 계수 저장이 기록과 다르게 수행된 증거가 없다.
+양의 numerator/denominator가 작은 gain으로 이어졌다. 음수 회귀 gain을0으로 제한하는 분기는 이번 첫 모델들에서는 실행 결과로 나타나지 않았다.
+
+첫 표본 채택 시각은 세 회 모두5.591초였으나 완성 모델까지 걸린 시간은17.191/24.791/30.191초로 달랐다.
+현재 코드는 첫 모델 이전에도 ToF 보호로 표본 채택을 보류할 수 있다. 따라서 같은80개 개수라도 실제 채택된 시간과 입력의 상관이 달라진다.
+기동 중 입력 변화와 ToF 허용 시점 차이는 첫 gain 변동의 경로로 확인된다. 왜 입력의 물리적 상관 자체가10/13과 달랐는지는 별도 비교가 남아 있다.
+learning_updates81은 초기 표본 적재 카운터가 포함된 값이며,81개의 완성 모델을 학습했다는 의미가 아니다.
+
+공통 학습 보류 경로
+1. 첫 모델이 guard.ready=1이 되면 noise_reference.ready=1이 될 때까지 추가 회귀학습을 보류한다.
+2. noise 기준 수집은 guard.allowed=1, reason0, 검출기/EMA 준비, object0, 유효 ToF를 요구한다.
+3. ToF 근접·잔차·object 등의 reason이 있으면 clear 타이머와 대기 표본을 초기화한다.
+4. clear 연속2초를 통과한 뒤에도 잡음 기준은1초 settle 및5초/500표본 이상을 필요로 한다.
+5. 근접 판정이 반복되면 잡음 측정이 완료되지 않고, 기준을 바꿀 회귀 갱신도 계속 보류된다.
+
+초기16개 ToF 표본으로 설정된 기준과 경계
+회차  기준mm    ToF sigma mm  근접 진입 경계mm  해제 경계mm
+1     296.3125  1.2103073     291.3125          293.3125
+2     295.8125  1.8445443     288.4343          292.1234
+3     294.8750  1.0532687     289.8750          291.8750
+
+진입은 tof<reference-max(5mm,4*sigma), 해제는 tof>=reference-max(3mm,2*sigma)이다.
+1차 첫 모델 이후~180초의 기록에서 ToF는283~300mm였다. 고정 위치라는 사용자 확인에도 경계를 자주 넘었다.
+3차의 첫 모델 이후180초까지144.218초 중 TOF_NEAR 비트가109.999초 동안 켜졌다. WAIT_CLEAR도29.439초였다. 이 구간에서 guard.allowed인 시간은0이었다.
+1차의 같은 구간에서는 allowed가 총0.400초 있었지만 연속 잡음 기준 준비에는 부족했다.
+세 회 모두 감사 기록의 noise_reference_samples 최대값0, noise.ready 비트0이었다.
+30cm에 실험판이 존재하므로, 이 기록은 완전 무물체 조건의 시험이라고 표시하지 않는다. 고정된 상대 기준에서의 부팅 비교다.
+
+코드 위치
+- Core/Src/main.c:1008 InitializeCompensation
+- Core/Src/main.c:1445 TrainDelayedQ1Pair
+- Core/Src/main.c:1897 noise_clear 조건
+- Core/Src/main.c:1910 DriftNoiseReferenceAllowsLearning 조건
+- Core/Inc/drift_learning_guard.h:137 ToF 진입/해제 경계
+- Core/Inc/drift_learning_guard.h:172 보호 사유 발생 시 clear 초기화
+- Core/Inc/drift_learning_guard.h:193 연속2초 clear 조건
+- Core/Inc/drift_noise_reference.h:47 첫 모델 이후 noise.ready까지 학습 보류
+- Core/Inc/drift_noise_reference.h:54 잡음 기준 수집
+
+실측 입력을 사용한 오프라인 분리
+1차 filtered CH0/CH1, 직전 EMA, ToF, object flags15726개를 production guard/noise 헤더로 재생했다(MSVC C11 /W4 /WX 성공).
+실제 입력 재생에서는 noise.ready0, peak_samples0이었다.
+ToF만296mm로 고정한 가상 비교에서는 약30.881초에501표본으로 noise.ready1이 됐다.
+object만0으로 바꾼 가상 비교에서는 여전히 noise.ready0이었다.
+이 결과는 초기 ToF 변동이 잡음 기준 준비를 막는다는 경로를 지지한다.
+evaluation tick에 따른 근사 주기와 유효 ToF 품질을 가정한 부분 재생이며, 전체 MCU의 bit-exact 재생이나 수정 후 실측 결과가 아니다.
+보호 해제 또는 ToF 고정값 사용을 해결책으로 제안하는 시험도 아니다.
+
+SWD 대조 및 별도 입력 오류
+1·2차는 RAM을 반복 읽었다.2차에서는82.780초에 첫 입력 invalid가 기록됐으며 해당 사이클의 센서 읽기에 약52.656ms가 걸렸다.
+fdc_diag_first_error0x20은 설치된 STM32 HAL 정의상 I2C timeout이다. 이후 INVALID 보호가 추가 학습을 막았다.
+따라서2차의82.780초 이후 보류를 전부 ToF 원인으로 해석하면 안 된다. 최초 모델 이후 입력이 유효했던 구간에서도 ToF 보류와 noise.ready0은 관측됐다.
+3차에서는 사용자 재인가 후3분 이상 SWD 읽기를 하지 않고, 약237초에 감사 링을 한 배치 읽었다.
+3차에서도 작은 첫 gain0.0994, 후속 갱신0, ToF 보류, 잡음 기준 미준비가 확인됐다.
+3차의 최종 RAM 카운터는 valid_cycles23070/invalid_skips0이며 첫 FDC 오류 기록도 없었다.
+따라서 공통 학습 보류 현상은 반복 SWD 읽기를 하지 않은 부팅에서도 재현됐다.
+2차 I2C timeout과 반복 SWD 읽기의 인과관계는 부팅별 센서 상태 차이라는 변수가 있어 이 비교만으로 확정하지 않는다.
+
+실행 이미지와 과거26cm/22cm와의 관계
+STM32 CPUID0x411fc271(Cortex-M7), 처음 연결 시 VTref3.306V를 확인했다.
+읽은 실제 Flash의 모든 load 구간은 현재 Sensor1 ELF와 일치한다.
+ELF SHA256:4ec2d08914b313e4735c68d23808e82a5215cbb8a7f3b9418b444ef769e515f6.
+현재 이미지에는 오늘 적용된 거리/ToF 보정 등이 있으므로10/13 26cm 이미지와 전체 바이너리가 같은 것은 아니다.
+회귀·초기화·보호·EMA 관련 함수 소스의 비교는 별도 code_comparison_20261013_20261014 자료에 있다.
+ToF에는 현재0.8978048056*raw+65.22306168 보정과 반올림이 적용된다. 보호 기준도 이 보정값에서 학습한다. 상수 offset은 상대 비교에서 상쇄되지만 최소5mm 경계와 반올림 때문에 이전 입력과 완전히 동일한 판정이라고 단정하지 않는다.
+10/13 RAM gain0.7358은 직접 관측값이다. 오늘 앞선22cm 측정의 gain약0은 CAN 회귀 모델로 추정한 값이었다.
+이번 세 회의 gain은 직접 RAM으로 읽었으며 모두 양수다. 따라서 당시 gain0의 직접 원인까지 재현했다는 표현은 사용하지 않는다.
+10/13 저녁 커스텀 SoC 수정 이력과 실제 CH0 반응/복귀 drift 차이도 남아 있어26→22cm 차이 전체를 이번 경로 하나로 확정하지 않는다.
+이번에는 커스텀 SoC 자체의 현재 Flash를 읽지 않았다.
+
+기록 품질과 공백
+- 세 회 모두 첫 감사 sequence1부터 복원됐으며, 수집된 해당 부팅 감사 sequence 사이의 누락은0이다. 마지막 in-flight/최근 레코드는 보수적으로 제외했다.
+- 모든 회차의 bootstrap80개 입력이 복원됐고 정수 연산 재계산과 정확히 일치했다.
+-1차 native DLL 수집기는 읽기 실패 뒤 멈춰 해당 수집기만 종료했다. 이미 flush된 원본은 보존됐으나 CAN 종료 summary는 없었다. 이후 CLI 하위 프로세스8초 timeout을 사용했다.
+-2차 대기 수집기는20분 제한으로 사용자 답변 전에 종료됐다. 재인가 답변 후 수신을 재개했으며, 첫 RAM 읽기 시점은 부팅 약40.6초다. 초반 CAN/evaluation 기록에 공백이 있지만 감사 링에 남은 첫 모델 표본은 전부 복원됐다.
+-3차 CAN 수집기는 Windows 상태 파일 교체가 읽기 잠금으로 실패해 중간 종료됐다. 새 부팅의 CAN 원본은113.484초/6993스냅샷이며 이 구간의 CH0/CH1 invalid는0이다. CAN180초 연속 기록을 완성한 것은 아니다.
+-3차 종료 RAM 감사 링은237초까지 보존돼 있어,3분 이상의 모델/보호/유효 카운터 비교는 가능했다.
+-3차 RAM 직전/직후 status.json 값은 오래된 파일이었다. 그 값255/255를 즉시 전후 상태 검증으로 사용하지 않는다. control_RAM_timing_audited.json에 stale을 표시했다.
+- 상태 파일 잠금 시 수신을 계속하고 재시도하도록 수집기를 수정했다. 전원 재인가 없이 수행한 final_CAN_check12초에서699개의 완성 스냅샷과 정상 CH0/CH1 상태를 확인했다. 수신 오류 프레임은0이며 어댑터의 기존 overrun latched 상태는 남아 있었다. 과거 누락이 없었다는 보증으로 해석하지 않는다.
+- 초기 compact 이벤트의 object 키는 flag_algorithmDO(검출 알고리즘 활성)의 라벨 오류였다. 분석의 실제 object는 audit/evaluation flags bit2/CAN line_bits bit6에서 읽었다. 이후 라벨을 detector_enabled로 고쳤고 종료 RAM에는 실제 state.idle_fdcQ1도 따로 읽었다. 원본 이벤트는 유지했다.
+- 최종 측정 수집기는 모두 종료됐다. 보드 전원이나 위치를 바꾸는 명령은 보내지 않았다.
+
+파일
+boot_comparison.json / boot_comparison.csv: 회차별 수치 및 품질 제한
+live_boot_01/continuous:1차 CAN/RAM 원본
+live_boot_02_after_reply:2차 재개 후 CAN/RAM 및 복원 감사 원본
+live_boot_03_can_control:3차 CAN 원본 및 종료 summary
+live_boot_03_end_RAM:3차 종료 시 RAM 감사 원본
+recorded_replay_result.json:1차 실제 입력 보호 함수 재생 결과
+control_RAM_timing_audited.json:3차 상태 파일 freshness 검증
+final_CAN_check: 마지막12초 현재 상태 재확인
+
+수정 검토의 초점
+초기16개 ToF 표본이 이후 변동을 대표하는지, 기동 안정화와 운전 중 근접 보호를 어떻게 구분할지가 우선 검토 대상이다.
+첫 모델 신뢰도를 확인하고 잡음 기준 준비가 장기간 실패했을 때 초기 모델이 계속 유지되는 경로도 정리해야 한다.
+해결 검증에는 초기 모델 안정성뿐 아니라 실제 물체 접근 시 학습 오염 방지와 기존 검출 반응 보존이 필요하다.
+현재 production 코드는 수정하지 않았고 수정안을 실기기에 적용한 결과도 아니다.

@@ -1,0 +1,12 @@
+../Drivers/VL53L1X/platform/vl53l1_platform.c:55:5:_I2CWrite	40	static
+../Drivers/VL53L1X/platform/vl53l1_platform.c:74:5:_I2CRead	40	static
+../Drivers/VL53L1X/platform/vl53l1_platform.c:94:12:_I2CMemRead	48	static
+../Drivers/VL53L1X/platform/vl53l1_platform.c:110:8:VL53L1_WriteMulti	32	static
+../Drivers/VL53L1X/platform/vl53l1_platform.c:126:8:VL53L1_ReadMulti	32	static
+../Drivers/VL53L1X/platform/vl53l1_platform.c:134:8:VL53L1_WrByte	32	static
+../Drivers/VL53L1X/platform/vl53l1_platform.c:149:8:VL53L1_WrWord	32	static
+../Drivers/VL53L1X/platform/vl53l1_platform.c:165:8:VL53L1_WrDWord	32	static
+../Drivers/VL53L1X/platform/vl53l1_platform.c:181:8:VL53L1_RdByte	32	static
+../Drivers/VL53L1X/platform/vl53l1_platform.c:185:8:VL53L1_RdWord	40	static
+../Drivers/VL53L1X/platform/vl53l1_platform.c:192:8:VL53L1_RdDWord	40	static
+../Drivers/VL53L1X/platform/vl53l1_platform.c:199:8:VL53L1_WaitMs	24	static

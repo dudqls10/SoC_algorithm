@@ -1,0 +1,21 @@
+--- before/Core/Inc/drift_learning_guard.h
++++ Core/Inc/drift_learning_guard.h
+@@ -206,6 +206,18 @@
+     return 1U;
+ }
+ 
++/* Sensor1 CAP-only admission. Drop any optical latch so neither a noisy nor
++ * an unavailable ToF measurement can hold CAP learning or noise calibration. */
++static inline uint8_t DriftLearningGuardStepCapOnly(DriftLearningGuard *g,
++        uint32_t tick, uint32_t ch0, uint32_t ch1, uint8_t pair_valid,
++        uint8_t object)
++{
++    g->tof_count = 0U;
++    g->tof_near = 0U;
++    return DriftLearningGuardStep(g, tick, ch0, ch1, pair_valid, object,
++                                 0U, 0U, 0U);
++}
++
+ /* A newly admitted pair waits for later clear observations. Any pause discards
+  * the entire pending queue; committed normal samples and the model survive. */
+ static inline uint8_t DriftLearningGuardTakePair(DriftLearningGuard *g,

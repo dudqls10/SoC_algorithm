@@ -1,0 +1,782 @@
+{
+  "success": true,
+  "metadata": {
+    "experiment_date": "2026-10-14",
+    "timezone": "Asia/Seoul",
+    "label": "New sensor: v1 firmware, ferrite bead and TMP omitted",
+    "hardware_description_source": "User report",
+    "ferrite_bead": "omitted, user-reported",
+    "tmp": "omitted, user-reported",
+    "firmware": "v1 unchanged, user-reported; running image not independently read back",
+    "firmware_changes_requested": false,
+    "firmware_programming_requested": false,
+    "user_confirmed_physical_start_gap_cm": 30,
+    "user_confirmed_motor_usb_reconnected": true,
+    "motor_probe_after_reconnection": "preflight_motor_reconnected.json",
+    "coordinate_reset_authorized": false,
+    "procedure": "30->1->30cm, one roundtrip, 10mm steps, 5s confirmed stationary holds, 20mm/s",
+    "baseline_seconds": 30,
+    "final_baseline_seconds": 30,
+    "signal_plot_policy": "Every original received raw and EMA sample; no averaging, resampling, or baseline subtraction in time plots",
+    "today_reference": "C:/Users/SongYoungBin/Desktop/Soc/Mobile_SoC_Experiments/Mobile_SoC_Sensor1_Distance/calibration/step_compare_20261014_01",
+    "october_7_reference_candidate": "C:/Users/SongYoungBin/Desktop/Codex_\uc791\uc5c5\uc790\ub8cc/03_\uc2e4\ud5d8_\ubd84\uc11d/raw_plateau_flags_20261007/completed_five_cycles",
+    "comparison_policy": "Compare overlapping distances and directions; explicitly retain differing firmware, hardware, and measurement conditions"
+  },
+  "baseline": {
+    "raw_ch0": {
+      "n": 1550,
+      "mean": 8919064.861935483,
+      "sigma": 238.87432165395717,
+      "min": 8918503,
+      "max": 8919743,
+      "threshold_3sigma": 716.6229649618715
+    },
+    "raw_ch1": {
+      "n": 1550,
+      "mean": 10984853.258064516,
+      "sigma": 307.15686453039433,
+      "min": 10983997,
+      "max": 10985884,
+      "threshold_3sigma": 921.4705935911829
+    },
+    "post_ema": {
+      "n": 1550,
+      "mean": 40235809.56774194,
+      "sigma": 27.901449586412085,
+      "min": 40235756,
+      "max": 40235978,
+      "threshold_3sigma": 83.70434875923625
+    }
+  },
+  "returned_baseline": {
+    "raw_ch0": {
+      "n": 1537,
+      "mean": 8919059.540013012,
+      "sigma": 243.17369610495206,
+      "min": 8918463,
+      "max": 8919248,
+      "delta_from_start": -5.321922471746802,
+      "return_shift_ratio_3sigma": 0.007426391187491402
+    },
+    "raw_ch1": {
+      "n": 1537,
+      "mean": 10985327.22446324,
+      "sigma": 246.24850565349007,
+      "min": 10984628,
+      "max": 10986060,
+      "delta_from_start": 473.9663987234235,
+      "return_shift_ratio_3sigma": 0.514358680591496
+    },
+    "post_ema": {
+      "n": 1537,
+      "mean": 40235802.042940795,
+      "sigma": 27.353863200124067,
+      "min": 40235741,
+      "max": 40235887,
+      "delta_from_start": -7.524801142513752,
+      "return_shift_ratio_3sigma": 0.08989737396031573
+    }
+  },
+  "detection": {
+    "raw_ch0": {
+      "target_negative": {
+        "approach_farthest_cm": 15.0,
+        "retreat_farthest_cm": 15.0,
+        "both_contiguous_from1cm_max_cm": 15,
+        "turnaround1cm_measured_once": true
+      },
+      "absolute": {
+        "approach_farthest_cm": 15.0,
+        "retreat_farthest_cm": 15.0,
+        "both_contiguous_from1cm_max_cm": 15,
+        "turnaround1cm_measured_once": true
+      },
+      "linear_return_drift_sensitivity": {
+        "approach_farthest_cm": 15.0,
+        "retreat_farthest_cm": 15.0,
+        "both_contiguous_from1cm_max_cm": 15,
+        "turnaround1cm_measured_once": true
+      }
+    },
+    "raw_ch1": {
+      "target_negative": {
+        "approach_farthest_cm": null,
+        "retreat_farthest_cm": null,
+        "both_contiguous_from1cm_max_cm": 0,
+        "turnaround1cm_measured_once": true
+      },
+      "absolute": {
+        "approach_farthest_cm": 3.0,
+        "retreat_farthest_cm": 3.0,
+        "both_contiguous_from1cm_max_cm": 3,
+        "turnaround1cm_measured_once": true
+      },
+      "linear_return_drift_sensitivity": {
+        "approach_farthest_cm": null,
+        "retreat_farthest_cm": null,
+        "both_contiguous_from1cm_max_cm": 0,
+        "turnaround1cm_measured_once": true
+      }
+    },
+    "post_ema": {
+      "target_negative": {
+        "approach_farthest_cm": 21.0,
+        "retreat_farthest_cm": 21.0,
+        "both_contiguous_from1cm_max_cm": 21,
+        "turnaround1cm_measured_once": true
+      },
+      "absolute": {
+        "approach_farthest_cm": 21.0,
+        "retreat_farthest_cm": 21.0,
+        "both_contiguous_from1cm_max_cm": 21,
+        "turnaround1cm_measured_once": true
+      },
+      "linear_return_drift_sensitivity": {
+        "approach_farthest_cm": 21.0,
+        "retreat_farthest_cm": 21.0,
+        "both_contiguous_from1cm_max_cm": 21,
+        "turnaround1cm_measured_once": true
+      }
+    }
+  },
+  "today_detection": {
+    "raw_ch0": {
+      "target_negative": {
+        "approach_farthest_cm": 18.0,
+        "retreat_farthest_cm": 18.0,
+        "both_contiguous_from1cm_max_cm": 18,
+        "turnaround1cm_measured_once": true
+      },
+      "absolute": {
+        "approach_farthest_cm": 18.0,
+        "retreat_farthest_cm": 18.0,
+        "both_contiguous_from1cm_max_cm": 18,
+        "turnaround1cm_measured_once": true
+      },
+      "linear_return_drift_correction_sensitivity": {
+        "approach_farthest_cm": 18.0,
+        "retreat_farthest_cm": 19.0,
+        "both_contiguous_from1cm_max_cm": 18,
+        "turnaround1cm_measured_once": true
+      }
+    },
+    "raw_ch1": {
+      "target_negative": {
+        "approach_farthest_cm": 7.0,
+        "retreat_farthest_cm": 7.0,
+        "both_contiguous_from1cm_max_cm": 0,
+        "turnaround1cm_measured_once": true
+      },
+      "absolute": {
+        "approach_farthest_cm": 7.0,
+        "retreat_farthest_cm": 7.0,
+        "both_contiguous_from1cm_max_cm": 2,
+        "turnaround1cm_measured_once": true
+      },
+      "linear_return_drift_correction_sensitivity": {
+        "approach_farthest_cm": 7.0,
+        "retreat_farthest_cm": 7.0,
+        "both_contiguous_from1cm_max_cm": 0,
+        "turnaround1cm_measured_once": true
+      }
+    },
+    "post_ema": {
+      "target_negative": {
+        "approach_farthest_cm": 23.0,
+        "retreat_farthest_cm": 22.0,
+        "both_contiguous_from1cm_max_cm": 22,
+        "turnaround1cm_measured_once": true
+      },
+      "absolute": {
+        "approach_farthest_cm": 23.0,
+        "retreat_farthest_cm": 30.0,
+        "both_contiguous_from1cm_max_cm": 22,
+        "turnaround1cm_measured_once": true
+      },
+      "linear_return_drift_correction_sensitivity": {
+        "approach_farthest_cm": 23.0,
+        "retreat_farthest_cm": 25.0,
+        "both_contiguous_from1cm_max_cm": 23,
+        "turnaround1cm_measured_once": true
+      }
+    }
+  },
+  "today_baseline": {
+    "raw_ch0": {
+      "n": 1556,
+      "mean": 8268666.59125964,
+      "sigma": 249.6996344049171,
+      "min": 8267744,
+      "max": 8269119,
+      "threshold_3sigma": 749.0989032147513
+    },
+    "raw_ch1": {
+      "n": 1556,
+      "mean": 10873109.61118252,
+      "sigma": 278.5706347822285,
+      "min": 10872370,
+      "max": 10874139,
+      "threshold_3sigma": 835.7119043466855
+    },
+    "post_ema": {
+      "n": 1556,
+      "mean": 40001285.37339332,
+      "sigma": 65.53029813224683,
+      "min": 40000941,
+      "max": 40001527,
+      "threshold_3sigma": 196.59089439674048
+    }
+  },
+  "today_returned_baseline": {
+    "raw_ch0": {
+      "n": 1550,
+      "mean": 8268875.530322581,
+      "sigma": 253.48095387993743,
+      "min": 8267919,
+      "max": 8269247,
+      "delta_from_start": 208.9390629408881,
+      "return_shift_ratio_3sigma": 0.2789205297781481
+    },
+    "raw_ch1": {
+      "n": 1550,
+      "mean": 10872893.807096774,
+      "sigma": 262.351457952785,
+      "min": 10872000,
+      "max": 10873803,
+      "delta_from_start": -215.8040857464075,
+      "return_shift_ratio_3sigma": 0.258227846969718
+    },
+    "post_ema": {
+      "n": 1550,
+      "mean": 40001495.56387097,
+      "sigma": 78.34503966435375,
+      "min": 40001043,
+      "max": 40001637,
+      "delta_from_start": 210.1904776468873,
+      "return_shift_ratio_3sigma": 1.0691770760384327
+    }
+  },
+  "approach_response_comparison": {
+    "raw": {
+      "october7_five_cycle_range_count": [
+        3489.5352664571255,
+        3620.513677372597
+      ],
+      "today_existing_count": 4215.445551658049,
+      "new_count": 4905.76289796643,
+      "new_relative_to_today_percent": 16.375904702098687
+    },
+    "ema": {
+      "october7_five_cycle_range_count": [
+        3513.0306748449802,
+        3634.3230602666736
+      ],
+      "today_existing_count": 4211.181329719722,
+      "new_count": 4909.892925225198,
+      "new_relative_to_today_percent": 16.591819273476393
+    }
+  },
+  "new_boundary_evidence": [
+    {
+      "direction": "approach",
+      "cm": 22.0,
+      "channel": "raw_ch0",
+      "delta": -51.009222304448485,
+      "hold_sigma": 256.72068731621914,
+      "threshold_3sigma": 716.6229649618715,
+      "negative_pass": false
+    },
+    {
+      "direction": "approach",
+      "cm": 22.0,
+      "channel": "post_ema",
+      "delta": -57.238284572958946,
+      "hold_sigma": 34.23454214633215,
+      "threshold_3sigma": 83.70434875923625,
+      "negative_pass": false
+    },
+    {
+      "direction": "approach",
+      "cm": 21.0,
+      "channel": "raw_ch0",
+      "delta": -88.93048387020826,
+      "hold_sigma": 266.51611852933206,
+      "threshold_3sigma": 716.6229649618715,
+      "negative_pass": false
+    },
+    {
+      "direction": "approach",
+      "cm": 21.0,
+      "channel": "post_ema",
+      "delta": -91.98709677904844,
+      "hold_sigma": 41.28494775729978,
+      "threshold_3sigma": 83.70434875923625,
+      "negative_pass": true
+    },
+    {
+      "direction": "approach",
+      "cm": 18.0,
+      "channel": "raw_ch0",
+      "delta": -242.17588897235692,
+      "hold_sigma": 255.8882110142241,
+      "threshold_3sigma": 716.6229649618715,
+      "negative_pass": false
+    },
+    {
+      "direction": "approach",
+      "cm": 18.0,
+      "channel": "post_ema",
+      "delta": -240.32355589419603,
+      "hold_sigma": 29.42666253607338,
+      "threshold_3sigma": 83.70434875923625,
+      "negative_pass": true
+    },
+    {
+      "direction": "approach",
+      "cm": 16.0,
+      "channel": "raw_ch0",
+      "delta": -597.070268817246,
+      "hold_sigma": 318.59677682992276,
+      "threshold_3sigma": 716.6229649618715,
+      "negative_pass": false
+    },
+    {
+      "direction": "approach",
+      "cm": 16.0,
+      "channel": "post_ema",
+      "delta": -610.2052419409156,
+      "hold_sigma": 96.71342869940544,
+      "threshold_3sigma": 83.70434875923625,
+      "negative_pass": true
+    },
+    {
+      "direction": "approach",
+      "cm": 15.0,
+      "channel": "raw_ch0",
+      "delta": -1231.6554577499628,
+      "hold_sigma": 309.5965409516885,
+      "threshold_3sigma": 716.6229649618715,
+      "negative_pass": true
+    },
+    {
+      "direction": "approach",
+      "cm": 15.0,
+      "channel": "post_ema",
+      "delta": -1236.2195637971163,
+      "hold_sigma": 80.68079371392922,
+      "threshold_3sigma": 83.70434875923625,
+      "negative_pass": true
+    },
+    {
+      "direction": "retreat",
+      "cm": 15.0,
+      "channel": "raw_ch0",
+      "delta": -753.2967180926353,
+      "hold_sigma": 301.9771236862383,
+      "threshold_3sigma": 716.6229649618715,
+      "negative_pass": true
+    },
+    {
+      "direction": "retreat",
+      "cm": 15.0,
+      "channel": "post_ema",
+      "delta": -743.8641846254468,
+      "hold_sigma": 78.99363965752516,
+      "threshold_3sigma": 83.70434875923625,
+      "negative_pass": true
+    },
+    {
+      "direction": "retreat",
+      "cm": 16.0,
+      "channel": "raw_ch0",
+      "delta": -262.07983431592584,
+      "hold_sigma": 266.7678634311681,
+      "threshold_3sigma": 716.6229649618715,
+      "negative_pass": false
+    },
+    {
+      "direction": "retreat",
+      "cm": 16.0,
+      "channel": "post_ema",
+      "delta": -264.84400653094053,
+      "hold_sigma": 31.807857299607875,
+      "threshold_3sigma": 83.70434875923625,
+      "negative_pass": true
+    },
+    {
+      "direction": "retreat",
+      "cm": 18.0,
+      "channel": "raw_ch0",
+      "delta": -246.0786021500826,
+      "hold_sigma": 266.87867844727293,
+      "threshold_3sigma": 716.6229649618715,
+      "negative_pass": false
+    },
+    {
+      "direction": "retreat",
+      "cm": 18.0,
+      "channel": "post_ema",
+      "delta": -242.3385752737522,
+      "hold_sigma": 30.338149743294878,
+      "threshold_3sigma": 83.70434875923625,
+      "negative_pass": true
+    },
+    {
+      "direction": "retreat",
+      "cm": 21.0,
+      "channel": "raw_ch0",
+      "delta": -131.41795208118856,
+      "hold_sigma": 239.6141820178146,
+      "threshold_3sigma": 716.6229649618715,
+      "negative_pass": false
+    },
+    {
+      "direction": "retreat",
+      "cm": 21.0,
+      "channel": "post_ema",
+      "delta": -137.02417347580194,
+      "hold_sigma": 33.86577626768655,
+      "threshold_3sigma": 83.70434875923625,
+      "negative_pass": true
+    },
+    {
+      "direction": "retreat",
+      "cm": 22.0,
+      "channel": "raw_ch0",
+      "delta": -84.49110214971006,
+      "hold_sigma": 254.2510043329693,
+      "threshold_3sigma": 716.6229649618715,
+      "negative_pass": false
+    },
+    {
+      "direction": "retreat",
+      "cm": 22.0,
+      "channel": "post_ema",
+      "delta": -82.24690860509872,
+      "hold_sigma": 34.23939201898665,
+      "threshold_3sigma": 83.70434875923625,
+      "negative_pass": false
+    }
+  ],
+  "complete_snapshots": 24330,
+  "incomplete_or_phase_crossing_bundles": 95,
+  "step_hold_count": 58,
+  "dwell_range_s": [
+    5.0,
+    5.063
+  ],
+  "maximum_hold_position_error_pulse": 0,
+  "CAN_error_frames": 0,
+  "CAN_receiver_overruns": 0,
+  "excluded_invalid_samples": {
+    "raw_ch0": 0,
+    "raw_ch1": 0,
+    "post_ema": 0
+  },
+  "learning_parity_observed_transitions": 0,
+  "object_detected_fraction": 0.9990957665433621,
+  "final_motor_status": [
+    0,
+    131072,
+    578,
+    72876032,
+    0,
+    0,
+    0,
+    0,
+    65535
+  ],
+  "parameter_restore": {
+    "1": 0,
+    "4": 0
+  },
+  "response_15to10cm": [
+    {
+      "dataset": "october7",
+      "cycle": 1,
+      "direction": "approach",
+      "signal": "raw",
+      "mean_change_15_to10cm": -3568.8783020768315,
+      "stationary_sigma_15cm": 159.61546289551333,
+      "stationary_sigma_10cm": 162.95818349089885,
+      "turnaround10cm_shared": false
+    },
+    {
+      "dataset": "october7",
+      "cycle": 1,
+      "direction": "approach",
+      "signal": "ema",
+      "mean_change_15_to10cm": -3560.866706997156,
+      "stationary_sigma_15cm": 24.261042870328374,
+      "stationary_sigma_10cm": 30.3980463314491,
+      "turnaround10cm_shared": false
+    },
+    {
+      "dataset": "october7",
+      "cycle": 1,
+      "direction": "retreat",
+      "signal": "raw",
+      "mean_change_15_to10cm": -3365.3171497080475,
+      "stationary_sigma_15cm": 160.73077778531362,
+      "stationary_sigma_10cm": 162.95818349089885,
+      "turnaround10cm_shared": true
+    },
+    {
+      "dataset": "october7",
+      "cycle": 1,
+      "direction": "retreat",
+      "signal": "ema",
+      "mean_change_15_to10cm": -3357.4279669970274,
+      "stationary_sigma_15cm": 24.657997926761656,
+      "stationary_sigma_10cm": 30.3980463314491,
+      "turnaround10cm_shared": true
+    },
+    {
+      "dataset": "october7",
+      "cycle": 2,
+      "direction": "approach",
+      "signal": "raw",
+      "mean_change_15_to10cm": -3524.0981595087796,
+      "stationary_sigma_15cm": 163.17800867906973,
+      "stationary_sigma_10cm": 166.44041503812682,
+      "turnaround10cm_shared": false
+    },
+    {
+      "dataset": "october7",
+      "cycle": 2,
+      "direction": "approach",
+      "signal": "ema",
+      "mean_change_15_to10cm": -3513.0306748449802,
+      "stationary_sigma_15cm": 14.185832142156253,
+      "stationary_sigma_10cm": 28.53212181444443,
+      "turnaround10cm_shared": false
+    },
+    {
+      "dataset": "october7",
+      "cycle": 2,
+      "direction": "retreat",
+      "signal": "raw",
+      "mean_change_15_to10cm": -3326.098794161342,
+      "stationary_sigma_15cm": 158.06674764246134,
+      "stationary_sigma_10cm": 166.44041503812682,
+      "turnaround10cm_shared": true
+    },
+    {
+      "dataset": "october7",
+      "cycle": 2,
+      "direction": "retreat",
+      "signal": "ema",
+      "mean_change_15_to10cm": -3328.7926098257303,
+      "stationary_sigma_15cm": 29.144783705290514,
+      "stationary_sigma_10cm": 28.53212181444443,
+      "turnaround10cm_shared": true
+    },
+    {
+      "dataset": "october7",
+      "cycle": 3,
+      "direction": "approach",
+      "signal": "raw",
+      "mean_change_15_to10cm": -3489.5352664571255,
+      "stationary_sigma_15cm": 159.787792787001,
+      "stationary_sigma_10cm": 164.59349342702586,
+      "turnaround10cm_shared": false
+    },
+    {
+      "dataset": "october7",
+      "cycle": 3,
+      "direction": "approach",
+      "signal": "ema",
+      "mean_change_15_to10cm": -3523.4145767986774,
+      "stationary_sigma_15cm": 16.488144168982096,
+      "stationary_sigma_10cm": 40.51761554461822,
+      "turnaround10cm_shared": false
+    },
+    {
+      "dataset": "october7",
+      "cycle": 3,
+      "direction": "retreat",
+      "signal": "raw",
+      "mean_change_15_to10cm": -3331.058324205689,
+      "stationary_sigma_15cm": 163.7195450088737,
+      "stationary_sigma_10cm": 164.59349342702586,
+      "turnaround10cm_shared": true
+    },
+    {
+      "dataset": "october7",
+      "cycle": 3,
+      "direction": "retreat",
+      "signal": "ema",
+      "mean_change_15_to10cm": -3346.088444687426,
+      "stationary_sigma_15cm": 25.825401676490316,
+      "stationary_sigma_10cm": 40.51761554461822,
+      "turnaround10cm_shared": true
+    },
+    {
+      "dataset": "october7",
+      "cycle": 4,
+      "direction": "approach",
+      "signal": "raw",
+      "mean_change_15_to10cm": -3535.3323601149023,
+      "stationary_sigma_15cm": 160.56653367405372,
+      "stationary_sigma_10cm": 154.12242318809035,
+      "turnaround10cm_shared": false
+    },
+    {
+      "dataset": "october7",
+      "cycle": 4,
+      "direction": "approach",
+      "signal": "ema",
+      "mean_change_15_to10cm": -3547.748688004911,
+      "stationary_sigma_15cm": 22.787384998766637,
+      "stationary_sigma_10cm": 28.572764576281987,
+      "turnaround10cm_shared": false
+    },
+    {
+      "dataset": "october7",
+      "cycle": 4,
+      "direction": "retreat",
+      "signal": "raw",
+      "mean_change_15_to10cm": -3337.934452695772,
+      "stationary_sigma_15cm": 149.55658478629206,
+      "stationary_sigma_10cm": 154.12242318809035,
+      "turnaround10cm_shared": true
+    },
+    {
+      "dataset": "october7",
+      "cycle": 4,
+      "direction": "retreat",
+      "signal": "ema",
+      "mean_change_15_to10cm": -3350.1408531591296,
+      "stationary_sigma_15cm": 24.956839046461774,
+      "stationary_sigma_10cm": 28.572764576281987,
+      "turnaround10cm_shared": true
+    },
+    {
+      "dataset": "october7",
+      "cycle": 5,
+      "direction": "approach",
+      "signal": "raw",
+      "mean_change_15_to10cm": -3620.513677372597,
+      "stationary_sigma_15cm": 164.9354152966849,
+      "stationary_sigma_10cm": 163.48782331936047,
+      "turnaround10cm_shared": false
+    },
+    {
+      "dataset": "october7",
+      "cycle": 5,
+      "direction": "approach",
+      "signal": "ema",
+      "mean_change_15_to10cm": -3634.3230602666736,
+      "stationary_sigma_15cm": 28.583279670086988,
+      "stationary_sigma_10cm": 15.493166257806747,
+      "turnaround10cm_shared": false
+    },
+    {
+      "dataset": "october7",
+      "cycle": 5,
+      "direction": "retreat",
+      "signal": "raw",
+      "mean_change_15_to10cm": -3372.4063502671197,
+      "stationary_sigma_15cm": 162.9043894498072,
+      "stationary_sigma_10cm": 163.48782331936047,
+      "turnaround10cm_shared": true
+    },
+    {
+      "dataset": "october7",
+      "cycle": 5,
+      "direction": "retreat",
+      "signal": "ema",
+      "mean_change_15_to10cm": -3378.633155077696,
+      "stationary_sigma_15cm": 21.692440698802763,
+      "stationary_sigma_10cm": 15.493166257806747,
+      "turnaround10cm_shared": true
+    },
+    {
+      "dataset": "today_existing",
+      "cycle": 1,
+      "direction": "approach",
+      "signal": "raw",
+      "mean_change_15_to10cm": -4215.445551658049,
+      "stationary_sigma_15cm": 233.43490520532012,
+      "stationary_sigma_10cm": 236.04717169263677,
+      "turnaround10cm_shared": false
+    },
+    {
+      "dataset": "today_existing",
+      "cycle": 1,
+      "direction": "approach",
+      "signal": "ema",
+      "mean_change_15_to10cm": -4211.181329719722,
+      "stationary_sigma_15cm": 40.74206825622112,
+      "stationary_sigma_10cm": 39.98203315087229,
+      "turnaround10cm_shared": false
+    },
+    {
+      "dataset": "today_existing",
+      "cycle": 1,
+      "direction": "retreat",
+      "signal": "raw",
+      "mean_change_15_to10cm": -4338.944535959512,
+      "stationary_sigma_15cm": 243.1902085395065,
+      "stationary_sigma_10cm": 237.18961701416066,
+      "turnaround10cm_shared": false
+    },
+    {
+      "dataset": "today_existing",
+      "cycle": 1,
+      "direction": "retreat",
+      "signal": "ema",
+      "mean_change_15_to10cm": -4330.95025203377,
+      "stationary_sigma_15cm": 45.47231136423653,
+      "stationary_sigma_10cm": 30.537662326461174,
+      "turnaround10cm_shared": false
+    },
+    {
+      "dataset": "new_no_ferrite_no_tmp",
+      "cycle": 1,
+      "direction": "approach",
+      "signal": "raw",
+      "mean_change_15_to10cm": -4905.76289796643,
+      "stationary_sigma_15cm": 309.5965409516885,
+      "stationary_sigma_10cm": 287.06921143843556,
+      "turnaround10cm_shared": false
+    },
+    {
+      "dataset": "new_no_ferrite_no_tmp",
+      "cycle": 1,
+      "direction": "approach",
+      "signal": "ema",
+      "mean_change_15_to10cm": -4909.892925225198,
+      "stationary_sigma_15cm": 80.68079371392922,
+      "stationary_sigma_10cm": 50.04496944188985,
+      "turnaround10cm_shared": false
+    },
+    {
+      "dataset": "new_no_ferrite_no_tmp",
+      "cycle": 1,
+      "direction": "retreat",
+      "signal": "raw",
+      "mean_change_15_to10cm": -5334.322539566085,
+      "stationary_sigma_15cm": 301.9771236862383,
+      "stationary_sigma_10cm": 266.62693797383514,
+      "turnaround10cm_shared": false
+    },
+    {
+      "dataset": "new_no_ferrite_no_tmp",
+      "cycle": 1,
+      "direction": "retreat",
+      "signal": "ema",
+      "mean_change_15_to10cm": -5343.586402498186,
+      "stationary_sigma_15cm": 78.99363965752516,
+      "stationary_sigma_10cm": 50.26395536244251,
+      "turnaround10cm_shared": false
+    }
+  ],
+  "limits": [
+    "Single new-sensor roundtrip.",
+    "30cm includes the target; relative baseline.",
+    "October7 only20..10cm with5cycles and a different CAN/firmware version.",
+    "Hardware descriptions and unchangedv1 firmware are user-reported; running image not read back.",
+    "Ferrite/TMP removal, unit variation and firmware differences are not isolated."
+  ]
+}

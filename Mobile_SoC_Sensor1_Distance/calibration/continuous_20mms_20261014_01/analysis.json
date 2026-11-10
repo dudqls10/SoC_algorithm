@@ -1,0 +1,50 @@
+{
+  "project": "Mobile_SoC_Sensor1_Distance",
+  "experiment_success": true,
+  "speed_mm_s": 20,
+  "profile": "continuous 300->10->300mm, no intermediate dwells",
+  "final_gap_mm": 300,
+  "baseline": {
+    "passed": true,
+    "samples": 197,
+    "mean": 40000240.36548223,
+    "offset_from_4e7": 240.36548223346472,
+    "first_to_last_half_change": 29.33714697510004,
+    "std": 46.86830481616606,
+    "evaluated_epoch_s": 1791955395.6961133
+  },
+  "complete_snapshots": 3436,
+  "aligned_moving_snapshots": 1830,
+  "can_errors": [],
+  "tof_linear_candidates": {
+    "continuous_approach": {
+      "samples": 115,
+      "gain": 0.9003483249356002,
+      "offset_mm": 63.65968330755909,
+      "rmse_mm": 8.06578969720307,
+      "uncorrected_rmse_mm": 50.75041602958486
+    },
+    "continuous_retreat": {
+      "samples": 114,
+      "gain": 0.8899866178409849,
+      "offset_mm": 67.74398610057109,
+      "rmse_mm": 7.72779510032125,
+      "uncorrected_rmse_mm": 53.717705290235706
+    },
+    "combined": {
+      "samples": 229,
+      "gain": 0.8947609104431198,
+      "offset_mm": 65.76107415667592,
+      "rmse_mm": 8.01728763030825,
+      "uncorrected_rmse_mm": 52.24865038073001
+    }
+  },
+  "tof_approach_fit_retreat_validation_rmse_mm": 8.204960520971778,
+  "limitations": [
+    "Continuous-motion calibration: physical position interpolated from actual motor feedback; filtering and sensor latency are included.",
+    "Distance bins are +/-5mm spatial groups, not stationary readings at exact centimetres. Actual mean distance is provided.",
+    "VL53L1X linear fit uses actual40..300mm;1..3cm readings retained but excluded from fit.",
+    "Single round trip; independent repeated validation not yet performed.",
+    "No fitted coefficient has been applied to firmware."
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "target": 40000000,
+  "mean_tolerance_count": 500,
+  "user_statement": "평균 ±500count 이내",
+  "confirmed_epoch_s": 1791954717.438,
+  "stability_window_s": 10,
+  "half_window_mean_change_count": 30,
+  "std_limit_count": 150,
+  "consecutive_stable_checks": 5
+}

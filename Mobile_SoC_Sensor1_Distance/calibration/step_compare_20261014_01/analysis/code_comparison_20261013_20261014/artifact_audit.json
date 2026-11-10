@@ -1,0 +1,1720 @@
+{
+  "artifact_paths": {
+    "oct13_verified": "C:\\Users\\SongYoungBin\\.codex\\visualizations\\2026\\10\\02\\01a0fcdc-55de-7463-a319-ade97ad00ae3\\step_sigma_once_20261013\\firmware_reference\\Mobile_SoC.elf",
+    "baseline_mobile_soc": "C:\\Users\\SongYoungBin\\Desktop\\Soc\\Mobile_SoC\\Debug\\Mobile_SoC.elf",
+    "sensor1_current_build": "C:\\Users\\SongYoungBin\\Desktop\\Soc\\Mobile_SoC_Experiments\\Mobile_SoC_Sensor1_Distance\\Debug\\Mobile_SoC_Sensor1_Distance.elf"
+  },
+  "binaries": {
+    "C:\\Users\\SongYoungBin\\.codex\\visualizations\\2026\\10\\02\\01a0fcdc-55de-7463-a319-ade97ad00ae3\\step_sigma_once_20261013\\firmware_reference\\Mobile_SoC.bin": {
+      "bytes": 74040,
+      "sha256": "8cdef58fe86c587d46e9d981133e9c44d8b806660f29345503fafec765430192"
+    },
+    "C:\\Users\\SongYoungBin\\Desktop\\Soc\\Mobile_SoC\\Debug\\Mobile_SoC.bin": {
+      "bytes": 74040,
+      "sha256": "8cdef58fe86c587d46e9d981133e9c44d8b806660f29345503fafec765430192"
+    },
+    "C:\\Users\\SongYoungBin\\Desktop\\Soc\\Mobile_SoC_Experiments\\Mobile_SoC_Sensor1_Distance\\Debug\\Mobile_SoC_Sensor1_Distance.bin": {
+      "bytes": 72408,
+      "sha256": "4cb14fda2071894cde9c6bbb4538551da6e506538449d2be7297c42664fbef15"
+    }
+  },
+  "elf_sections": {
+    "oct13_verified": {
+      "file_sha256": "928446c74b4c725bfda6deeb0b5fecff4a91c804602df64627fe98fa94c940dd",
+      "section_hashes": {
+        ".isr_vector": "fc9fed9c2e9eb46ba10665334673957e124e53072ed23a6146ca7747179582dc",
+        ".text": "b0a487a78e1b9c4afe06fcdfccb5fe61638e6c22c88f5f5110957c80bf1dc0ff",
+        ".rodata": "8e7cceca494030d1f98e3e9ab50be8a36001b300ed8b2c466f1fcef4c5c1b943"
+      }
+    },
+    "baseline_mobile_soc": {
+      "file_sha256": "928446c74b4c725bfda6deeb0b5fecff4a91c804602df64627fe98fa94c940dd",
+      "section_hashes": {
+        ".isr_vector": "fc9fed9c2e9eb46ba10665334673957e124e53072ed23a6146ca7747179582dc",
+        ".text": "b0a487a78e1b9c4afe06fcdfccb5fe61638e6c22c88f5f5110957c80bf1dc0ff",
+        ".rodata": "8e7cceca494030d1f98e3e9ab50be8a36001b300ed8b2c466f1fcef4c5c1b943"
+      }
+    },
+    "sensor1_current_build": {
+      "file_sha256": "4ec2d08914b313e4735c68d23808e82a5215cbb8a7f3b9418b444ef769e515f6",
+      "section_hashes": {
+        ".isr_vector": "1e786af556f6b76a2475257c6548916f2f9398bfa8923eb645efea8e4c72866d",
+        ".text": "208a15108c0a52c499b9e18248508e9a9c1b32177a60420126a3c597e3bc8fce",
+        ".rodata": "b330220c3486bf5639316ec66d2e41e5be59a3ddc18e0cbde58fae4133b34236"
+      }
+    }
+  },
+  "functions": [
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "ApplyEMA2Filter",
+      "old_size": 176,
+      "new_size": 176,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "DriftCompensatedResidual",
+      "old_size": 108,
+      "new_size": 108,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "DriftCompensation",
+      "old_size": 80,
+      "new_size": 80,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "DriftFitGainScaled",
+      "old_size": 208,
+      "new_size": 208,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "DriftGateSelfTest",
+      "old_size": 1156,
+      "new_size": 1156,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "DriftIntegralReference",
+      "old_size": 104,
+      "new_size": 104,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "DriftLearningGuardCommit",
+      "old_size": 126,
+      "new_size": 126,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "DriftLearningGuardPause",
+      "old_size": 86,
+      "new_size": 86,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "DriftLearningGuardReset",
+      "old_size": 60,
+      "new_size": 60,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "DriftLearningGuardSeed",
+      "old_size": 540,
+      "new_size": 540,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "DriftLearningGuardStep",
+      "old_size": 1560,
+      "new_size": 1560,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "DriftLearningGuardTakePair",
+      "old_size": 298,
+      "new_size": 298,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "DriftModelInitializationSelfTest",
+      "old_size": 488,
+      "new_size": 488,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "DriftModelMathSelfTest",
+      "old_size": 1056,
+      "new_size": 1056,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "DriftNoiseReferenceAllowsLearning",
+      "old_size": 48,
+      "new_size": 48,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "DriftNoiseReferenceReject",
+      "old_size": 32,
+      "new_size": 32,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "DriftNoiseReferenceReset",
+      "old_size": 26,
+      "new_size": 26,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "DriftNoiseReferenceSigma",
+      "old_size": 40,
+      "new_size": 40,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "DriftNoiseReferenceStep",
+      "old_size": 548,
+      "new_size": 548,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "DriftObjectDetected",
+      "old_size": 298,
+      "new_size": 298,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "DriftOffsetFromMeans",
+      "old_size": 128,
+      "new_size": 128,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "DriftSeedDetectionWindow",
+      "old_size": 212,
+      "new_size": 212,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "EMA2LegacyConstantBias",
+      "old_size": 120,
+      "new_size": 120,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "EMA2PrecisionSelfTest",
+      "old_size": 596,
+      "new_size": 596,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "EMA2PrecisionStep",
+      "old_size": 464,
+      "new_size": 464,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDCRecoveryArm",
+      "old_size": 40,
+      "new_size": 40,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDCRecoveryDue",
+      "old_size": 114,
+      "new_size": 114,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDCRecoveryReset",
+      "old_size": 32,
+      "new_size": 32,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_CaptureConfigReadback",
+      "old_size": 732,
+      "new_size": 732,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_ClearI2C3Bus",
+      "old_size": 560,
+      "new_size": 560,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_ConversionTimeUs",
+      "old_size": 50,
+      "new_size": 50,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_I2C3LineState",
+      "old_size": 112,
+      "new_size": 112,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_Init",
+      "old_size": 356,
+      "new_size": 356,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_InitWithRetry",
+      "old_size": 336,
+      "new_size": 336,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_InitWriteVerified",
+      "old_size": 232,
+      "new_size": 232,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_IsValidRegister",
+      "old_size": 46,
+      "new_size": 46,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_RawToCountMilli",
+      "old_size": 198,
+      "new_size": 198,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_RawToFrequencyHz",
+      "old_size": 296,
+      "new_size": 296,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_ReadBytes",
+      "old_size": 112,
+      "new_size": 112,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_ReadCH0Data",
+      "old_size": 32,
+      "new_size": 32,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_ReadCH0Sample",
+      "old_size": 64,
+      "new_size": 64,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_ReadCH1Data",
+      "old_size": 32,
+      "new_size": 32,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_ReadCH1Sample",
+      "old_size": 64,
+      "new_size": 64,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_ReadChannel",
+      "old_size": 212,
+      "new_size": 212,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_ReadReg",
+      "old_size": 66,
+      "new_size": 66,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_ReadReg32",
+      "old_size": 98,
+      "new_size": 98,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_ReadbackMatches",
+      "old_size": 66,
+      "new_size": 66,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_RecordDiagnostic",
+      "old_size": 324,
+      "new_size": 324,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_RegisterVerifyMask",
+      "old_size": 172,
+      "new_size": 172,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_RestartConversion",
+      "old_size": 200,
+      "new_size": 200,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_WarmupAndDiscard",
+      "old_size": 116,
+      "new_size": 116,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "FDC_WriteReg32",
+      "old_size": 140,
+      "new_size": 140,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "InitializeKalmanFilters",
+      "old_size": 220,
+      "new_size": 220,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "KalmanFilter",
+      "old_size": 500,
+      "new_size": 500,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "RecordDriftModelAudit",
+      "old_size": 1596,
+      "new_size": 1596,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "RecoverFDCI2C",
+      "old_size": 140,
+      "new_size": 140,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "baseline_mobile_soc",
+      "function": "TIM_Configuration",
+      "old_size": 48,
+      "new_size": 48,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "ApplyEMA2Filter",
+      "old_size": 176,
+      "new_size": 176,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "DriftCompensatedResidual",
+      "old_size": 108,
+      "new_size": 108,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "DriftCompensation",
+      "old_size": 80,
+      "new_size": 80,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "DriftFitGainScaled",
+      "old_size": 208,
+      "new_size": 208,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "DriftGateSelfTest",
+      "old_size": 1156,
+      "new_size": 1156,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "DriftIntegralReference",
+      "old_size": 104,
+      "new_size": 104,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "DriftLearningGuardCommit",
+      "old_size": 126,
+      "new_size": 126,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "DriftLearningGuardPause",
+      "old_size": 86,
+      "new_size": 86,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "DriftLearningGuardReset",
+      "old_size": 60,
+      "new_size": 60,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "DriftLearningGuardSeed",
+      "old_size": 540,
+      "new_size": 540,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "DriftLearningGuardStep",
+      "old_size": 1560,
+      "new_size": 1560,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "DriftLearningGuardTakePair",
+      "old_size": 298,
+      "new_size": 298,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "DriftModelInitializationSelfTest",
+      "old_size": 488,
+      "new_size": 488,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "DriftModelMathSelfTest",
+      "old_size": 1056,
+      "new_size": 1056,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "DriftNoiseReferenceAllowsLearning",
+      "old_size": 48,
+      "new_size": 48,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "DriftNoiseReferenceReject",
+      "old_size": 32,
+      "new_size": 32,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "DriftNoiseReferenceReset",
+      "old_size": 26,
+      "new_size": 26,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "DriftNoiseReferenceSigma",
+      "old_size": 40,
+      "new_size": 40,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "DriftNoiseReferenceStep",
+      "old_size": 548,
+      "new_size": 548,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "DriftObjectDetected",
+      "old_size": 298,
+      "new_size": 298,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "DriftOffsetFromMeans",
+      "old_size": 128,
+      "new_size": 128,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "DriftSeedDetectionWindow",
+      "old_size": 212,
+      "new_size": 212,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "EMA2LegacyConstantBias",
+      "old_size": 120,
+      "new_size": 120,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "EMA2PrecisionSelfTest",
+      "old_size": 596,
+      "new_size": 596,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "EMA2PrecisionStep",
+      "old_size": 464,
+      "new_size": 464,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDCRecoveryArm",
+      "old_size": 40,
+      "new_size": 40,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDCRecoveryDue",
+      "old_size": 114,
+      "new_size": 114,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDCRecoveryReset",
+      "old_size": 32,
+      "new_size": 32,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_CaptureConfigReadback",
+      "old_size": 732,
+      "new_size": 732,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_ClearI2C3Bus",
+      "old_size": 560,
+      "new_size": 560,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_ConversionTimeUs",
+      "old_size": 50,
+      "new_size": 50,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_I2C3LineState",
+      "old_size": 112,
+      "new_size": 112,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_Init",
+      "old_size": 356,
+      "new_size": 356,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_InitWithRetry",
+      "old_size": 336,
+      "new_size": 336,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_InitWriteVerified",
+      "old_size": 232,
+      "new_size": 232,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_IsValidRegister",
+      "old_size": 46,
+      "new_size": 46,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_RawToCountMilli",
+      "old_size": 198,
+      "new_size": 198,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_RawToFrequencyHz",
+      "old_size": 296,
+      "new_size": 296,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_ReadBytes",
+      "old_size": 112,
+      "new_size": 112,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_ReadCH0Data",
+      "old_size": 32,
+      "new_size": 32,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_ReadCH0Sample",
+      "old_size": 64,
+      "new_size": 64,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_ReadCH1Data",
+      "old_size": 32,
+      "new_size": 32,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_ReadCH1Sample",
+      "old_size": 64,
+      "new_size": 64,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_ReadChannel",
+      "old_size": 212,
+      "new_size": 212,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_ReadReg",
+      "old_size": 66,
+      "new_size": 66,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_ReadReg32",
+      "old_size": 98,
+      "new_size": 98,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_ReadbackMatches",
+      "old_size": 66,
+      "new_size": 66,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_RecordDiagnostic",
+      "old_size": 324,
+      "new_size": 324,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_RegisterVerifyMask",
+      "old_size": 172,
+      "new_size": 172,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_RestartConversion",
+      "old_size": 200,
+      "new_size": 200,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_WarmupAndDiscard",
+      "old_size": 116,
+      "new_size": 116,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "FDC_WriteReg32",
+      "old_size": 140,
+      "new_size": 140,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "InitializeKalmanFilters",
+      "old_size": 220,
+      "new_size": 220,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "KalmanFilter",
+      "old_size": 500,
+      "new_size": 500,
+      "exact_function_bytes_same": true
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "RecordDriftModelAudit",
+      "old_size": 1596,
+      "new_size": 1596,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "RecoverFDCI2C",
+      "old_size": 140,
+      "new_size": 140,
+      "exact_function_bytes_same": false
+    },
+    {
+      "candidate": "sensor1_current_build",
+      "function": "TIM_Configuration",
+      "old_size": 48,
+      "new_size": 48,
+      "exact_function_bytes_same": true
+    }
+  ],
+  "split_source_hash_comparison": [
+    {
+      "file": "Core/Inc/can.h",
+      "split_baseline_sha256": "79fc859f9e4cfe14c77c776bf2f34e839f352d021b70f94ade9fd15ead109c79",
+      "mobile_soc_sha256": "79fc859f9e4cfe14c77c776bf2f34e839f352d021b70f94ade9fd15ead109c79",
+      "sensor1_sha256": "79fc859f9e4cfe14c77c776bf2f34e839f352d021b70f94ade9fd15ead109c79"
+    },
+    {
+      "file": "Core/Inc/drift_gate.h",
+      "split_baseline_sha256": "9cd3c1725b54125490d2acd8d2fde4e745f278a43de5df92bdb65182ca3e3a97",
+      "mobile_soc_sha256": "9cd3c1725b54125490d2acd8d2fde4e745f278a43de5df92bdb65182ca3e3a97",
+      "sensor1_sha256": "9cd3c1725b54125490d2acd8d2fde4e745f278a43de5df92bdb65182ca3e3a97"
+    },
+    {
+      "file": "Core/Inc/drift_learning_guard.h",
+      "split_baseline_sha256": "ee6213eda51f93ab68ab4d2606525b65ac85511c237c4d7b54abe1ef20c5fd6e",
+      "mobile_soc_sha256": "ee6213eda51f93ab68ab4d2606525b65ac85511c237c4d7b54abe1ef20c5fd6e",
+      "sensor1_sha256": "ee6213eda51f93ab68ab4d2606525b65ac85511c237c4d7b54abe1ef20c5fd6e"
+    },
+    {
+      "file": "Core/Inc/drift_model_audit.h",
+      "split_baseline_sha256": "24a6ea787b6d741cf40c1bec101f94c9ba9dc7d12515faab47e94c4481eb3768",
+      "mobile_soc_sha256": "24a6ea787b6d741cf40c1bec101f94c9ba9dc7d12515faab47e94c4481eb3768",
+      "sensor1_sha256": "24a6ea787b6d741cf40c1bec101f94c9ba9dc7d12515faab47e94c4481eb3768"
+    },
+    {
+      "file": "Core/Inc/drift_model_math.h",
+      "split_baseline_sha256": "87828bf5a5cec5df2e35aff8f6f6f81864cf302578752c9befc5b4bd2a93ad15",
+      "mobile_soc_sha256": "87828bf5a5cec5df2e35aff8f6f6f81864cf302578752c9befc5b4bd2a93ad15",
+      "sensor1_sha256": "87828bf5a5cec5df2e35aff8f6f6f81864cf302578752c9befc5b4bd2a93ad15"
+    },
+    {
+      "file": "Core/Inc/drift_noise_reference.h",
+      "split_baseline_sha256": "a49072d85edfc1d855276694948bc2841ae5b707f0a64cab5f7d8c0c167a27fb",
+      "mobile_soc_sha256": "a49072d85edfc1d855276694948bc2841ae5b707f0a64cab5f7d8c0c167a27fb",
+      "sensor1_sha256": "a49072d85edfc1d855276694948bc2841ae5b707f0a64cab5f7d8c0c167a27fb"
+    },
+    {
+      "file": "Core/Inc/ema_precision.h",
+      "split_baseline_sha256": "6c3db4ef8e16327bcc3dd12a9727211591ea674144999fe21e1eb8b870beb2b7",
+      "mobile_soc_sha256": "6c3db4ef8e16327bcc3dd12a9727211591ea674144999fe21e1eb8b870beb2b7",
+      "sensor1_sha256": "6c3db4ef8e16327bcc3dd12a9727211591ea674144999fe21e1eb8b870beb2b7"
+    },
+    {
+      "file": "Core/Inc/evaluation_clock.h",
+      "split_baseline_sha256": "f72c5e5893fa93ebe3625a24aec111ab320f304faf3f4159f2f29b1675abde94",
+      "mobile_soc_sha256": "f72c5e5893fa93ebe3625a24aec111ab320f304faf3f4159f2f29b1675abde94",
+      "sensor1_sha256": "f72c5e5893fa93ebe3625a24aec111ab320f304faf3f4159f2f29b1675abde94"
+    },
+    {
+      "file": "Core/Inc/evaluation_trace.h",
+      "split_baseline_sha256": "73911ba141b0967e88736a9cdab5d238f3bebcba55cfa8ff3cefe9555b88db93",
+      "mobile_soc_sha256": "73911ba141b0967e88736a9cdab5d238f3bebcba55cfa8ff3cefe9555b88db93",
+      "sensor1_sha256": "73911ba141b0967e88736a9cdab5d238f3bebcba55cfa8ff3cefe9555b88db93"
+    },
+    {
+      "file": "Core/Inc/fdc.h",
+      "split_baseline_sha256": "0762cc8bd29c59a3cb948e4199f43014e416dfacb156164822a4f6aa89b55737",
+      "mobile_soc_sha256": "0762cc8bd29c59a3cb948e4199f43014e416dfacb156164822a4f6aa89b55737",
+      "sensor1_sha256": "0762cc8bd29c59a3cb948e4199f43014e416dfacb156164822a4f6aa89b55737"
+    },
+    {
+      "file": "Core/Inc/fdc_recovery.h",
+      "split_baseline_sha256": "9ec973daec7b8b70a9442ea93aa2740519f9c267fd1d186bb5db38c7827fc952",
+      "mobile_soc_sha256": "9ec973daec7b8b70a9442ea93aa2740519f9c267fd1d186bb5db38c7827fc952",
+      "sensor1_sha256": "9ec973daec7b8b70a9442ea93aa2740519f9c267fd1d186bb5db38c7827fc952"
+    },
+    {
+      "file": "Core/Inc/gpio.h",
+      "split_baseline_sha256": "92b391aae985f5b7b6fcbfc37daf922842a683a44045b4d55712007e860ec0ef",
+      "mobile_soc_sha256": "92b391aae985f5b7b6fcbfc37daf922842a683a44045b4d55712007e860ec0ef",
+      "sensor1_sha256": "92b391aae985f5b7b6fcbfc37daf922842a683a44045b4d55712007e860ec0ef"
+    },
+    {
+      "file": "Core/Inc/i2c.h",
+      "split_baseline_sha256": "c7f240f31b537f0cb9fb5879de785223f5f9f6335c990433644c9c1be2d53b0b",
+      "mobile_soc_sha256": "c7f240f31b537f0cb9fb5879de785223f5f9f6335c990433644c9c1be2d53b0b",
+      "sensor1_sha256": "c7f240f31b537f0cb9fb5879de785223f5f9f6335c990433644c9c1be2d53b0b"
+    },
+    {
+      "file": "Core/Inc/main.h",
+      "split_baseline_sha256": "1323252e78d06b0e7e53e8e0b6a626efa303205b5d7d74330cd2793c7f67d638",
+      "mobile_soc_sha256": "1323252e78d06b0e7e53e8e0b6a626efa303205b5d7d74330cd2793c7f67d638",
+      "sensor1_sha256": "1323252e78d06b0e7e53e8e0b6a626efa303205b5d7d74330cd2793c7f67d638"
+    },
+    {
+      "file": "Core/Inc/stm32f7xx_hal_conf.h",
+      "split_baseline_sha256": "3074a21ab005642ff161900eac189eb3683bb04c4cbf6c7607a35373ff67cab8",
+      "mobile_soc_sha256": "3074a21ab005642ff161900eac189eb3683bb04c4cbf6c7607a35373ff67cab8",
+      "sensor1_sha256": "3074a21ab005642ff161900eac189eb3683bb04c4cbf6c7607a35373ff67cab8"
+    },
+    {
+      "file": "Core/Inc/stm32f7xx_it.h",
+      "split_baseline_sha256": "a2ceac2f4f8521e4171f98c1cab306ea28ab17b36e9bd654fd4a6029d2fda03c",
+      "mobile_soc_sha256": "a2ceac2f4f8521e4171f98c1cab306ea28ab17b36e9bd654fd4a6029d2fda03c",
+      "sensor1_sha256": "a2ceac2f4f8521e4171f98c1cab306ea28ab17b36e9bd654fd4a6029d2fda03c"
+    },
+    {
+      "file": "Core/Inc/tim.h",
+      "split_baseline_sha256": "c440b0dbe3f52d2b3d307f1ae6fdaba86255048ce7de090c710a24aed316cd3e",
+      "mobile_soc_sha256": "c440b0dbe3f52d2b3d307f1ae6fdaba86255048ce7de090c710a24aed316cd3e",
+      "sensor1_sha256": "c440b0dbe3f52d2b3d307f1ae6fdaba86255048ce7de090c710a24aed316cd3e"
+    },
+    {
+      "file": "Core/Inc/tmp117.h",
+      "split_baseline_sha256": "8216cef1838985263ccd1a60975a775ccbee5c68de161e17b6ae5f00928be0a5",
+      "mobile_soc_sha256": "8216cef1838985263ccd1a60975a775ccbee5c68de161e17b6ae5f00928be0a5",
+      "sensor1_sha256": "8216cef1838985263ccd1a60975a775ccbee5c68de161e17b6ae5f00928be0a5"
+    },
+    {
+      "file": "Core/Src/can.c",
+      "split_baseline_sha256": "4a123d985a4c10b92ccc597e259ea9408b24b5e7512945bdc09023dd6482cbd2",
+      "mobile_soc_sha256": "4a123d985a4c10b92ccc597e259ea9408b24b5e7512945bdc09023dd6482cbd2",
+      "sensor1_sha256": "4a123d985a4c10b92ccc597e259ea9408b24b5e7512945bdc09023dd6482cbd2"
+    },
+    {
+      "file": "Core/Src/fdc.c",
+      "split_baseline_sha256": "300497c96c8d996ac44bbf878010c219554aaae565306e47cdd8a207cfc3ef44",
+      "mobile_soc_sha256": "300497c96c8d996ac44bbf878010c219554aaae565306e47cdd8a207cfc3ef44",
+      "sensor1_sha256": "300497c96c8d996ac44bbf878010c219554aaae565306e47cdd8a207cfc3ef44"
+    },
+    {
+      "file": "Core/Src/gpio.c",
+      "split_baseline_sha256": "27c2ee72612993be1dbc6cce206cb8dc192fc5dbce1a3b4274ff69e05df40c3b",
+      "mobile_soc_sha256": "27c2ee72612993be1dbc6cce206cb8dc192fc5dbce1a3b4274ff69e05df40c3b",
+      "sensor1_sha256": "27c2ee72612993be1dbc6cce206cb8dc192fc5dbce1a3b4274ff69e05df40c3b"
+    },
+    {
+      "file": "Core/Src/i2c.c",
+      "split_baseline_sha256": "9db139c1e18dfed6a824f873bd742b2176ecae3d616ca02ef4972911d39b99be",
+      "mobile_soc_sha256": "9db139c1e18dfed6a824f873bd742b2176ecae3d616ca02ef4972911d39b99be",
+      "sensor1_sha256": "9db139c1e18dfed6a824f873bd742b2176ecae3d616ca02ef4972911d39b99be"
+    },
+    {
+      "file": "Core/Src/main.c",
+      "split_baseline_sha256": "f45eeed0053faa2e52b7ca59b93d188d3acced44e2f5584a1091561e1e72639f",
+      "mobile_soc_sha256": "f45eeed0053faa2e52b7ca59b93d188d3acced44e2f5584a1091561e1e72639f",
+      "sensor1_sha256": "96b46e8f7309f9153fbc6f18b9d881729869ac73ce07a6de4716386c9af2410c"
+    },
+    {
+      "file": "Core/Src/stm32f7xx_hal_msp.c",
+      "split_baseline_sha256": "a91b2a13bdfbfd8b1570bf58b83b685c9ec32cd8a685a2e03bb0958557875104",
+      "mobile_soc_sha256": "a91b2a13bdfbfd8b1570bf58b83b685c9ec32cd8a685a2e03bb0958557875104",
+      "sensor1_sha256": "a91b2a13bdfbfd8b1570bf58b83b685c9ec32cd8a685a2e03bb0958557875104"
+    },
+    {
+      "file": "Core/Src/stm32f7xx_it.c",
+      "split_baseline_sha256": "fe73ebe07697e626ae008c1a982d216f982dbd7a0d04dca6e45d677f967dc790",
+      "mobile_soc_sha256": "fe73ebe07697e626ae008c1a982d216f982dbd7a0d04dca6e45d677f967dc790",
+      "sensor1_sha256": "fe73ebe07697e626ae008c1a982d216f982dbd7a0d04dca6e45d677f967dc790"
+    },
+    {
+      "file": "Core/Src/syscalls.c",
+      "split_baseline_sha256": "1589f3d61a3625fb2e4604c6ffd48518fda29d1b78bf774b2d91d76236e1777f",
+      "mobile_soc_sha256": "1589f3d61a3625fb2e4604c6ffd48518fda29d1b78bf774b2d91d76236e1777f",
+      "sensor1_sha256": "1589f3d61a3625fb2e4604c6ffd48518fda29d1b78bf774b2d91d76236e1777f"
+    },
+    {
+      "file": "Core/Src/sysmem.c",
+      "split_baseline_sha256": "ae7da85ddcf68727218002cace4d885d363c9e1cd1955ca1b10ccc5e3075b9b5",
+      "mobile_soc_sha256": "ae7da85ddcf68727218002cace4d885d363c9e1cd1955ca1b10ccc5e3075b9b5",
+      "sensor1_sha256": "ae7da85ddcf68727218002cace4d885d363c9e1cd1955ca1b10ccc5e3075b9b5"
+    },
+    {
+      "file": "Core/Src/system_stm32f7xx.c",
+      "split_baseline_sha256": "496f2869fc809b58983740cc855707ec07b77903865d6a72ff1197cadd3ef281",
+      "mobile_soc_sha256": "496f2869fc809b58983740cc855707ec07b77903865d6a72ff1197cadd3ef281",
+      "sensor1_sha256": "496f2869fc809b58983740cc855707ec07b77903865d6a72ff1197cadd3ef281"
+    },
+    {
+      "file": "Core/Src/tim.c",
+      "split_baseline_sha256": "63c5a20a8228c1633924ed1f383cac4e115ed358e6c3641afe5b30df68e8c7a4",
+      "mobile_soc_sha256": "63c5a20a8228c1633924ed1f383cac4e115ed358e6c3641afe5b30df68e8c7a4",
+      "sensor1_sha256": "63c5a20a8228c1633924ed1f383cac4e115ed358e6c3641afe5b30df68e8c7a4"
+    },
+    {
+      "file": "Core/Src/tmp117.c",
+      "split_baseline_sha256": "a857dd47da9c97484fd41271317ef9c2cdc80e08add4293a949ac64893e00e46",
+      "mobile_soc_sha256": "a857dd47da9c97484fd41271317ef9c2cdc80e08add4293a949ac64893e00e46",
+      "sensor1_sha256": "a857dd47da9c97484fd41271317ef9c2cdc80e08add4293a949ac64893e00e46"
+    },
+    {
+      "file": "Core/Startup/startup_stm32f722retx.s",
+      "split_baseline_sha256": "360dbf1ec5cf37af959021731aa54ec9f4f76fee208ccac8d4cff45dff630181",
+      "mobile_soc_sha256": "360dbf1ec5cf37af959021731aa54ec9f4f76fee208ccac8d4cff45dff630181",
+      "sensor1_sha256": "360dbf1ec5cf37af959021731aa54ec9f4f76fee208ccac8d4cff45dff630181"
+    }
+  ],
+  "source_diffs": {
+    "main_mobile_vs_sensor1.diff": {
+      "lines": 248,
+      "source_sha256": "f45eeed0053faa2e52b7ca59b93d188d3acced44e2f5584a1091561e1e72639f",
+      "target_sha256": "96b46e8f7309f9153fbc6f18b9d881729869ac73ce07a6de4716386c9af2410c"
+    },
+    "main_before_calibration_vs_current.diff": {
+      "lines": 248,
+      "source_sha256": "f45eeed0053faa2e52b7ca59b93d188d3acced44e2f5584a1091561e1e72639f",
+      "target_sha256": "96b46e8f7309f9153fbc6f18b9d881729869ac73ce07a6de4716386c9af2410c"
+    }
+  },
+  "old_flash_verification": {
+    "flash_matches_noise_reference": true,
+    "full_BIN_bytes_match": false,
+    "ELF_loadable_sections_match": true,
+    "unallocated_alignment_only_difference": true,
+    "padding_differences": [
+      {
+        "address": "0x8011dac",
+        "BIN_byte": 0,
+        "Flash_byte": 255
+      },
+      {
+        "address": "0x8011dad",
+        "BIN_byte": 0,
+        "Flash_byte": 255
+      },
+      {
+        "address": "0x8011dae",
+        "BIN_byte": 0,
+        "Flash_byte": 255
+      },
+      {
+        "address": "0x8011daf",
+        "BIN_byte": 0,
+        "Flash_byte": 255
+      }
+    ],
+    "expected_BIN_sha256": "8cdef58fe86c587d46e9d981133e9c44d8b806660f29345503fafec765430192",
+    "readback_sha256": "459e6d4fdd35e71bafc9db652584d2c6a64c2bf7a85151f7796db75798f5092a",
+    "bytes": 74040,
+    "reset_halt_write_commands_sent": 0,
+    "read_elapsed_ms": 891.0,
+    "RAM_interpreted_only_if_flash_matches": true,
+    "output_folder": "C:\\Users\\SongYoungBin\\.codex\\visualizations\\2026\\10\\02\\01a0fcdc-55de-7463-a319-ade97ad00ae3\\noise_live_20261013\\flash_verification_1791879275930157500",
+    "runtime": {
+      "ema2_selected_alpha": 0.11999999731779099,
+      "ema2_precision_self_test_failed": 0,
+      "ema2_initialized": 1,
+      "uwTick": 1632313,
+      "drift_model_init_self_test_failed": 0,
+      "drift_eval_invalid_skips": 2,
+      "drift_eval_learning_updates": 97,
+      "drift_detection_baseline_sigma": 70,
+      "drift_detection_recent_sigma": 12,
+      "drift_detection_entry_threshold": 246,
+      "fdc_recovery_retry_count": 0,
+      "fdc_diag_first_valid": 0,
+      "flag_DOinit": 1,
+      "n_data": 80
+    },
+    "ring_sequence_before": 162680,
+    "ring_sequence_after": 162706,
+    "safe_ring_entries": 483,
+    "valid_EMA_entries": 483,
+    "alpha_ppm_range": [
+      120000,
+      120000
+    ],
+    "last_entry": {
+      "sequence": 162678,
+      "tick_ms": 1632296,
+      "pre_ema": 40000514,
+      "post_ema": 40000495,
+      "alpha_ppm": 120000,
+      "flags": 31,
+      "learning_updates": 97
+    },
+    "runtime_alpha_in_new_range": true
+  },
+  "today_firmware_identity": {
+    "epoch_s": 1791966287.1585183,
+    "halt_reset_write_commands": 0,
+    "identified": false,
+    "connect_result": -1,
+    "failure": "RuntimeError('Read-only SWD attachment unavailable')"
+  },
+  "old_result_keys": [
+    "success",
+    "cycles",
+    "step_cm",
+    "dwell_s",
+    "step_hold_count",
+    "dwell_observed_range_s",
+    "statistics_settle_exclusion_s",
+    "statistics_step_window_s",
+    "baseline_settle_exclusion_s",
+    "baseline_window_s",
+    "firmware_sha256",
+    "baseline",
+    "returned_baseline",
+    "detection",
+    "complete_snapshots",
+    "incomplete_or_phase_crossing_bundles",
+    "CAN_error_frames",
+    "CAN_receiver_overruns",
+    "CAN_error_visibility",
+    "counter_delta",
+    "maximum_hold_position_error_pulse",
+    "noise_reference_unchanged",
+    "final_motor_status",
+    "firmware_writes",
+    "reset_commands",
+    "Notion_updates",
+    "limits"
+  ],
+  "today_result_keys": [
+    "success",
+    "method",
+    "step_hold_count",
+    "dwell_observed_range_s",
+    "baseline",
+    "returned_baseline",
+    "detection",
+    "previous_detection",
+    "previous_baseline",
+    "complete_snapshots",
+    "incomplete_or_phase_crossing_bundles",
+    "CAN_error_frames",
+    "CAN_receiver_overruns",
+    "excluded_invalid_samples",
+    "learning_parity_observed_transitions",
+    "maximum_hold_position_error_pulse",
+    "final_motor_status",
+    "parameter_restore",
+    "live_firmware_identity",
+    "historical_data_root",
+    "limits"
+  ],
+  "user_confirmations": {
+    "same_board_and_installation": true,
+    "powercycle_or_restart_between_measurements": true,
+    "answers": [
+      "\ubcf4\ub4dc\uc640 \uc124\uce58 \uc870\uac74 \ubaa8\ub450 \ub3d9\uc77c",
+      "\uc804\uc6d0 \uc7ac\uc778\uac00 \ub610\ub294 \uc7ac\uc2dc\uc791\uc744 \ud588\ub2e4"
+    ]
+  },
+  "same_source_functions": {
+    "InitializeCompensation": true,
+    "LinearRegression": true,
+    "TrainDelayedQ1Pair": true,
+    "DriftCompensation": true,
+    "ApplyEMA2Filter": true,
+    "InitializeKalmanFilters": true,
+    "KalmanFilter": true
+  },
+  "CAN_settled_model_fits": {
+    "oct13": {
+      "n_stationary_windows": 60,
+      "CH0_slope": 1.0000999306153138,
+      "CH1_slope": -0.7244585222448887,
+      "effective_reference_gain": 0.7244585222448887,
+      "intercept": 39553989.180004634,
+      "rmse_count": 5.1604208710627315,
+      "interpretation": "Descriptive fit of settled raw/EMA window means; not direct RAM coefficient readback."
+    },
+    "oct14": {
+      "n_stationary_windows": 60,
+      "CH0_slope": 1.0000268521206535,
+      "CH1_slope": -7.241998927075972e-05,
+      "effective_reference_gain": 7.241998927075972e-05,
+      "intercept": 31733182.371957265,
+      "rmse_count": 4.669725961274486,
+      "interpretation": "Descriptive fit of settled raw/EMA window means; not direct RAM coefficient readback."
+    }
+  },
+  "metrics": {
+    "oct13": {
+      "ema_sigma": 77.39234761099333,
+      "ema_threshold_3sigma": 232.17704283297996,
+      "raw0_sigma": 256.660974626495,
+      "raw1_sigma": 89.96934399559451,
+      "raw0_return_shift": -37.248375022783875,
+      "ema_return_shift": -61.12215165793896,
+      "EMA_contiguous_cm": 26
+    },
+    "oct14": {
+      "ema_sigma": 65.53029813224683,
+      "ema_threshold_3sigma": 196.59089439674048,
+      "raw0_sigma": 249.6996344049171,
+      "raw1_sigma": 278.5706347822285,
+      "raw0_return_shift": 208.9390629408881,
+      "ema_return_shift": 210.1904776468873,
+      "EMA_contiguous_cm": 22
+    }
+  },
+  "retreat_decomposition": [
+    {
+      "experiment": "oct13",
+      "retreat_cm": 20,
+      "delta_raw0": -799.9912561420351,
+      "delta_raw1": 73.92217244021595,
+      "delta_EMA": -851.5571912303567,
+      "fitted_raw0_contribution": -800.071199760507,
+      "fitted_raw1_contribution": -53.55354780717068,
+      "old_gain_counterfactual_delta_raw0_minus07358raw1": -854.383190623546,
+      "EMA_threshold_3sigma": 232.17704283297996
+    },
+    {
+      "experiment": "oct13",
+      "retreat_cm": 22,
+      "delta_raw0": -530.3103158753365,
+      "delta_raw1": 56.79100919701159,
+      "delta_EMA": -574.3188111037016,
+      "fitted_raw0_contribution": -530.3633101115092,
+      "fitted_raw1_contribution": -41.1427305996629,
+      "old_gain_counterfactual_delta_raw0_minus07358raw1": -572.0971404424977,
+      "EMA_threshold_3sigma": 232.17704283297996
+    },
+    {
+      "experiment": "oct13",
+      "retreat_cm": 23,
+      "delta_raw0": -380.25584879051894,
+      "delta_raw1": 104.9028604682535,
+      "delta_EMA": -458.73826425522566,
+      "fitted_raw0_contribution": -380.2938479914652,
+      "fitted_raw1_contribution": -75.99777127409268,
+      "old_gain_counterfactual_delta_raw0_minus07358raw1": -457.44337352305985,
+      "EMA_threshold_3sigma": 232.17704283297996
+    },
+    {
+      "experiment": "oct13",
+      "retreat_cm": 24,
+      "delta_raw0": -352.9879607260227,
+      "delta_raw1": 27.689703388139606,
+      "delta_EMA": -376.4769469946623,
+      "fitted_raw0_contribution": -353.02323503013645,
+      "fitted_raw1_contribution": -20.06004159797091,
+      "old_gain_counterfactual_delta_raw0_minus07358raw1": -373.3620444790158,
+      "EMA_threshold_3sigma": 232.17704283297996
+    },
+    {
+      "experiment": "oct13",
+      "retreat_cm": 25,
+      "delta_raw0": -263.6158790932968,
+      "delta_raw1": 37.68725440837443,
+      "delta_EMA": -294.4533551633358,
+      "fitted_raw0_contribution": -263.6422223903011,
+      "fitted_raw1_contribution": -27.302852636158107,
+      "old_gain_counterfactual_delta_raw0_minus07358raw1": -291.34616088697874,
+      "EMA_threshold_3sigma": 232.17704283297996
+    },
+    {
+      "experiment": "oct13",
+      "retreat_cm": 26,
+      "delta_raw0": -185.14571115467697,
+      "delta_raw1": 70.562674254179,
+      "delta_EMA": -235.84392004460096,
+      "fitted_raw0_contribution": -185.16421287951536,
+      "fitted_raw1_contribution": -51.119730715829974,
+      "old_gain_counterfactual_delta_raw0_minus07358raw1": -237.06572687090187,
+      "EMA_threshold_3sigma": 232.17704283297996
+    },
+    {
+      "experiment": "oct14",
+      "retreat_cm": 20,
+      "delta_raw0": -562.9667537109926,
+      "delta_raw1": -39.44122204557061,
+      "delta_EMA": -561.4563972726464,
+      "fitted_raw0_contribution": -562.9818705621872,
+      "fitted_raw1_contribution": 0.0028563328773658758,
+      "old_gain_counterfactual_delta_raw0_minus07358raw1": -533.9459025298618,
+      "EMA_threshold_3sigma": 196.59089439674048
+    },
+    {
+      "experiment": "oct14",
+      "retreat_cm": 22,
+      "delta_raw0": -224.58717800676823,
+      "delta_raw1": -10.105060070753098,
+      "delta_EMA": -225.56114841997623,
+      "fitted_raw0_contribution": -224.5932086487693,
+      "fitted_raw1_contribution": 0.0007318083419043218,
+      "old_gain_counterfactual_delta_raw0_minus07358raw1": -217.1518748067081,
+      "EMA_threshold_3sigma": 196.59089439674048
+    },
+    {
+      "experiment": "oct14",
+      "retreat_cm": 23,
+      "delta_raw0": -140.12822462059557,
+      "delta_raw1": 16.991930320858955,
+      "delta_EMA": -141.9103583022952,
+      "fitted_raw0_contribution": -140.13198736059005,
+      "fitted_raw1_contribution": -0.0012305554115261024,
+      "old_gain_counterfactual_delta_raw0_minus07358raw1": -152.6308869506836,
+      "EMA_threshold_3sigma": 196.59089439674048
+    },
+    {
+      "experiment": "oct14",
+      "retreat_cm": 24,
+      "delta_raw0": -90.54743493814021,
+      "delta_raw1": -101.89006698317826,
+      "delta_EMA": -86.9152259901166,
+      "fitted_raw0_contribution": -90.54986632878803,
+      "fitted_raw1_contribution": 0.007378877557718759,
+      "old_gain_counterfactual_delta_raw0_minus07358raw1": -15.576723651917646,
+      "EMA_threshold_3sigma": 196.59089439674048
+    },
+    {
+      "experiment": "oct14",
+      "retreat_cm": 25,
+      "delta_raw0": -37.712092973291874,
+      "delta_raw1": -281.3945158533752,
+      "delta_EMA": -39.70255998522043,
+      "fitted_raw0_contribution": -37.71310562296249,
+      "fitted_raw1_contribution": 0.02037858781895206,
+      "old_gain_counterfactual_delta_raw0_minus07358raw1": 169.3379917916216,
+      "EMA_threshold_3sigma": 196.59089439674048
+    },
+    {
+      "experiment": "oct14",
+      "retreat_cm": 26,
+      "delta_raw0": 48.69735824689269,
+      "delta_raw1": -254.77784918621182,
+      "delta_EMA": 50.606281474232674,
+      "fitted_raw0_contribution": 48.69866587423184,
+      "fitted_raw1_contribution": 0.0184510091044927,
+      "old_gain_counterfactual_delta_raw0_minus07358raw1": 236.16289967810735,
+      "EMA_threshold_3sigma": 196.59089439674048
+    }
+  ],
+  "old_RAM_gain": 0.7358,
+  "old_RAM_evidence_first_entry": {
+    "sequence": "169942",
+    "tick_ms": "1704933",
+    "raw_ch0": "8346779",
+    "raw_ch1": "10905976",
+    "filtered_ch0": "8346630",
+    "filtered_ch1": "10905983",
+    "pre_ema": "40000518",
+    "post_ema": "40000527",
+    "alpha_ppm": "120000",
+    "flags": "31",
+    "learning_updates": "97",
+    "coefficient": "7358",
+    "offset": "321489",
+    "cap_mm": "1888",
+    "fusion_mm": "707",
+    "tof_mm": "254",
+    "total_us": "5259",
+    "read_us": "3339",
+    "kalman_us": "9",
+    "drift_us": "139",
+    "ema_us": "17",
+    "calibration_us": "93",
+    "tof_us": "277",
+    "curve_us": "1368",
+    "fusion_us": "8",
+    "approx_host_monotonic_ns": "14706284266700"
+  },
+  "custom_soc_revision": {
+    "old_measurement_start_kst": "2026-10-13T17:15:55+09:00",
+    "old_measurement_end_kst": "2026-10-13T17:22:33+09:00",
+    "safe_ram_flash_kst": "2026-10-13T19:50:11+09:00",
+    "flash_after_26cm_measurement": true,
+    "source_diffs": {
+      "main.c": {
+        "old_sha256": "8a2fe441b6bebee58240d6b921ad4a8daa3ac21ecfa4ef7773aa050eb723b092",
+        "new_sha256": "43cc9a0d611504eb0bf0b0e754ecc97c38124e4703b023bf7e263b17400d01ed",
+        "diff_lines": 21
+      },
+      "i2c_apb.c": {
+        "old_sha256": "bc77dc0d9bca24f41b7f1b1e086a09c245db83ca25aea601da2c007873803acf",
+        "new_sha256": "48fd507e59ed21313463126c0daf419e826b5eb43c7124be6c2b83fd64d6b9c2",
+        "diff_lines": 16
+      },
+      "Makefile": {
+        "old_sha256": "88fd7f466898838d925bafafee7d5a13e1e99558a5fa03036d6496c611ccf91a",
+        "new_sha256": "d205631ead48936e05b690ddafe37e09ecbab8646aedd35fe3a68e8d7741a337",
+        "diff_lines": 14
+      }
+    },
+    "safe_ram_build": {
+      "output": "C:\\Users\\SongYoungBin\\.codex\\visualizations\\2026\\10\\02\\01a0fcdc-55de-7463-a319-ade97ad00ae3\\step_sigma_once_20261013\\raw_freeze_diagnosis\\safe_ram_build_1791886086708768300",
+      "return_code": 0,
+      "initial_SP": "0x20007ff0",
+      "reset_vector": "0xc1",
+      "symbols": {
+        "_start_data": "0x20000100",
+        "_end_stack": "0x20007ff0",
+        "_end_bss": "0x2000047c",
+        "_start_bss": "0x20000184"
+      },
+      "outputs": {
+        "main.elf": {
+          "path": "C:\\Users\\SongYoungBin\\Desktop\\Soc\\nxa3110\\NXP3110\\nxp3110_segger_work\\example\\nxp3110\\main.elf",
+          "size": 300524,
+          "sha256": "debc119dfdeea93af685cd33854886bb1151164459fb5b6e2ac72b4a4758762f"
+        },
+        "main.elf.bin": {
+          "path": "C:\\Users\\SongYoungBin\\Desktop\\Soc\\nxa3110\\NXP3110\\nxp3110_segger_work\\example\\nxp3110\\main.elf.bin",
+          "size": 13832,
+          "sha256": "e9b4f16b79c4df5f08283cbde28a860cd66611336382a108bc5ba2bcd7c1727b"
+        },
+        "main.elf.map": {
+          "path": "C:\\Users\\SongYoungBin\\Desktop\\Soc\\nxa3110\\NXP3110\\nxp3110_segger_work\\example\\nxp3110\\main.elf.map",
+          "size": 148492,
+          "sha256": "e52f13459858c947584f17c4985c9a8785afc6431fe913e06402a044c65eaaf2"
+        },
+        "main.elf.lst": {
+          "path": "C:\\Users\\SongYoungBin\\Desktop\\Soc\\nxa3110\\NXP3110\\nxp3110_segger_work\\example\\nxp3110\\main.elf.lst",
+          "size": 329392,
+          "sha256": "e3250bd6b3e916a17f76998a277a2806d19efdbfef8aecf1f7ff3b30d616bb93"
+        },
+        "main.c": {
+          "path": "C:\\Users\\SongYoungBin\\Desktop\\Soc\\nxa3110\\NXP3110\\nxp3110_segger_work\\example\\nxp3110\\main.c",
+          "size": 6023,
+          "sha256": "43cc9a0d611504eb0bf0b0e754ecc97c38124e4703b023bf7e263b17400d01ed"
+        },
+        "i2c_apb.c": {
+          "path": "C:\\Users\\SongYoungBin\\Desktop\\Soc\\nxa3110\\NXP3110\\nxp3110_segger_work\\example\\nxp3110\\i2c_apb.c",
+          "size": 19915,
+          "sha256": "48fd507e59ed21313463126c0daf419e826b5eb43c7124be6c2b83fd64d6b9c2"
+        },
+        "Makefile": {
+          "path": "C:\\Users\\SongYoungBin\\Desktop\\Soc\\nxa3110\\NXP3110\\nxp3110_segger_work\\example\\nxp3110\\Makefile",
+          "size": 444,
+          "sha256": "d205631ead48936e05b690ddafe37e09ecbab8646aedd35fe3a68e8d7741a337"
+        },
+        "nxp3110_safe_ram.ld": {
+          "path": "C:\\Users\\SongYoungBin\\Desktop\\Soc\\nxa3110\\NXP3110\\nxp3110_segger_work\\example\\nxp3110\\nxp3110_safe_ram.ld",
+          "size": 1524,
+          "sha256": "866ae5eeb14aa65960dc3a57cd90a38d4916532e6cc65ad59e80302f9a462931"
+        }
+      },
+      "workaround": "Exclude upper 32KB data SRAM after repeated bit-8 write/read errors",
+      "shared_SDK_linker_unchanged": true
+    },
+    "safe_ram_flash": {
+      "output": "C:\\Users\\SongYoungBin\\.codex\\visualizations\\2026\\10\\02\\01a0fcdc-55de-7463-a319-ade97ad00ae3\\step_sigma_once_20261013\\raw_freeze_diagnosis\\flash_safe_ram_1791888611295660000",
+      "image": "C:\\Users\\SongYoungBin\\Desktop\\Soc\\nxa3110\\NXP3110\\nxp3110_segger_work\\example\\nxp3110\\main.elf.bin",
+      "image_size": 13832,
+      "expected_sha256": "e9b4f16b79c4df5f08283cbde28a860cd66611336382a108bc5ba2bcd7c1727b",
+      "readback_sha256": "e9b4f16b79c4df5f08283cbde28a860cd66611336382a108bc5ba2bcd7c1727b",
+      "readback_matches": true,
+      "return_code": 0,
+      "elapsed_s": 16.639999999999418,
+      "backup_saved": true,
+      "initial_SP": "0x20007ff0",
+      "actual_programming": true,
+      "success": true
+    },
+    "diagnosis_summary": {
+      "task": "Custom SoC flash with SWD preserved; investigate post-flash HardFault",
+      "firmware_image": "C:\\Users\\SongYoungBin\\Desktop\\Soc\\nxa3110\\NXP3110\\nxp3110_segger_work\\example\\nxp3110\\main.elf.bin",
+      "image_sha256": "e9b4f16b79c4df5f08283cbde28a860cd66611336382a108bc5ba2bcd7c1727b",
+      "image_size": 13832,
+      "flash_entire_image_verified": true,
+      "post_power_cycle_image_matches": true,
+      "source_backup": "C:\\Users\\SongYoungBin\\.codex\\visualizations\\2026\\10\\02\\01a0fcdc-55de-7463-a319-ade97ad00ae3\\step_sigma_once_20261013\\raw_freeze_diagnosis\\safe_ram_build_1791886086708768300\\before_project",
+      "source_diff": "C:\\Users\\SongYoungBin\\.codex\\visualizations\\2026\\10\\02\\01a0fcdc-55de-7463-a319-ade97ad00ae3\\step_sigma_once_20261013\\raw_freeze_diagnosis\\safe_ram_build_1791886086708768300\\changes.patch",
+      "changes": [
+        "PAF1=0x017F retains PB3/PB4 SWD and PB6/PB7 I2C1",
+        "GPIE OR update preserves SWCLK input",
+        "Project-specific linker uses lower 32KB data SRAM and initial SP=0x20007FF0; upper SRAM is avoided as a board workaround"
+      ],
+      "ram_evidence": {
+        "output": "C:\\Users\\SongYoungBin\\.codex\\visualizations\\2026\\10\\02\\01a0fcdc-55de-7463-a319-ade97ad00ae3\\step_sigma_once_20261013\\raw_freeze_diagnosis\\ram_bit_locations_1791885934756015300",
+        "failures": [
+          {
+            "address": "0x2000dd84",
+            "written": "0xffffffff",
+            "read": "0xfffffeff",
+            "xor": "0x100"
+          },
+          {
+            "address": "0x2000ed84",
+            "written": "0xffffffff",
+            "read": "0xfffffeff",
+            "xor": "0x100"
+          },
+          {
+            "address": "0x2000fd84",
+            "written": "0xffffffff",
+            "read": "0xfffffeff",
+            "xor": "0x100"
+          },
+          {
+            "address": "0x2000fe84",
+            "written": "0xffffffff",
+            "read": "0xfffffeff",
+            "xor": "0x100"
+          },
+          {
+            "address": "0x2000dd84",
+            "written": "0x100",
+            "read": "0x0",
+            "xor": "0x100"
+          },
+          {
+            "address": "0x2000ed84",
+            "written": "0x100",
+            "read": "0x0",
+            "xor": "0x100"
+          },
+          {
+            "address": "0x2000fd84",
+            "written": "0x100",
+            "read": "0x0",
+            "xor": "0x100"
+          },
+          {
+            "address": "0x2000fe84",
+            "written": "0x100",
+            "read": "0x0",
+            "xor": "0x100"
+          },
+          {
+            "address": "0x2000dd84",
+            "written": "0x55555555",
+            "read": "0x55555455",
+            "xor": "0x100"
+          },
+          {
+            "address": "0x2000ed84",
+            "written": "0x55555555",
+            "read": "0x55555455",
+            "xor": "0x100"
+          },
+          {
+            "address": "0x2000fd84",
+            "written": "0x55555555",
+            "read": "0x55555455",
+            "xor": "0x100"
+          },
+          {
+            "address": "0x2000fe84",
+            "written": "0x55555555",
+            "read": "0x55555455",
+            "xor": "0x100"
+          }
+        ],
+        "tested_words": 8,
+        "patterns_per_word": 5,
+        "all_original_values_restored": true
+      },
+      "ram_failure_explanation": "The saved reentrancy pointer at 0x2000FD84 changed from 0x20000124 to 0x20000024 (bit 8 lost). Direct J-Link patterns reproduced bit-8 read/write mismatch at four upper-SRAM words. Moving initial MSP lower by 4KB still failed; moving it to 0x20007FF0 reached the main loop. This establishes an upper-SRAM access anomaly on this chip/board, not its manufacturing/electrical root cause.",
+      "latest_runtime": {
+        "output": "C:\\Users\\SongYoungBin\\.codex\\visualizations\\2026\\10\\02\\01a0fcdc-55de-7463-a319-ade97ad00ae3\\step_sigma_once_20261013\\raw_freeze_diagnosis\\flashed_runtime_1791886269838732600",
+        "return_code": 0,
+        "reset_halt_write_commands_sent": 0,
+        "ELF_entry": "0xc1",
+        "main_address": {
+          "address": 313,
+          "size": 276
+        },
+        "reset_handler": {
+          "address": 193,
+          "size": 116
+        },
+        "cpuid": "0x412fc231",
+        "vectors": [
+          "0x20007ff0",
+          "0xc1",
+          "0x829",
+          "0x82d",
+          "0x84d",
+          "0x851",
+          "0x855",
+          "0x0"
+        ],
+        "paf": [
+          "0x0",
+          "0x17f"
+        ],
+        "gpie": "0xff",
+        "ICSR": "0x0",
+        "VTOR": "0x20000000",
+        "CFSR": "0x0",
+        "HFSR": "0x0",
+        "DHCSR": {
+          "dhcsr_before": "0x1010001",
+          "dhcsr_after": "0x1010001"
+        },
+        "core_halted": {
+          "dhcsr_before": false,
+          "dhcsr_after": false
+        },
+        "core_lockup": {
+          "dhcsr_before": false,
+          "dhcsr_after": false
+        },
+        "analog": {
+          "0x0": "0x64a2",
+          "0x4": "0x3",
+          "0x8": "0x80",
+          "0xc": "0x20",
+          "0x10": "0x20",
+          "0x14": "0x2d",
+          "0x18": "0x50",
+          "0x1c": "0x800f00",
+          "0x20": "0x0",
+          "0x24": "0x69",
+          "0x28": "0x69",
+          "0x2c": "0x25",
+          "0x30": "0x25",
+          "0x34": "0xea6",
+          "0x38": "0xea6",
+          "0x3c": "0xea6",
+          "0x40": "0xea6",
+          "0x44": "0x0",
+          "0x48": "0x0",
+          "0x4c": "0x0",
+          "0x50": "0x0",
+          "0x54": "0x8",
+          "0x58": "0xa",
+          "0x5c": "0x8",
+          "0x60": "0xb",
+          "0x64": "0x8007f9",
+          "0x68": "0xa8d414",
+          "0x6c": "0xa8d3be",
+          "0x70": "0xa786ae",
+          "0x74": "0x0",
+          "0x78": "0x14d10"
+        },
+        "software_counters": {
+          "symbol_systick_cnt": 6487,
+          "symbol_g_i2c_addrmatch_cnt": 5854,
+          "symbol_g_i2c_txlatch_cnt": 6032,
+          "symbol_g_i2c_stale_recover_cnt": 60
+        }
+      },
+      "passive_can": {
+        "output": "C:\\Users\\SongYoungBin\\.codex\\visualizations\\2026\\10\\02\\01a0fcdc-55de-7463-a319-ade97ad00ae3\\step_sigma_once_20261013\\raw_freeze_diagnosis\\connection_state_1791886261158417700",
+        "CAN_failure": null,
+        "CAN_ids": {
+          "0x41": 379,
+          "0x42": 379,
+          "0x43": 378,
+          "0x44": 378
+        },
+        "CAN_errors": [],
+        "latest_frames": {
+          "0x41": "00800adc0000a8d6",
+          "0x42": "02625b7a000003db",
+          "0x43": "000003da00000101",
+          "0x44": "d88bbf0200007847"
+        },
+        "JLink_pin_status_log": "SEGGER J-Link Commander V8.10d (Compiled Oct 24 2024 10:01:14)\nDLL version V8.10d, compiled Oct 24 2024 09:58:28\n\nJ-Link Commander will now exit on Error\n\nJ-Link Command File read successfully.\nProcessing script file...\nJ-Link>exec DisableAutoUpdateFW\nJ-Link>ShowHWStatus\nJ-Link connection not established yet but required for command.\nConnecting to J-Link via USB...O.K.\nFirmware: J-Link V9 compiled May  7 2021 16:26:12\nHardware version: V9.70\nJ-Link uptime (since boot): N/A (Not supported by this model)\nS/N: 59768883\nLicense(s): RDI, GDB, FlashDL, FlashBP, JFlash\nVTref=3.308V\nVTref=3.308V\nITarget=0mA\nTCK=1 TDI=1 TDO=1 TMS=1 TRES=1 TRST=0\nSupported target interface speeds:\n - 12 MHz/n, (n>=1). => 12000kHz, 6000kHz, 4000kHz, ...\n - Adaptive clocking\nJ-Link>exit\n\nScript processing completed.\n\n\n",
+        "motor_commands_sent": 0,
+        "CPU_connect_reset_halt_write_commands_sent": 0,
+        "CAN_raw": {
+          "CH0": {
+            "samples": 379,
+            "unique": 1,
+            "min": 8391388,
+            "max": 8391388
+          },
+          "CH1": {
+            "samples": 379,
+            "unique": 1,
+            "min": 43222,
+            "max": 43222
+          }
+        }
+      },
+      "CAN_44_decoded_HAL_I2C_status": {
+        "configuration": 3,
+        "CH0": 3,
+        "CH1": 3,
+        "status_3": "HAL_TIMEOUT"
+      },
+      "scope_limitations": [
+        "The current flash, cold boot and SWD access have been verified.",
+        "Current CAN raw is unchanged across 379 frames; I2C timeouts remain. End-to-end sensing is not verified.",
+        "The 110-130-second curve flattening in the prior motor experiment is not yet attributed to this newly observed SRAM issue.",
+        "The lower 32KB SRAM has not been exhaustively tested."
+      ],
+      "next_diagnostic": "Trace live SoC I2C transaction/state and MCU HAL timeouts while matching direct CH0DR/CH1DR samples with CAN. Do not run another motor distance sweep while reads time out.",
+      "motor_commands_sent_this_turn": 0,
+      "STM32_firmware_changed_this_turn": false,
+      "Notion_updated": false
+    },
+    "limit": "Historical SoC flash was verified; SoC image at Oct14 22cm run was not read back."
+  }
+}

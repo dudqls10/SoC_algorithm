@@ -1,0 +1,53 @@
+10/13 26cm와 10/14 22cm: 코드 및 측정 감소 원인 대조
+사용자 확인: 두 측정은 같은 보드·전극/실험판·배선·거리 영점. 사이에 전원 재인가 또는 재시작이 있었음.
+
+확인된 코드 이력
+1. 10/13 측정에서 Flash와 일치 확인된 STM32 펌웨어 BIN/ELF가 현재 기준 Mobile_SoC 보관본과 완전히 같음.
+   BIN SHA256: 8cdef58fe86c587d46e9d981133e9c44d8b806660f29345503fafec765430192
+2. 기준 Mobile_SoC와 현재 Sensor1 소스의 InitializeCompensation, LinearRegression, TrainDelayedQ1Pair, DriftCompensation, ApplyEMA2Filter, InitializeKalmanFilters, KalmanFilter 본문은 각각 동일.
+   분리 manifest의 기존 Core 파일31개 중 main.c만 달라짐. 새 sensor1_distance_calibration.h가 추가됨.
+   main.c 차이: CAP 거리 환산, ToF 보정, CVF 거리표 및 관련 fusion 불확도. EMA 설정은 느림0.12/빠름0.45, 전환 차이5000~42000count로 동일.
+   ema_precision.h self-test의0.04는 검사용 입력이며 실제 ApplyEMA2Filter의 느린 계수 설정이 아님.
+   26/22cm는 원본 count에 대한 오프라인3sigma 결과이므로 CAP 거리 환산식 변경으로 직접 바뀌는 숫자는 아님.
+   단, ToF는 학습 허용 guard의 입력에도 사용되므로 실제 적용되었다면 학습 상태에 간접 영향을 줄 수 있음.
+3. 커스텀 SoC 쪽에는 26cm 측정 뒤 실제 Flash 변경이 있었음.
+   26cm 자료 시간: 2026-10-13T17:15:55+09:00 ~ 2026-10-13T17:22:33+09:00
+   SRAM 회피 이미지 Flash 시간: 2026-10-13T19:50:11+09:00; 저장 로그의 전체 이미지 읽기 검증 일치.
+   수정: PB3/PB4 SWD 보존, GPIE 입력 비트 OR 보존, 상위 SRAM 접근 오류 회피를 위한 초기 SP 0x2000FFF0→0x20007FF0 및 사용 SRAM64→32KB.
+   수정 전후 보관 main.c/i2c_apb.c 차이에는 센싱 변환식·변환주기 변경이 없고, pinmux/입력 enable 변경이 있음. 링크 배치 변경도 있으므로 보드 내부 동작 조건까지 완전히 동일한 비교로 볼 수 없음.
+4. 오늘22cm 시험의 STM32/SOC 실제 실행 이미지 및 RAM 계수는 당시 SWD 읽기에 실패하여 식별하지 못함.
+   현재 디스크의 Sensor1 빌드가 당시 보드에서 실행됐다는 뜻이 아니며, SoC 변경이 거리 감소를 유발했다는 A/B 검증도 아님.
+
+같은 방법의 측정 결과: 시작30cm 정지 첫5초 제외25초, 단계 정지 첫1초 제외4초, sample sigma(ddof1), 양방향 연속 음수3sigma.
+항목 / 어제26cm / 오늘22cm
+oct13: EMA sigma=77.392, 문턱3sigma=232.177; Raw CH0 sigma=256.661, CH1 sigma=89.969; 복귀 Raw 이동=-37.248, EMA 이동=-61.122 count
+oct14: EMA sigma=65.530, 문턱3sigma=196.591; Raw CH0 sigma=249.700, CH1 sigma=278.571; 복귀 Raw 이동=+208.939, EMA 이동=+210.190 count
+22cm 복귀 EMA delta: -574.319 → -225.561 count
+23cm 복귀 EMA delta: -458.738 → -141.910 count
+26cm 복귀 EMA delta: -235.844 → +50.606 count
+
+거리 감소가 계산되는 직접 이유
+오늘 문턱은232.177→196.591count로 낮아졌지만,23cm 복귀 신호는-458.738→-141.910count로 작아져 통과하지 못함.22cm의-225.561count에서 양방향 연속 조건을 만족함.
+어제26cm 복귀는-235.844count로 문턱232.177을3.667count(1.58%)만 넘은 경계 결과였음.
+26cm 복귀 Raw delta도-185.146→+48.697count로 변함. 따라서 후단 EMA 설정만으로 생긴 차이가 아님.
+
+보상 모델 상태 차이
+어제 RAM evaluation.csv에서 coefficient7358, 즉 gain0.7358을 직접 확인. 오늘은 직접 RAM 확인이 아님.
+oct13 정지구간60개의 EMA=a*Raw0+b*Raw1+C 적합: a=1.00009993, b=-0.72445852, RMSE=5.160count.
+oct14 정지구간60개의 EMA=a*Raw0+b*Raw1+C 적합: a=1.00002685, b=-0.00007242, RMSE=4.670count.
+오늘 CAN 출력은 CH1 기여가 거의0인 모델과 일치함.26cm에서 어제 CH1 항은 약-51count를 보탰지만 오늘은 거의0임.
+InitializeCompensation은 dComps와 학습 상태를0으로 초기화함. 이후 DriftFitGainScaled가 표본 공분산/분산으로 gain을 계산하고 음수 gain을0으로 제한함. 분모가0이면 기존 계수 유지.
+따라서 재시작 후 워밍업·기준 채널 상관 또는 학습 허용 조건이 달라지면 같은 코드에서도 다른 gain/offset이 가능함.
+측정 중 학습 갱신 홀짝 전환은 이전/오늘 모두0회였음. 현재 계수가0에 가깝게 학습/유지되었을 가능성이 있지만 부팅 표본·RAM 계수가 없어 확정할 수 없음.
+오늘 복귀 Raw+208.939count와 EMA+210.190count가 거의 같아 원시 기준 이동이 출력에 남았다는 해석과 일치함.
+어제 gain을 오늘 데이터에 강제로 적용해도26cm 복귀는 약+236.163count(타깃 방향과 반대)가 됨. 단순 계수 복원으로26cm가 돌아온다고 볼 수 없음.
+시작/끝 기준을 선형 보간하는 기존 민감도 계산도 오늘 EMA22→23cm에 그쳤음. 기준 이동만으로 전체 차이가 설명되지는 않으며 실제 drift의 선형성을 뜻하지 않음.
+
+현재 판단
+직접 확인: 같은 거리의 Raw/EMA delta 감소, 복귀 기준 이동, CH1 보상 기여 차이, 전원 재시작,26cm 이후의 SoC 펌웨어 Flash 이력.
+유력한 가설: 재시작과 달라진 칩 동작/워밍업 조건에서 보상 모델이 다르게 초기 학습되어, 달라진 Raw/CH1 변화가 기준에 남음.
+미확정: 오늘 실제 계수와 프로그램, 왜 원시 값의 운영점/시간 drift가 달라졌는지, SoC 수정의 거리 영향, 온도·전원 영향 각각의 크기.
+근본 원인 분리를 위한 다음 검증은 같은 보드에서 칩/STM32 이미지 해시와 부팅 직후·30cm 안정 후 gain/offset/학습reason/업데이트횟수를 함께 기록하는 것. 불량 상위 SRAM을 다시 사용하는 이전 SoC 이미지로 되돌리는 시험은 수행하지 않음.
+
+이번 작업은 보관 파일에 대한 오프라인 비교만 수행. 센서/모터 명령·리셋·Flash·코드 변경 없음.
+자료: artifact_audit.json, main_mobile_vs_sensor1.diff, soc_main_c.diff, soc_i2c_apb_c.diff, boundary_comparison.csv, retreat_channel_decomposition.csv.
